@@ -1,0 +1,7 @@
+{
+  "_comment": "Risk appetite: residual scores above this need executive acceptance. Scale is likelihood x impact (1-25).",
+  "organization": "Example Community Services (fictional nonprofit)",
+  "assessment_date": "2026-10-29",
+  "risk_appetite_max_residual": 6,
+  "risk_bands": {"low": [1, 4], "medium": [5, 9], "high": [10, 16], "critical": [17, 25]}
+}

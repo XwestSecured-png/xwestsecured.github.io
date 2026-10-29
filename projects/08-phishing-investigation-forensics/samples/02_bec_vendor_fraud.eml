@@ -1,0 +1,29 @@
+Received: from smtp.payflow-billing.example ([198.51.100.77]) by
+ mx.corp.example with ESMTPS id 4XyZ2844; Wed, 28 Oct 2026 16:41:30 +0000
+Authentication-Results: mx.corp.example; spf=pass
+ smtp.mailfrom=payflow-billing.example; dkim=pass
+ header.d=payflow-billing.example; dmarc=pass
+ header.from=payflow-billing.example
+Return-Path: <dana.whitfield@payflow-billing.example>
+From: "Dana Whitfield" <dana.whitfield@payflow-billing.example>
+Reply-To: dana.payflow@mail.example.net
+To: accounts.payable@corp.example
+Subject: RE: Invoice INV-20931 overdue - updated banking details
+Date: Wed, 28 Oct 2026 16:41:22 +0000
+Message-ID: <CAB12xyz@payflow-billing.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi team,
+
+Following our audit, our bank details have changed. Please use the updated ba=
+nking details below for
+invoice INV-20931, which is now overdue, and process the wire transfer today.
+
+New account number: 000123456789   Routing number: 011000015
+
+Please keep this confidential until our finance team sends the formal notice.
+
+Dana Whitfield
+Accounts Receivable, PayFlow

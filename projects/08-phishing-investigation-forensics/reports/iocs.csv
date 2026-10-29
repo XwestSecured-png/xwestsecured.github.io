@@ -1,0 +1,11 @@
+type,value,source_email,verdict
+domain-name,c0rp.example,01_credential_phish.eml,MALICIOUS
+ipv4-addr,203.0.113.45,01_credential_phish.eml,MALICIOUS
+url,https://c0rp-portal.example/login/verify?u=staff,01_credential_phish.eml,MALICIOUS
+domain-name,c0rp-portal.example,01_credential_phish.eml,MALICIOUS
+url,https://198.51.100.23/owa/auth.php,01_credential_phish.eml,MALICIOUS
+ipv4-addr,198.51.100.23,01_credential_phish.eml,MALICIOUS
+file:sha256,17c11fcc55103e5ac698e03d6d493aec9fb22fcd97a8ab59605f5828d6ca472b,01_credential_phish.eml,MALICIOUS
+email-addr,dana.payflow@mail.example.net,02_bec_vendor_fraud.eml,MALICIOUS
+domain-name,payflow-billing.example,02_bec_vendor_fraud.eml,MALICIOUS
+ipv4-addr,198.51.100.77,02_bec_vendor_fraud.eml,MALICIOUS

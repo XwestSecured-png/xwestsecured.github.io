@@ -1,0 +1,13 @@
+{
+  "Global Administrator": [
+    {"userPrincipalName": "admin.west@corp.example", "userType": "Member", "onPremisesSyncEnabled": false},
+    {"userPrincipalName": "globaladmin2@corp.example", "userType": "Member", "onPremisesSyncEnabled": true},
+    {"userPrincipalName": "it.vendor_partner.example#EXT#@corp.example", "userType": "Guest", "onPremisesSyncEnabled": false},
+    {"userPrincipalName": "breakglass1@corp.example", "userType": "Member", "onPremisesSyncEnabled": false},
+    {"userPrincipalName": "breakglass2@corp.example", "userType": "Member", "onPremisesSyncEnabled": false},
+    {"userPrincipalName": "ops.manager@corp.example", "userType": "Member", "onPremisesSyncEnabled": true}
+  ],
+  "Exchange Administrator": [
+    {"userPrincipalName": "exchange.admin@corp.example", "userType": "Member", "onPremisesSyncEnabled": false}
+  ]
+}

@@ -1,0 +1,8 @@
+received_utc,message_id,sender,recipient,subject,status
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,jdoe@corp.example,Action Required: Payroll portal password expires today,Delivered
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,asmith@corp.example,Action Required: Payroll portal password expires today,Delivered
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,mlee@corp.example,Action Required: Payroll portal password expires today,Delivered
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,kpatel@corp.example,Action Required: Payroll portal password expires today,Delivered
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,rgarcia@corp.example,Action Required: Payroll portal password expires today,Quarantined
+2026-10-27T14:03:12Z,<20261027140305.77812@mail.c0rp.example>,helpdesk@c0rp.example,tnguyen@corp.example,Action Required: Payroll portal password expires today,Delivered
+2026-10-28T16:41:30Z,<CAB12xyz@payflow-billing.example>,dana.whitfield@payflow-billing.example,accounts.payable@corp.example,RE: Invoice INV-20931 overdue - updated banking details,Delivered

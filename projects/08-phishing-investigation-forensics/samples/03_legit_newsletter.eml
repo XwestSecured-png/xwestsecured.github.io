@@ -1,0 +1,30 @@
+Received: from relay01.corp.example ([10.10.0.30]) by mailbox01.corp.example
+ with ESMTPS id 4XyZ1914; Thu, 29 Oct 2026 12:00:04 +0000
+Authentication-Results: mx.corp.example; spf=pass smtp.mailfrom=corp.example;
+ dkim=pass header.d=corp.example; dmarc=pass header.from=corp.example
+Return-Path: <news@corp.example>
+From: "Corp Communications" <news@corp.example>
+To: staff-all@corp.example
+Subject: Weekly update: volunteer day and new parking lot hours
+Date: Thu, 29 Oct 2026 12:00:00 +0000
+Message-ID: <weekly-2026-44@corp.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5085259314036305689=="
+
+--===============5085259314036305689==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Read this week's update on the intranet: https://intranet.corp.example/news/2=
+026-44
+
+--===============5085259314036305689==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<p>Read this week's update on the <a href=3D"https://intranet.corp.example/ne=
+ws/2026-44">intranet</a>.</p>
+
+--===============5085259314036305689==--

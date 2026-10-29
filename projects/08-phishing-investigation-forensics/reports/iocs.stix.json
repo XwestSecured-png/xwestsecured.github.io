@@ -1,0 +1,235 @@
+{
+  "type": "bundle",
+  "id": "bundle--e1ff0bea-667d-448d-a48b-55bd3476b3f4",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "name": "phish_analyzer.py",
+      "identity_class": "system"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d1c4ec47-5c13-52b8-a656-5122bd1be140",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing domain-name: c0rp.example",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'c0rp.example']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--095a5439-4547-5442-a5f9-0b85c1400a22",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing ipv4-addr: 203.0.113.45",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '203.0.113.45']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--302f4773-f73c-56dc-a6c5-8d2c1d98a4fd",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing url: https://c0rp-portal.example/login/verify?u=staff",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'https://c0rp-portal.example/login/verify?u=staff']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--70ef371b-0c55-517b-9398-79694b4181f0",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing domain-name: c0rp-portal.example",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'c0rp-portal.example']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--449bb5d6-24a9-5c20-9f1a-418149baa176",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing url: https://198.51.100.23/owa/auth.php",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'https://198.51.100.23/owa/auth.php']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1577d3f7-fa3b-5f43-af85-8b4bfa159847",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing ipv4-addr: 198.51.100.23",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '198.51.100.23']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3526379d-86fb-58c2-8b56-6303ad7edee2",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing file:sha256: 17c11fcc55103e5ac698e03d6d493aec9fb22fcd97a8ab59605f5828d6ca472b",
+      "description": "From email 'Action Required: Payroll portal password expires today' (MALICIOUS, score 100)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '17c11fcc55103e5ac698e03d6d493aec9fb22fcd97a8ab59605f5828d6ca472b']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--975aa016-2ebf-5036-b703-e0a1e780b059",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing email-addr: dana.payflow@mail.example.net",
+      "description": "From email 'RE: Invoice INV-20931 overdue - updated banking details' (MALICIOUS, score 85)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[email-addr:value = 'dana.payflow@mail.example.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--0ad9c023-5880-58a1-8d21-1b7064a2604a",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing domain-name: payflow-billing.example",
+      "description": "From email 'RE: Invoice INV-20931 overdue - updated banking details' (MALICIOUS, score 85)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'payflow-billing.example']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5d4209f8-b363-5a95-bdb2-89c9c60bcfd0",
+      "created": "2026-10-29T15:28:32.000Z",
+      "modified": "2026-10-29T15:28:32.000Z",
+      "created_by_ref": "identity--01d3a7a3-121f-56cf-bef7-f03bbcc7e86a",
+      "name": "Phishing ipv4-addr: 198.51.100.77",
+      "description": "From email 'RE: Invoice INV-20931 overdue - updated banking details' (MALICIOUS, score 85)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '198.51.100.77']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-29T15:28:32.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    }
+  ]
+}

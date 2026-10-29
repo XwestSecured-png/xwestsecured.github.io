@@ -1,0 +1,1503 @@
+{
+ "pkg:pypi/jinja2@2.10": [
+  {
+   "id": "PYSEC-2021-66",
+   "aliases": [
+    "CVE-2020-28493",
+    "SNYK-PYTHON-JINJA2-1012994",
+    "GHSA-g3rq-g295-4j3m"
+   ],
+   "summary": "This affects the package jinja2 from 0.0.0 and before 2.11.3. The ReDoS vulnerability is mainly due to the `_punctuation_re regex` operator and its use of multiple wildcards. The last wildcard is the most exploitable as it searches for trailing punctuation. This issue can be mitigated by Markdown to format user content instead of the urlize filter, or by implementing request timeouts and limiting process memory.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.11.3"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "PYSEC-2019-217",
+   "aliases": [
+    "CVE-2019-10906",
+    "GHSA-462w-v97r-4m45"
+   ],
+   "summary": "In Pallets Jinja before 2.10.1, str.format_map allows a sandbox escape.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.10.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-h5c8-rqwp-cp95",
+   "aliases": [
+    "CVE-2024-22195",
+    "PYSEC-2026-1473"
+   ],
+   "summary": "The `xmlattr` filter in affected versions of Jinja accepts keys containing spaces. XML/HTML attributes cannot contain spaces, as each would then be interpreted as a separate attribute. If an application accepts keys (as opposed to only values) as user input, and renders these in pages that other users see as well, an attacker could use this to inject other attributes and perform XSS. Note that accepting keys as user input is not common or a particularly intended use case of the `xmlattr` filter, and an application doing so should already be verifying what keys are provided regardless of this fix.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "3.1.3"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-h75v-3vvj-5mfj",
+   "aliases": [
+    "CVE-2024-34064",
+    "PYSEC-2026-1474"
+   ],
+   "summary": "The `xmlattr` filter in affected versions of Jinja accepts keys containing non-attribute characters. XML/HTML attributes cannot contain spaces, `/`, `>`, or `=`, as each would then be interpreted as starting a separate attribute. If an application accepts keys (as opposed to only values) as user input, and renders these in pages that other users see as well, an attacker could use this to inject other attributes and perform XSS. The fix for the previous GHSA-h5c8-rqwp-cp95 CVE-2024-22195 only addressed spaces but not other characters.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "3.1.4"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-q2x7-8rv6-6q7h",
+   "aliases": [
+    "CVE-2024-56326",
+    "PYSEC-2026-1475"
+   ],
+   "summary": "An oversight in how the Jinja sandboxed environment detects calls to `str.format` allows an attacker that controls the content of a template to execute arbitrary Python code.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "3.1.5"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-cpwx-vrp4-4pq7",
+   "aliases": [
+    "CVE-2025-27516",
+    "PYSEC-2026-1471"
+   ],
+   "summary": "An oversight in how the Jinja sandboxed environment interacts with the `|attr` filter allows an attacker that controls the content of a template to execute arbitrary Python code.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "3.1.6"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  }
+ ],
+ "pkg:pypi/pyyaml@5.3": [
+  {
+   "id": "PYSEC-2020-96",
+   "aliases": [
+    "CVE-2020-1747",
+    "CVE-2025-50460",
+    "GHSA-6757-jp84-gxfx",
+    "GHSA-fm6c-f59h-7mmg"
+   ],
+   "summary": "A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "5.3.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "PYSEC-2021-142",
+   "aliases": [
+    "CVE-2020-14343",
+    "GHSA-8q59-q68h-6hv4"
+   ],
+   "summary": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "5.4"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-6757-jp84-gxfx",
+   "aliases": [
+    "CVE-2020-1747",
+    "PYSEC-2020-96"
+   ],
+   "summary": "A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "5.3.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  }
+ ],
+ "pkg:pypi/requests@2.19.1": [
+  {
+   "id": "PYSEC-2018-28",
+   "aliases": [
+    "CVE-2018-18074",
+    "GHSA-x84v-xcm2-53pg"
+   ],
+   "summary": "The Requests package before 2.20.0 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.20.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-j8r2-6x86-q33q",
+   "aliases": [
+    "CVE-2023-32681",
+    "PYSEC-2023-74"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-9wx4-h78v-vm56",
+   "aliases": [
+    "CVE-2024-35195",
+    "PYSEC-2026-1873"
+   ],
+   "summary": "When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.32.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-9hjg-9r4m-mvj7",
+   "aliases": [
+    "CVE-2024-47081",
+    "PYSEC-2026-1872"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.32.4"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-gc5v-m9x4-r6x2",
+   "aliases": [
+    "CVE-2026-25645",
+    "PYSEC-2026-2275"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.33.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  }
+ ],
+ "pkg:pypi/urllib3@1.24.1": [
+  {
+   "id": "PYSEC-2019-133",
+   "aliases": [
+    "CVE-2019-11324",
+    "GHSA-mh33-7rrq-662w"
+   ],
+   "summary": "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the ssl_context, ca_certs, or ca_certs_dir argument.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "1.24.2"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "PYSEC-2019-132",
+   "aliases": [
+    "CVE-2019-11236",
+    "GHSA-r64q-w8jr-g9qp"
+   ],
+   "summary": "In the urllib3 library through 1.24.1 for Python, CRLF injection is possible if the attacker controls the request parameter.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "1.24.3"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "PYSEC-2020-148",
+   "aliases": [
+    "CVE-2020-26137",
+    "GHSA-wqvq-5m8c-6g24"
+   ],
+   "summary": "urllib3 before 1.25.9 allows CRLF injection if the attacker controls the HTTP request method, as demonstrated by inserting CR and LF control characters in the first argument of putrequest(). NOTE: this is similar to CVE-2020-26116.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "1.25.9"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-34jh-p97f-mpxf",
+   "aliases": [
+    "CVE-2024-37891",
+    "PYSEC-2026-1995"
+   ],
+   "summary": "When using urllib3's proxy support with `ProxyManager`, the `Proxy-Authorization` header is only sent to the configured proxy, as expected.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "1.26.19"
+        },
+        {
+         "fixed": "2.2.2"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-v845-jxx5-vc9f",
+   "aliases": [
+    "CVE-2023-43804",
+    "PYSEC-2023-192"
+   ],
+   "summary": "urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.0.6"
+        },
+        {
+         "fixed": "1.26.17"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-gwvm-45gx-3cf8",
+   "aliases": [
+    "CVE-2018-25091",
+    "PYSEC-2023-207"
+   ],
+   "summary": "urllib3 before 1.24.2 does not remove the authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the authorization header to be exposed to unintended hosts or transmitted in cleartext. NOTE: this issue exists because of an incomplete fix for CVE-2018-20060 (which was case-sensitive).",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "1.24.2"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-g4mx-q9vg-27p4",
+   "aliases": [
+    "CVE-2023-45803",
+    "PYSEC-2023-212"
+   ],
+   "summary": "urllib3 previously wouldn't remove the HTTP request body when an HTTP redirect response using status 303 \"See Other\" after the request had its method changed from one that could accept a request body (like `POST`) to `GET` as is required by HTTP RFCs. Although the behavior of removing the request body is not specified in the section for redirects, it can be inferred by piecing together information from different sections and we have observed the behavior in other major HTTP client implementations like curl and web browsers.",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.0.7"
+        },
+        {
+         "fixed": "1.26.18"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-pq67-6m6q-mj2v",
+   "aliases": [
+    "CVE-2025-50181",
+    "PYSEC-2026-1999"
+   ],
+   "summary": "urllib3 handles redirects and retries using the same mechanism, which is controlled by the `Retry` object. The most common way to disable redirects is at the request level, as follows:",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.5.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-gm62-xv2j-4w53",
+   "aliases": [
+    "CVE-2025-66418",
+    "PYSEC-2026-1998"
+   ],
+   "summary": "## Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.6.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-2xpw-w6gg-jr37",
+   "aliases": [
+    "CVE-2025-66471",
+    "PYSEC-2026-1994"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.6.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-38jv-5279-wg99",
+   "aliases": [
+    "CVE-2026-21441",
+    "PYSEC-2026-1996"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.6.3"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-qccp-gfcp-xxvc",
+   "aliases": [
+    "CVE-2026-44431",
+    "PYSEC-2026-141"
+   ],
+   "summary": "### Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.7.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  },
+  {
+   "id": "GHSA-vxq7-64xx-v4gw",
+   "aliases": [
+    "CVE-2026-97689"
+   ],
+   "summary": "## Impact",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "ECOSYSTEM",
+       "events": [
+        {
+         "fixed": "2.8.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "UNKNOWN",
+    "source": "pypi"
+   }
+  }
+ ],
+ "pkg:npm/axios@0.21.0": [
+  {
+   "id": "GHSA-cph5-m8f7-6c5x",
+   "aliases": [],
+   "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.21.2"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "source": "npm",
+    "vulnerable_versions": "<0.21.2"
+   }
+  },
+  {
+   "id": "GHSA-jr5f-v2jv-69x6",
+   "aliases": [],
+   "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.30.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 0,
+    "source": "npm",
+    "vulnerable_versions": "<0.30.0"
+   }
+  },
+  {
+   "id": "GHSA-fvcv-3m26-pcqx",
+   "aliases": [],
+   "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 4.8,
+    "source": "npm",
+    "vulnerable_versions": "<0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-62hf-57xw-28j9",
+   "aliases": [],
+   "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 7.5,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-hfxv-24rg-xrqf",
+   "aliases": [],
+   "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-p92q-9vqr-4j8v",
+   "aliases": [],
+   "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 0,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-j5f8-grm9-p9fc",
+   "aliases": [],
+   "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-3g43-6gmg-66jw",
+   "aliases": [],
+   "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7,
+    "source": "npm",
+    "vulnerable_versions": ">=0.19.0 <0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-898c-q2cr-xwhg",
+   "aliases": [],
+   "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 4.8,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-3p68-rc4w-qgx5",
+   "aliases": [],
+   "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 4.8,
+    "source": "npm",
+    "vulnerable_versions": "<0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-4w2v-q235-vp99",
+   "aliases": [],
+   "summary": "Axios vulnerable to Server-Side Request Forgery",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.21.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 5.9,
+    "source": "npm",
+    "vulnerable_versions": "<0.21.1"
+   }
+  },
+  {
+   "id": "GHSA-w9j2-pvgh-6h63",
+   "aliases": [],
+   "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 4.8,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-pmwg-cvhr-8vh7",
+   "aliases": [],
+   "summary": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.2,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-xhjh-pmcv-23jw",
+   "aliases": [],
+   "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "LOW",
+    "cvss": 3.7,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-m7pr-hjqh-92cm",
+   "aliases": [],
+   "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 6.8,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-5c9x-8gcm-mpgx",
+   "aliases": [],
+   "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 5.3,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-vf2m-468p-8v99",
+   "aliases": [],
+   "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 5.3,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-pf86-5x62-jrwf",
+   "aliases": [],
+   "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.4,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-6chq-wfr3-2hj9",
+   "aliases": [],
+   "summary": "Axios: Header Injection via Prototype Pollution",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.4,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-xx6v-rp6x-q39c",
+   "aliases": [],
+   "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 5.4,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.0"
+   }
+  },
+  {
+   "id": "GHSA-43fc-jf86-j433",
+   "aliases": [],
+   "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.30.2"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "source": "npm",
+    "vulnerable_versions": "<=0.30.2"
+   }
+  },
+  {
+   "id": "GHSA-pjwm-pj3p-43mv",
+   "aliases": [],
+   "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "0.31.1"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 8.6,
+    "source": "npm",
+    "vulnerable_versions": "<=0.31.1"
+   }
+  },
+  {
+   "id": "GHSA-wf5p-g6vw-rhxx",
+   "aliases": [],
+   "summary": "Axios Cross-Site Request Forgery Vulnerability",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.28.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 6.5,
+    "source": "npm",
+    "vulnerable_versions": ">=0.8.1 <0.28.0"
+   }
+  },
+  {
+   "id": "GHSA-mmx7-hfxf-jppx",
+   "aliases": [],
+   "summary": "Axios: Prototype pollution gadgets can alter axios request construction",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.33.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 0,
+    "source": "npm",
+    "vulnerable_versions": "<0.33.0"
+   }
+  },
+  {
+   "id": "GHSA-7q8q-rj6j-mhjq",
+   "aliases": [],
+   "summary": "Axios: Nested axios option objects can consume polluted prototype values",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "0.33.0"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 0,
+    "source": "npm",
+    "vulnerable_versions": ">=0.8.0 <0.33.0"
+   }
+  }
+ ],
+ "pkg:npm/express@4.21.2": [],
+ "pkg:npm/lodash@4.17.15": [
+  {
+   "id": "GHSA-35jh-r3h4-6jhm",
+   "aliases": [],
+   "summary": "Command Injection in lodash",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "4.17.21"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.2,
+    "source": "npm",
+    "vulnerable_versions": "<4.17.21"
+   }
+  },
+  {
+   "id": "GHSA-p6mc-m468-83gw",
+   "aliases": [],
+   "summary": "Prototype Pollution in lodash",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "4.17.19"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 7.4,
+    "source": "npm",
+    "vulnerable_versions": ">=3.7.0 <4.17.19"
+   }
+  },
+  {
+   "id": "GHSA-29mw-wpgm-hmr9",
+   "aliases": [],
+   "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "fixed": "4.17.21"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 5.3,
+    "source": "npm",
+    "vulnerable_versions": ">=4.0.0 <4.17.21"
+   }
+  },
+  {
+   "id": "GHSA-xxjr-mmjv-4gpg",
+   "aliases": [],
+   "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "4.17.22"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 6.5,
+    "source": "npm",
+    "vulnerable_versions": ">=4.0.0 <=4.17.22"
+   }
+  },
+  {
+   "id": "GHSA-r5fr-rjxr-66jc",
+   "aliases": [],
+   "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "4.17.23"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "HIGH",
+    "cvss": 8.1,
+    "source": "npm",
+    "vulnerable_versions": ">=4.0.0 <=4.17.23"
+   }
+  },
+  {
+   "id": "GHSA-f23m-r3pf-42rh",
+   "aliases": [],
+   "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+   "affected": [
+    {
+     "ranges": [
+      {
+       "type": "SEMVER",
+       "events": [
+        {
+         "last_affected": "4.17.23"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "database_specific": {
+    "severity": "MODERATE",
+    "cvss": 6.5,
+    "source": "npm",
+    "vulnerable_versions": "<=4.17.23"
+   }
+  }
+ ]
+}

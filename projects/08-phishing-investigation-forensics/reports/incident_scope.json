@@ -1,0 +1,232 @@
+{
+  "timeline": [
+    {
+      "ts": "2026-10-27T14:03:05Z",
+      "source": "email",
+      "user": "",
+      "event": "Phish sent: 'Action Required: Payroll portal password expires today' from Corp IT Helpdesk <helpdesk@c0rp.example> (origin 203.0.113.45)",
+      "attack": ""
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "jdoe",
+      "event": "Delivered to jdoe@corp.example",
+      "attack": "T1566"
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "asmith",
+      "event": "Delivered to asmith@corp.example",
+      "attack": "T1566"
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "mlee",
+      "event": "Delivered to mlee@corp.example",
+      "attack": "T1566"
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "kpatel",
+      "event": "Delivered to kpatel@corp.example",
+      "attack": "T1566"
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "rgarcia",
+      "event": "Quarantined for rgarcia@corp.example (no user exposure)",
+      "attack": ""
+    },
+    {
+      "ts": "2026-10-27T14:03:12Z",
+      "source": "message trace",
+      "user": "tnguyen",
+      "event": "Delivered to tnguyen@corp.example",
+      "attack": "T1566"
+    },
+    {
+      "ts": "2026-10-27T14:09:44Z",
+      "source": "proxy",
+      "user": "jdoe",
+      "event": "Clicked phishing link c0rp-portal.example",
+      "attack": "T1204.001"
+    },
+    {
+      "ts": "2026-10-27T14:10:31Z",
+      "source": "proxy",
+      "user": "jdoe",
+      "event": "POST (credential submission) to c0rp-portal.example from 10.10.20.31",
+      "attack": "T1566.002 \u2192 T1056.003"
+    },
+    {
+      "ts": "2026-10-27T14:12:02Z",
+      "source": "proxy",
+      "user": "mlee",
+      "event": "Clicked phishing link c0rp-portal.example",
+      "attack": "T1204.001"
+    },
+    {
+      "ts": "2026-10-27T14:25:58Z",
+      "source": "EDR WS-0102",
+      "user": "tnguyen",
+      "event": "FileCreate: outlook.exe \u2190 - (C:\\Users\\tnguyen\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\Payroll_Update_Nov2026.pdf.html)",
+      "attack": "T1204.002"
+    },
+    {
+      "ts": "2026-10-27T14:26:05Z",
+      "source": "EDR WS-0102",
+      "user": "tnguyen",
+      "event": "ProcessCreate: msedge.exe \u2190 outlook.exe (C:\\Users\\tnguyen\\...\\Payroll_Update_Nov2026.pdf.html)",
+      "attack": "T1204.002"
+    },
+    {
+      "ts": "2026-10-27T14:26:40Z",
+      "source": "proxy",
+      "user": "tnguyen",
+      "event": "POST (credential submission) to 198.51.100.23 from 10.10.20.102",
+      "attack": "T1566.002 \u2192 T1056.003"
+    },
+    {
+      "ts": "2026-10-27T14:31:55Z",
+      "source": "Entra sign-in",
+      "user": "jdoe",
+      "event": "SUCCESSFUL sign-in from 203.0.113.88 (NL) to Office 365 Exchange Online",
+      "attack": "T1078.004"
+    },
+    {
+      "ts": "2026-10-27T14:33:10Z",
+      "source": "Entra sign-in",
+      "user": "jdoe",
+      "event": "SUCCESSFUL sign-in from 203.0.113.88 (NL) to Office 365 Exchange Online",
+      "attack": "T1078.004"
+    },
+    {
+      "ts": "2026-10-27T14:34:20Z",
+      "source": "M365 audit",
+      "user": "jdoe",
+      "event": "Suspicious inbox rule created: Name='..' MoveToFolder=RSS Subscriptions; SubjectOrBodyContainsWords=payroll,invoice,bank",
+      "attack": "T1564.008"
+    },
+    {
+      "ts": "2026-10-27T14:40:02Z",
+      "source": "Entra sign-in",
+      "user": "tnguyen",
+      "event": "Attacker sign-in attempt from 203.0.113.88 (NL): Failure: MFA denied",
+      "attack": "T1078.004"
+    },
+    {
+      "ts": "2026-10-27T14:41:30Z",
+      "source": "Entra sign-in",
+      "user": "tnguyen",
+      "event": "Attacker sign-in attempt from 203.0.113.88 (NL): Failure: MFA denied",
+      "attack": "T1078.004"
+    },
+    {
+      "ts": "2026-10-28T16:41:22Z",
+      "source": "email",
+      "user": "",
+      "event": "Phish sent: 'RE: Invoice INV-20931 overdue - updated banking details' from Dana Whitfield <dana.whitfield@payflow-billing.example> (origin 198.51.100.77)",
+      "attack": ""
+    },
+    {
+      "ts": "2026-10-28T16:41:30Z",
+      "source": "message trace",
+      "user": "accounts.payable",
+      "event": "Delivered to accounts.payable@corp.example",
+      "attack": "T1566"
+    }
+  ],
+  "impact": [
+    {
+      "user": "jdoe",
+      "highest_stage": "compromised",
+      "stages": [
+        "received",
+        "clicked",
+        "submitted_credentials",
+        "compromised"
+      ],
+      "action": "Disable sign-in, revoke sessions/refresh tokens, reset password, re-register MFA, remove inbox rules, review mailbox audit for data access and onward phishing",
+      "evidence": [
+        "2026-10-27T14:03:12Z Delivered to jdoe@corp.example",
+        "2026-10-27T14:09:44Z Clicked phishing link c0rp-portal.example",
+        "2026-10-27T14:10:31Z POST (credential submission) to c0rp-portal.example from 10.10.20.31",
+        "2026-10-27T14:34:20Z Suspicious inbox rule created: Name='..' MoveToFolder=RSS Subscriptions; SubjectOrBodyContainsWords=payroll,invoice,bank",
+        "2026-10-27T14:31:55Z SUCCESSFUL sign-in from 203.0.113.88 (NL) to Office 365 Exchange Online",
+        "2026-10-27T14:33:10Z SUCCESSFUL sign-in from 203.0.113.88 (NL) to Office 365 Exchange Online"
+      ]
+    },
+    {
+      "user": "tnguyen",
+      "highest_stage": "submitted_credentials",
+      "stages": [
+        "received",
+        "opened_attachment",
+        "submitted_credentials"
+      ],
+      "action": "Reset password, revoke sessions, confirm MFA blocked attacker, monitor sign-ins 30 days",
+      "evidence": [
+        "2026-10-27T14:03:12Z Delivered to tnguyen@corp.example",
+        "2026-10-27T14:26:40Z POST (credential submission) to 198.51.100.23 from 10.10.20.102",
+        "2026-10-27T14:25:58Z FileCreate: outlook.exe \u2190 - (C:\\Users\\tnguyen\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\Payroll_Update_Nov2026.pdf.html)",
+        "2026-10-27T14:26:05Z ProcessCreate: msedge.exe \u2190 outlook.exe (C:\\Users\\tnguyen\\...\\Payroll_Update_Nov2026.pdf.html)",
+        "2026-10-27T14:40:02Z attacker attempt blocked: Failure: MFA denied",
+        "2026-10-27T14:41:30Z attacker attempt blocked: Failure: MFA denied"
+      ]
+    },
+    {
+      "user": "mlee",
+      "highest_stage": "clicked",
+      "stages": [
+        "received",
+        "clicked"
+      ],
+      "action": "Confirm no submission in proxy/EDR; targeted awareness follow-up",
+      "evidence": [
+        "2026-10-27T14:03:12Z Delivered to mlee@corp.example",
+        "2026-10-27T14:12:02Z Clicked phishing link c0rp-portal.example"
+      ]
+    },
+    {
+      "user": "asmith",
+      "highest_stage": "received",
+      "stages": [
+        "received"
+      ],
+      "action": "Message purged; no action beyond awareness",
+      "evidence": [
+        "2026-10-27T14:03:12Z Delivered to asmith@corp.example"
+      ]
+    },
+    {
+      "user": "kpatel",
+      "highest_stage": "received",
+      "stages": [
+        "received"
+      ],
+      "action": "Message purged; no action beyond awareness",
+      "evidence": [
+        "2026-10-27T14:03:12Z Delivered to kpatel@corp.example"
+      ]
+    },
+    {
+      "user": "accounts.payable",
+      "highest_stage": "received",
+      "stages": [
+        "received"
+      ],
+      "action": "Message purged; no action beyond awareness",
+      "evidence": [
+        "2026-10-28T16:41:30Z Delivered to accounts.payable@corp.example"
+      ]
+    }
+  ],
+  "new_iocs": [
+    "203.0.113.88"
+  ]
+}

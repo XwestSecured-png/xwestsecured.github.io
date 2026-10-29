@@ -1,0 +1,23 @@
+function,category_id,category_name,current,target,weight,owner,evidence,notes
+Govern,GV.OC,Organizational Context,2,3,1.0,Executive Director,Mission statement; list of regulatory obligations (HIPAA for client health data; state breach law),Stakeholder cyber expectations not documented
+Govern,GV.RM,Risk Management Strategy,1,3,1.5,IT Director,No board-approved risk appetite statement,Risk decisions made ad hoc
+Govern,GV.RR,"Roles, Responsibilities, and Authorities",2,3,1.0,HR Director,IT Director owns security; no RACI,Need RACI and security duties in job descriptions
+Govern,GV.PO,Policy,1,3,1.5,IT Director,Acceptable Use policy (2021) only,Draft policies in /policies
+Govern,GV.OV,Oversight,1,3,1.0,Board Finance Committee,No security reporting to the board,Quarterly KPI dashboard proposed
+Govern,GV.SC,Cybersecurity Supply Chain Risk Management,1,3,1.5,Operations Manager,Vendor list exists; no security due diligence,14 SaaS vendors hold client data
+Identify,ID.AM,Asset Management,2,3,1.5,IT Director,RMM agent inventory covers ~85% of endpoints,No SaaS/data inventory
+Identify,ID.RA,Risk Assessment,2,3,1.5,IT Director,Monthly vuln scans (Project 02),First formal risk register in this project
+Identify,ID.IM,Improvement,1,3,0.5,IT Director,No lessons-learned process,
+Protect,PR.AA,"Identity Management, Authentication, and Access Control",2,4,2.0,IT Director,MFA on M365 for staff; not on admin/VPN; shared accounts at 2 sites,Highest-risk gap
+Protect,PR.AT,Awareness and Training,1,3,1.0,HR Director,Annual video only,Phishing simulation program planned
+Protect,PR.DS,Data Security,2,3,1.5,IT Director,BitLocker on laptops; backups not immutable,Client PII in file shares
+Protect,PR.PS,Platform Security,2,3,1.0,IT Director,Patch via RMM; no config baseline,CIS baselines (Project 02 audits)
+Protect,PR.IR,Technology Infrastructure Resilience,2,3,1.0,IT Director,Flat network at 3 of 5 sites,Segmentation design in Project 04
+Detect,DE.CM,Continuous Monitoring,1,3,1.5,IT Director,Defender AV alerts only; logs not centralized,
+Detect,DE.AE,Adverse Event Analysis,1,3,1.0,IT Director,No correlation/triage process,Triage toolkit (Project 01)
+Respond,RS.MA,Incident Management,1,3,1.5,IT Director,No written IR plan,Playbook in Project 01
+Respond,RS.AN,Incident Analysis,1,3,1.0,IT Director,,
+Respond,RS.CO,Incident Response Reporting and Communication,1,3,1.0,Executive Director,No notification templates or legal contact,
+Respond,RS.MI,Incident Mitigation,2,3,1.0,IT Director,Can isolate endpoints via Defender,
+Recover,RC.RP,Incident Recovery Plan Execution,1,3,1.5,IT Director,Backups exist; restore never tested,
+Recover,RC.CO,Incident Recovery Communication,1,3,0.5,Executive Director,,

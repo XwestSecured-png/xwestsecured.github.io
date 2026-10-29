@@ -1,0 +1,462 @@
+[
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-01",
+    "severity": "critical",
+    "title": "Root account without MFA",
+    "resource": "<root_account>",
+    "detail": "mfa_active=false",
+    "fix": "Enable hardware/passkey MFA on root; store securely.",
+    "references": "CIS AWS Foundations (IAM: root MFA); MITRE T1078.004"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-02",
+    "severity": "critical",
+    "title": "Root account has access keys",
+    "resource": "<root_account>",
+    "detail": "active root access key",
+    "fix": "Delete root access keys; use IAM roles.",
+    "references": "CIS AWS Foundations (IAM: no root access keys)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-NET-01",
+    "severity": "critical",
+    "title": "Security group exposes admin/DB ports to the internet",
+    "resource": "sg-0a1b2c3d4e5f60002 (legacy-admin)",
+    "detail": "0.0.0.0/0 \u2192 3389/RDP",
+    "fix": "Remove world access; use SSM Session Manager / bastion / VPN, or restrict to known CIDRs.",
+    "references": "CIS AWS Foundations (Networking: no 0.0.0.0/0 to admin ports); MITRE T1133"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-NET-01",
+    "severity": "critical",
+    "title": "Security group exposes admin/DB ports to the internet",
+    "resource": "sg-0a1b2c3d4e5f60003 (db-temp)",
+    "detail": "::/0 \u2192 22/SSH, 3389/RDP, 445/SMB, 5985/WinRM, 5986/WinRM, 1433/MSSQL",
+    "fix": "Remove world access; use SSM Session Manager / bastion / VPN, or restrict to known CIDRs.",
+    "references": "CIS AWS Foundations (Networking: no 0.0.0.0/0 to admin ports); MITRE T1133"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-S3-02",
+    "severity": "critical",
+    "title": "S3 bucket policy is public",
+    "resource": "ecs-website-assets-example",
+    "detail": "PolicyStatus.IsPublic=true",
+    "fix": "Remove public principals; serve public content through CloudFront with OAC.",
+    "references": "MITRE T1530 (Data from Cloud Storage)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-KRB-02",
+    "severity": "critical",
+    "title": "Kerberoastable privileged account",
+    "resource": "svc_sql",
+    "detail": "SPN=MSSQLSvc/sql01.corp.example:1433; pwd age 3331 days",
+    "fix": "Use gMSA for services; otherwise 25+ char random password, AES-only encryption, and remove privileged rights.",
+    "references": "MITRE T1558.003 (Kerberoasting)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-KRB-02",
+    "severity": "critical",
+    "title": "Kerberoastable privileged account",
+    "resource": "svc_backup",
+    "detail": "SPN=HTTP/backup01.corp.example; pwd age 1753 days",
+    "fix": "Use gMSA for services; otherwise 25+ char random password, AES-only encryption, and remove privileged rights.",
+    "references": "MITRE T1558.003 (Kerberoasting)"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-CA-01",
+    "severity": "critical",
+    "title": "Legacy authentication not blocked",
+    "resource": "Conditional Access",
+    "detail": "no enabled policy blocks exchangeActiveSync + other client apps for all users",
+    "fix": "Create CA policy: All users, client apps = Exchange ActiveSync + Other clients, Grant = Block.",
+    "references": "CISA SCuBA M365 baseline (legacy auth); MITRE T1110.003"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-MFA-01",
+    "severity": "critical",
+    "title": "Admin without any MFA method",
+    "resource": "exchange.admin@corp.example",
+    "detail": "methods=none",
+    "fix": "Require MFA registration via Conditional Access; prioritize admins.",
+    "references": "CISA SCuBA M365 baseline (Entra ID); CSF 2.0 PR.AA-03; MITRE T1078.004"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-PRIV-02",
+    "severity": "critical",
+    "title": "Guest account holds privileged role",
+    "resource": "it.vendor_partner.example#EXT#@corp.example",
+    "detail": "Global Administrator",
+    "fix": "Remove privileged roles from guest/external accounts.",
+    "references": "CISA SCuBA M365 baseline"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-04",
+    "severity": "high",
+    "title": "Console user without MFA",
+    "resource": "jdoe",
+    "detail": "password_enabled, mfa_active=false",
+    "fix": "Require MFA (or move users to IAM Identity Center with SSO + MFA).",
+    "references": "CIS AWS Foundations (IAM: MFA for console users)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-05",
+    "severity": "high",
+    "title": "Access key not rotated",
+    "resource": "backup-svc key1",
+    "detail": "2096 days old",
+    "fix": "Rotate or replace with role-based temporary credentials.",
+    "references": "CIS AWS Foundations (IAM: rotate keys \u2264 90 days)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-05",
+    "severity": "high",
+    "title": "Access key not rotated",
+    "resource": "backup-svc key2",
+    "detail": "362 days old",
+    "fix": "Rotate or replace with role-based temporary credentials.",
+    "references": "CIS AWS Foundations (IAM: rotate keys \u2264 90 days)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-05",
+    "severity": "high",
+    "title": "Access key not rotated",
+    "resource": "former-contractor key1",
+    "detail": "1028 days old",
+    "fix": "Rotate or replace with role-based temporary credentials.",
+    "references": "CIS AWS Foundations (IAM: rotate keys \u2264 90 days)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-09",
+    "severity": "high",
+    "title": "Full admin (*:*) attached directly to IAM user",
+    "resource": "ci-deploy",
+    "detail": "arn:aws:iam::aws:policy/AdministratorAccess",
+    "fix": "Grant admin only via roles assumed with MFA (or IAM Identity Center permission sets); attach policies to groups/roles, not users.",
+    "references": "CIS AWS Foundations (IAM: no *:* policies); least privilege"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-09",
+    "severity": "high",
+    "title": "Full admin (*:*) attached directly to IAM user",
+    "resource": "former-contractor",
+    "detail": "inline *:* policy",
+    "fix": "Grant admin only via roles assumed with MFA (or IAM Identity Center permission sets); attach policies to groups/roles, not users.",
+    "references": "CIS AWS Foundations (IAM: no *:* policies); least privilege"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-LOG-01",
+    "severity": "high",
+    "title": "No multi-region CloudTrail trail",
+    "resource": "account",
+    "detail": "1 trails",
+    "fix": "Create an organization/multi-region trail to a locked-down logging account.",
+    "references": "CIS AWS Foundations (Logging: CloudTrail all regions)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-S3-01",
+    "severity": "high",
+    "title": "S3 Block Public Access not fully enabled",
+    "resource": "ecs-website-assets-example",
+    "detail": "public_policy=True",
+    "fix": "Enable all four Block Public Access settings (account and bucket level).",
+    "references": "CIS AWS Foundations (Storage: S3 Block Public Access)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-ACC-01",
+    "severity": "high",
+    "title": "Stale enabled account",
+    "resource": "old.helpdesk",
+    "detail": "last logon 2025-11-03",
+    "fix": "Disable after confirming with the manager; delete after 30 days.",
+    "references": "CIS Controls v8.1 5.3; MITRE T1078.002"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-KRB-01",
+    "severity": "high",
+    "title": "krbtgt password not rotated",
+    "resource": "krbtgt",
+    "detail": "last set 2019-06-02 (2706 days)",
+    "fix": "Rotate krbtgt twice (allowing replication between resets) at least every 180 days and after any DA compromise.",
+    "references": "MITRE T1558.001 (Golden Ticket)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-KRB-03",
+    "severity": "high",
+    "title": "Kerberos pre-authentication disabled (AS-REP roastable)",
+    "resource": "scanner",
+    "detail": "DoesNotRequirePreAuth=True",
+    "fix": "Enable Kerberos pre-authentication.",
+    "references": "MITRE T1558.004 (AS-REP Roasting)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-KRB-04",
+    "severity": "high",
+    "title": "Unconstrained delegation on user account",
+    "resource": "app_legacy",
+    "detail": "TrustedForDelegation=True",
+    "fix": "Remove unconstrained delegation; use resource-based constrained delegation; mark admins 'sensitive and cannot be delegated'.",
+    "references": "MITRE T1558 / T1134"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-PRIV-01",
+    "severity": "high",
+    "title": "Too many Domain Admins",
+    "resource": "Domain Admins",
+    "detail": "6 members: Administrator, xw-admin, svc_sql, old.helpdesk, jdoe.admin, vendor.it",
+    "fix": "Reduce to 2-4 named admin accounts; delegate with least-privileged groups; adopt a tiered admin model.",
+    "references": "Microsoft AD tiering guidance; CIS Controls v8.1 5.4"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-CA-03",
+    "severity": "high",
+    "title": "Admin roles not required to use phishing-resistant MFA",
+    "resource": "Conditional Access",
+    "detail": "",
+    "fix": "CA policy: include directory roles (Global Admin, Privileged Role Admin, etc.), Grant = authentication strength 'Phishing-resistant MFA'.",
+    "references": "CISA SCuBA M365 baseline"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-MFA-01",
+    "severity": "high",
+    "title": "User without MFA registered",
+    "resource": "frontdesk.site3@corp.example",
+    "detail": "methods=none",
+    "fix": "Require MFA registration via Conditional Access; prioritize admins.",
+    "references": "CISA SCuBA M365 baseline (Entra ID); CSF 2.0 PR.AA-03; MITRE T1078.004"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-MFA-02",
+    "severity": "high",
+    "title": "Admin lacks phishing-resistant MFA",
+    "resource": "globaladmin2@corp.example",
+    "detail": "methods=['microsoftAuthenticatorPush', 'mobilePhone']",
+    "fix": "Register FIDO2 security keys / passkeys or WHfB; enforce 'Phishing-resistant MFA' auth strength for admin roles.",
+    "references": "CISA SCuBA M365 baseline; OMB M-22-09; NIST SP 800-63B-4 (phishing resistance)"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-PRIV-01",
+    "severity": "high",
+    "title": "Global Administrator count outside recommended range",
+    "resource": "Global Administrator",
+    "detail": "6 members (policy 2-4; CISA SCuBA allows at most 8)",
+    "fix": "Use least-privileged roles (User/Exchange/Security Admin) and PIM just-in-time activation.",
+    "references": "CISA SCuBA M365 baseline (privileged access)"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-PRIV-03",
+    "severity": "high",
+    "title": "Privileged role assigned to on-prem synced account",
+    "resource": "globaladmin2@corp.example",
+    "detail": "Global Administrator",
+    "fix": "Use cloud-only admin accounts so an AD compromise can't escalate to the cloud tenant.",
+    "references": "Microsoft privileged access guidance; CISA SCuBA M365 baseline"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-PRIV-03",
+    "severity": "high",
+    "title": "Privileged role assigned to on-prem synced account",
+    "resource": "ops.manager@corp.example",
+    "detail": "Global Administrator",
+    "fix": "Use cloud-only admin accounts so an AD compromise can't escalate to the cloud tenant.",
+    "references": "Microsoft privileged access guidance; CISA SCuBA M365 baseline"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-03",
+    "severity": "medium",
+    "title": "Root account used recently",
+    "resource": "<root_account>",
+    "detail": "password_last_used=2026-10-20",
+    "fix": "Reserve root for break-glass tasks; alert on root use.",
+    "references": "CIS AWS Foundations (IAM: avoid root use)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-06",
+    "severity": "medium",
+    "title": "Unused active access key",
+    "resource": "backup-svc key2",
+    "detail": "last used never",
+    "fix": "Deactivate and delete unused keys.",
+    "references": "CIS AWS Foundations (IAM: disable unused credentials \u2265 45 days)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-06",
+    "severity": "medium",
+    "title": "Unused active access key",
+    "resource": "former-contractor key1",
+    "detail": "last used 2025-12-14",
+    "fix": "Deactivate and delete unused keys.",
+    "references": "CIS AWS Foundations (IAM: disable unused credentials \u2265 45 days)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-08",
+    "severity": "medium",
+    "title": "Stale console password",
+    "resource": "former-contractor",
+    "detail": "last login 2025-12-15",
+    "fix": "Disable console access for inactive users.",
+    "references": "CIS AWS Foundations (IAM)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-LOG-02",
+    "severity": "medium",
+    "title": "CloudTrail log file validation disabled",
+    "resource": "mgmt-events-us-east-1",
+    "detail": "",
+    "fix": "Enable log file integrity validation.",
+    "references": "CIS AWS Foundations (Logging)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-S3-01",
+    "severity": "medium",
+    "title": "S3 Block Public Access not fully enabled",
+    "resource": "ecs-client-intake-exports-example",
+    "detail": "public_policy=False",
+    "fix": "Enable all four Block Public Access settings (account and bucket level).",
+    "references": "CIS AWS Foundations (Storage: S3 Block Public Access)"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-ACC-01",
+    "severity": "medium",
+    "title": "Stale enabled account",
+    "resource": "intern2024",
+    "detail": "last logon 2024-08-15",
+    "fix": "Disable after confirming with the manager; delete after 30 days.",
+    "references": "CIS Controls v8.1 5.3; MITRE T1078.002"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-PWD-01",
+    "severity": "medium",
+    "title": "Privileged account with non-expiring, aged password",
+    "resource": "Administrator",
+    "detail": "PasswordNeverExpires; last set 2018-04-01",
+    "fix": "Privileged passwords should be managed (PAM/LAPS) or rotated on compromise; enforce 15+ chars + MFA.",
+    "references": "NIST SP 800-63B-4; CIS Controls v8.1 5.2"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-PWD-01",
+    "severity": "medium",
+    "title": "Privileged account with non-expiring, aged password",
+    "resource": "svc_sql",
+    "detail": "PasswordNeverExpires; last set 2017-09-15",
+    "fix": "Privileged passwords should be managed (PAM/LAPS) or rotated on compromise; enforce 15+ chars + MFA.",
+    "references": "NIST SP 800-63B-4; CIS Controls v8.1 5.2"
+  },
+  {
+    "platform": "Active Directory",
+    "check": "AD-PWD-01",
+    "severity": "medium",
+    "title": "Privileged account with non-expiring, aged password",
+    "resource": "svc_backup",
+    "detail": "PasswordNeverExpires; last set 2022-01-10",
+    "fix": "Privileged passwords should be managed (PAM/LAPS) or rotated on compromise; enforce 15+ chars + MFA.",
+    "references": "NIST SP 800-63B-4; CIS Controls v8.1 5.2"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-CA-04",
+    "severity": "medium",
+    "title": "Conditional Access policy left in report-only mode",
+    "resource": "Block legacy authentication",
+    "detail": "state=enabledForReportingButNotEnforced",
+    "fix": "Review sign-in impact and switch to On.",
+    "references": "CSF 2.0 PR.AA-05"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-CA-05",
+    "severity": "medium",
+    "title": "Conditional Access policy with many user exclusions",
+    "resource": "Require MFA - all users",
+    "detail": "5 excluded users",
+    "fix": "Limit exclusions to break-glass accounts; review quarterly.",
+    "references": "CSF 2.0 PR.AA-05"
+  },
+  {
+    "platform": "Entra ID",
+    "check": "ENT-MFA-03",
+    "severity": "medium",
+    "title": "User relies only on SMS/voice/email MFA",
+    "resource": "asmith@corp.example",
+    "detail": "methods=['mobilePhone']",
+    "fix": "Move users to Authenticator with number matching or passkeys; SMS is vulnerable to SIM swap.",
+    "references": "NIST SP 800-63B-4 (restricted authenticators)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-IAM-07",
+    "severity": "low",
+    "title": "User has two active access keys",
+    "resource": "backup-svc",
+    "detail": "2 active keys",
+    "fix": "Keep at most one active key per user.",
+    "references": "CIS AWS Foundations (IAM)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-LOG-03",
+    "severity": "low",
+    "title": "CloudTrail logs not encrypted with KMS CMK",
+    "resource": "mgmt-events-us-east-1",
+    "detail": "",
+    "fix": "Encrypt with a customer-managed KMS key.",
+    "references": "CIS AWS Foundations (Logging)"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-S3-03",
+    "severity": "low",
+    "title": "S3 versioning disabled",
+    "resource": "ecs-website-assets-example",
+    "detail": "Versioning=Suspended",
+    "fix": "Enable versioning (and Object Lock for backups) to survive ransomware/deletion.",
+    "references": "CSF 2.0 PR.DS-11"
+  },
+  {
+    "platform": "AWS",
+    "check": "AWS-S3-03",
+    "severity": "low",
+    "title": "S3 versioning disabled",
+    "resource": "ecs-client-intake-exports-example",
+    "detail": "Versioning=None",
+    "fix": "Enable versioning (and Object Lock for backups) to survive ransomware/deletion.",
+    "references": "CSF 2.0 PR.DS-11"
+  }
+]

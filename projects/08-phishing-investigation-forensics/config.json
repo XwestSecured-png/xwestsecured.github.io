@@ -1,0 +1,8 @@
+{
+  "_comment": "Domains you own or trust (lookalikes of these are flagged), brand names attackers impersonate, and your internal networks.",
+  "protected_domains": ["corp.example", "payflow.example"],
+  "trusted_brands": ["Corp IT", "IT Helpdesk", "Payroll", "HR", "PayFlow"],
+  "internal_networks": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"],
+  "shorteners": ["bit.ly", "tinyurl.com", "t.co", "is.gd", "rb.gy", "cutt.ly", "ow.ly", "rebrand.ly"],
+  "freemail": ["gmail.com", "outlook.com", "yahoo.com", "proton.me", "aol.com", "mail.example.net"]
+}

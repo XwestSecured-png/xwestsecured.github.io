@@ -1,0 +1,227 @@
+[
+  {
+    "file": "01_credential_phish.eml",
+    "sha256": "2d492110c76bc304552b9e7e5eb178d3ffea79dd334ee846673348f4e3565d71",
+    "message_id": "<20261027140305.77812@mail.c0rp.example>",
+    "date_utc": "2026-10-27T14:03:05Z",
+    "subject": "Action Required: Payroll portal password expires today",
+    "from": "Corp IT Helpdesk <helpdesk@c0rp.example>",
+    "reply_to": [],
+    "return_path": "bounce@c0rp.example",
+    "auth": {
+      "spf": "pass",
+      "dkim": "none",
+      "dmarc": "none"
+    },
+    "origin_ip": "203.0.113.45",
+    "hops": 2,
+    "links": [
+      {
+        "url": "https://c0rp-portal.example/login/verify?u=staff",
+        "host": "c0rp-portal.example",
+        "text": "https://portal.corp.example/payroll",
+        "notes": [
+          "text shows portal.corp.example",
+          "credential-harvest path"
+        ]
+      }
+    ],
+    "attachments": [
+      {
+        "name": "Payroll_Update_Nov2026.pdf.html",
+        "content_type": "text/html",
+        "true_type": "html",
+        "size": 391,
+        "sha256": "17c11fcc55103e5ac698e03d6d493aec9fb22fcd97a8ab59605f5828d6ca472b",
+        "notes": [
+          "risky type .html",
+          "double extension",
+          "HTML smuggling / obfuscated JS",
+          "form posts to 198.51.100.23"
+        ]
+      }
+    ],
+    "score": 100,
+    "verdict": "MALICIOUS",
+    "attack": [
+      "T1027.006",
+      "T1566.001",
+      "T1566.002"
+    ],
+    "signals": [
+      {
+        "points": 35,
+        "category": "sender",
+        "detail": "From domain 'c0rp.example' is a lookalike of protected domain 'corp.example'"
+      },
+      {
+        "points": 30,
+        "category": "attachments",
+        "detail": "Payroll_Update_Nov2026.pdf.html: JavaScript decoding/Blob pattern (HTML smuggling, T1027.006)"
+      },
+      {
+        "points": 30,
+        "category": "attachments",
+        "detail": "Payroll_Update_Nov2026.pdf.html: embedded login form posts to https://198.51.100.23/owa/auth.php"
+      },
+      {
+        "points": 25,
+        "category": "links",
+        "detail": "Link text shows 'portal.corp.example' but points to 'c0rp-portal.example'"
+      },
+      {
+        "points": 25,
+        "category": "attachments",
+        "detail": "Risky attachment type: Payroll_Update_Nov2026.pdf.html"
+      },
+      {
+        "points": 25,
+        "category": "attachments",
+        "detail": "Double extension: Payroll_Update_Nov2026.pdf.html"
+      },
+      {
+        "points": 20,
+        "category": "sender",
+        "detail": "Display name 'Corp IT Helpdesk' impersonates an internal/trusted brand from external domain"
+      },
+      {
+        "points": 20,
+        "category": "content",
+        "detail": "Urgency / pressure language: action required, password expires, verify your account, within 24 hours"
+      },
+      {
+        "points": 10,
+        "category": "links",
+        "detail": "External link with login/verify-style path"
+      },
+      {
+        "points": 8,
+        "category": "authentication",
+        "detail": "DMARC result missing"
+      },
+      {
+        "points": 5,
+        "category": "authentication",
+        "detail": "DKIM result missing"
+      }
+    ],
+    "iocs": [
+      {
+        "type": "domain-name",
+        "value": "c0rp.example"
+      },
+      {
+        "type": "ipv4-addr",
+        "value": "203.0.113.45"
+      },
+      {
+        "type": "url",
+        "value": "https://c0rp-portal.example/login/verify?u=staff"
+      },
+      {
+        "type": "domain-name",
+        "value": "c0rp-portal.example"
+      },
+      {
+        "type": "url",
+        "value": "https://198.51.100.23/owa/auth.php"
+      },
+      {
+        "type": "ipv4-addr",
+        "value": "198.51.100.23"
+      },
+      {
+        "type": "file:sha256",
+        "value": "17c11fcc55103e5ac698e03d6d493aec9fb22fcd97a8ab59605f5828d6ca472b"
+      }
+    ]
+  },
+  {
+    "file": "02_bec_vendor_fraud.eml",
+    "sha256": "c57cf4bcfc2fcfe58dc95523dc1a80ef4fa93bdb8d32888762f4ce75e1aca99c",
+    "message_id": "<CAB12xyz@payflow-billing.example>",
+    "date_utc": "2026-10-28T16:41:22Z",
+    "subject": "RE: Invoice INV-20931 overdue - updated banking details",
+    "from": "Dana Whitfield <dana.whitfield@payflow-billing.example>",
+    "reply_to": [
+      "dana.payflow@mail.example.net"
+    ],
+    "return_path": "dana.whitfield@payflow-billing.example",
+    "auth": {
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass"
+    },
+    "origin_ip": "198.51.100.77",
+    "hops": 1,
+    "links": [],
+    "attachments": [],
+    "score": 85,
+    "verdict": "MALICIOUS",
+    "attack": [
+      "T1656"
+    ],
+    "signals": [
+      {
+        "points": 35,
+        "category": "sender",
+        "detail": "From domain 'payflow-billing.example' is a lookalike of protected domain 'payflow.example'"
+      },
+      {
+        "points": 30,
+        "category": "content",
+        "detail": "BEC / payment-fraud language: keep this confidential, new account number, routing number, updated banking details, wire transfer"
+      },
+      {
+        "points": 20,
+        "category": "sender",
+        "detail": "Reply-To (dana.payflow@mail.example.net) differs from From (dana.whitfield@payflow-billing.example)"
+      }
+    ],
+    "iocs": [
+      {
+        "type": "email-addr",
+        "value": "dana.payflow@mail.example.net"
+      },
+      {
+        "type": "domain-name",
+        "value": "payflow-billing.example"
+      },
+      {
+        "type": "ipv4-addr",
+        "value": "198.51.100.77"
+      }
+    ]
+  },
+  {
+    "file": "03_legit_newsletter.eml",
+    "sha256": "ee00017d6a67ac01ced7dcde066390f3b88fbe721775b12f4fbe385bfd798dcc",
+    "message_id": "<weekly-2026-44@corp.example>",
+    "date_utc": "2026-10-29T12:00:00Z",
+    "subject": "Weekly update: volunteer day and new parking lot hours",
+    "from": "Corp Communications <news@corp.example>",
+    "reply_to": [],
+    "return_path": "news@corp.example",
+    "auth": {
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass"
+    },
+    "origin_ip": null,
+    "hops": 1,
+    "links": [
+      {
+        "url": "https://intranet.corp.example/news/2026-44",
+        "host": "intranet.corp.example",
+        "text": "intranet",
+        "notes": []
+      }
+    ],
+    "attachments": [],
+    "score": 0,
+    "verdict": "LIKELY BENIGN",
+    "attack": [],
+    "signals": [],
+    "iocs": []
+  }
+]

@@ -1,0 +1,8 @@
+ts_utc,user,src_ip,method,url,status,bytes_out
+2026-10-27T13:55:10Z,jdoe,10.10.20.31,GET,https://intranet.corp.example/news,200,812
+2026-10-27T14:09:44Z,jdoe,10.10.20.31,GET,https://c0rp-portal.example/login/verify?u=staff,200,640
+2026-10-27T14:10:31Z,jdoe,10.10.20.31,POST,https://c0rp-portal.example/login/verify?u=staff,302,1290
+2026-10-27T14:12:02Z,mlee,10.10.20.57,GET,https://c0rp-portal.example/login/verify?u=staff,200,655
+2026-10-27T14:20:17Z,kpatel,10.10.20.88,GET,https://intranet.corp.example/hr,200,700
+2026-10-27T14:26:40Z,tnguyen,10.10.20.102,POST,https://198.51.100.23/owa/auth.php,200,1544
+2026-10-27T15:01:00Z,asmith,10.10.20.45,GET,https://www.news.example/,200,900

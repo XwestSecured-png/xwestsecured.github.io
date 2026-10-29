@@ -1,6 +1,6 @@
 # Projects
 
-Hands-on defensive security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, MITRE ATT&CK).
+Hands-on security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, MITRE ATT&CK).
 
 ---
 
@@ -29,6 +29,34 @@ Side-by-side vulnerable and secure code showing five SQL injection attacks (OWAS
 [View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/04-network-threat-detection)
 
 Zeek log analytics that detect port scans, C2 beaconing, data exfiltration and DNS tunneling (7/7 planted scenarios found, 0 false positives). Also includes a 10-check vendor-neutral firewall rule auditor, 11 validated Suricata rules, and a Zero Trust segmentation design.
+
+---
+
+## 05: NIST CSF 2.0 Gap Assessment, Risk Register & Policy Set
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/05-grc-csf2-risk-assessment)
+
+A full security program assessment for a fictional multi-site nonprofit. It scores current vs. target maturity across all 22 NIST CSF 2.0 categories, keeps a risk register with inherent and residual heat maps and a risk-appetite check, and generates a board-ready report with a prioritized 90-day roadmap. Includes Information Security, Access Control and Vendor Risk policies.
+
+---
+
+## 06: Cloud & Identity Security Audit (AWS · Entra ID · Active Directory)
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/06-cloud-identity-security-audit)
+
+Read-only collectors and an offline analyzer run 34 identity-security checks: root and IAM key hygiene, public S3 and exposed security groups, MFA strength and Conditional Access gaps, guest admins, Kerberoastable service accounts and krbtgt age. Includes a 30-day hardening plan and KQL/Athena detections.
+
+---
+
+## 07: Software Supply-Chain Security Toolkit
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/07-software-supply-chain-security)
+
+Tools that address OWASP Top 10:2025 A03 Software Supply Chain Failures. A secrets scanner exports SARIF for GitHub code scanning, a CycloneDX SBOM generator inventories every build, and a dependency gate checks components against OSV, PyPI and npm advisories and turns 58 advisories into 6 upgrade actions. A hardened CI pipeline template enforces it all.
+
+---
+
+## 08: Phishing Investigation & Forensic Timeline
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/08-phishing-investigation-forensics)
+
+Offline analysis of suspicious emails catches lookalike domains, deceptive links, HTML smuggling and business email compromise, then exports IOCs as STIX 2.1. A correlation tool combines mail, proxy, sign-in and EDR logs to find who clicked, who submitted credentials and who was compromised, and surfaces new attacker infrastructure along the way.
 
 ---
 

@@ -1,0 +1,13 @@
+[
+  {"SamAccountName": "krbtgt", "Enabled": false, "PasswordLastSet": "2019-06-02T10:00:00", "LastLogonDate": null},
+  {"SamAccountName": "Administrator", "Enabled": true, "LastLogonDate": "2026-10-28T09:00:00", "PasswordLastSet": "2018-04-01T10:00:00", "PasswordNeverExpires": true, "AdminCount": 1},
+  {"SamAccountName": "xw-admin", "Enabled": true, "LastLogonDate": "2026-10-28T08:00:00", "PasswordLastSet": "2026-02-01T10:00:00", "PasswordNeverExpires": false, "AdminCount": 1},
+  {"SamAccountName": "svc_sql", "Enabled": true, "LastLogonDate": "2026-10-29T01:00:00", "PasswordLastSet": "2017-09-15T10:00:00", "PasswordNeverExpires": true, "ServicePrincipalName": ["MSSQLSvc/sql01.corp.example:1433"], "AdminCount": 1},
+  {"SamAccountName": "svc_backup", "Enabled": true, "LastLogonDate": "2026-10-29T02:00:00", "PasswordLastSet": "2022-01-10T10:00:00", "PasswordNeverExpires": true, "ServicePrincipalName": ["HTTP/backup01.corp.example"]},
+  {"SamAccountName": "scanner", "Enabled": true, "LastLogonDate": "2026-10-20T10:00:00", "PasswordLastSet": "2021-05-01T10:00:00", "DoesNotRequirePreAuth": true},
+  {"SamAccountName": "old.helpdesk", "Enabled": true, "LastLogonDate": "2025-11-03T10:00:00", "PasswordLastSet": "2025-03-01T10:00:00", "AdminCount": 1},
+  {"SamAccountName": "app_legacy", "Enabled": true, "LastLogonDate": "2026-10-01T10:00:00", "PasswordLastSet": "2020-01-01T10:00:00", "TrustedForDelegation": true},
+  {"SamAccountName": "jdoe", "Enabled": true, "LastLogonDate": "2026-10-28T08:30:00", "PasswordLastSet": "2026-03-01T10:00:00"},
+  {"SamAccountName": "intern2024", "Enabled": true, "LastLogonDate": "2024-08-15T10:00:00", "PasswordLastSet": "2024-06-01T10:00:00"},
+  {"SamAccountName": "termed.user", "Enabled": false, "LastLogonDate": "2025-01-10T10:00:00", "PasswordLastSet": "2024-12-01T10:00:00"}
+]

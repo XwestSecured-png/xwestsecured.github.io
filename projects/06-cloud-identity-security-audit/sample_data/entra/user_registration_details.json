@@ -1,0 +1,9 @@
+{"value": [
+  {"userPrincipalName": "admin.west@corp.example", "isAdmin": true, "isMfaRegistered": true, "methodsRegistered": ["passKeyDeviceBound", "microsoftAuthenticatorPush"]},
+  {"userPrincipalName": "globaladmin2@corp.example", "isAdmin": true, "isMfaRegistered": true, "methodsRegistered": ["microsoftAuthenticatorPush", "mobilePhone"]},
+  {"userPrincipalName": "exchange.admin@corp.example", "isAdmin": true, "isMfaRegistered": false, "methodsRegistered": []},
+  {"userPrincipalName": "jdoe@corp.example", "isAdmin": false, "isMfaRegistered": true, "methodsRegistered": ["microsoftAuthenticatorPush"]},
+  {"userPrincipalName": "asmith@corp.example", "isAdmin": false, "isMfaRegistered": true, "methodsRegistered": ["mobilePhone"]},
+  {"userPrincipalName": "frontdesk.site3@corp.example", "isAdmin": false, "isMfaRegistered": false, "methodsRegistered": []},
+  {"userPrincipalName": "mlee@corp.example", "isAdmin": false, "isMfaRegistered": true, "methodsRegistered": ["windowsHelloForBusiness", "microsoftAuthenticatorPush"]}
+]}

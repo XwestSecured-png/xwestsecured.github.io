@@ -1,0 +1,83 @@
+# =============================================================================
+# Software supply-chain security pipeline (GitHub Actions TEMPLATE)
+# Copy to .github/workflows/security.yml in the repository you want to protect.
+#
+# Hardening applied (OpenSSF Scorecard / SLSA / NIST SSDF guidance):
+#   * least-privilege GITHUB_TOKEN (read-only by default, per-job grants)
+#   * third-party actions should be pinned to a full commit SHA in production
+#     (tags shown here for readability; Dependabot can keep SHAs updated)
+#   * no long-lived cloud secrets: deploy jobs use OIDC (see Project 06 docs)
+#   * build fails on secrets, KEV/high vulns with fixes, or unpinned deps
+# =============================================================================
+name: supply-chain-security
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"      # weekly re-scan catches newly disclosed CVEs
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write   # upload SARIF to code scanning
+    steps:
+      - uses: actions/checkout@v4          # pin: actions/checkout@<full-sha>
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Scan for hard-coded secrets
+        run: python3 supplychain/secrets_scan.py . --sarif secrets.sarif
+      - name: Upload SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: secrets.sarif
+          category: secrets
+
+  sbom-and-vulns:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate CycloneDX SBOM
+        run: python3 supplychain/sbom.py . --name "${{ github.event.repository.name }}" --version "${{ github.sha }}" --out sbom.cdx.json
+      - name: Check dependencies (OSV) and enforce policy
+        run: |
+          curl -fsSL -o kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+          python3 supplychain/vuln_check.py sbom.cdx.json --fetch --kev kev.json --strict --out vuln_report.json
+      - name: Keep SBOM + report as build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-and-vuln-report
+          path: |
+            sbom.cdx.json
+            vuln_report.json
+            vuln_report.md
+
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure
