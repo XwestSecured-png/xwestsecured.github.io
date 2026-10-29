@@ -1,0 +1,27 @@
+title: Member Added to Privileged Security Group
+id: 4b9d2e6f-7a1c-4e8b-b5d3-9c0e1f2a3b04
+status: stable
+description: A user was added to Domain Admins, Enterprise Admins, Schema Admins or local Administrators.
+author: Xiome West
+date: 2026-10-29
+references:
+  - https://attack.mitre.org/techniques/T1098/
+tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: [4728, 4732, 4756]
+    TargetUserName|contains:
+      - 'Domain Admins'
+      - 'Enterprise Admins'
+      - 'Schema Admins'
+      - 'Administrators'
+  condition: selection
+falsepositives:
+  - Approved change with a matching ticket
+level: high

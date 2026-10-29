@@ -1,32 +1,41 @@
 # Projects
 
-Below are the core cybersecurity projects I will complete throughout my training. Each section will be updated with full write-ups, analysis, and documentation as the work is completed.
+Hands-on defensive security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, MITRE ATT&CK).
 
 ---
 
-## TryHackMe Journal  
-## My TryHackMe Profile
-https://tryhackme.com/p/westwings85
+## 01: Incident Response Log Triage Toolkit & Incident Handler's Journal
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/01-incident-response-log-triage)
+
+A Python toolkit that correlates Linux and Windows authentication logs to detect brute force, password spraying, account compromise, persistence and log tampering, with each detection mapped to MITRE ATT&CK. Includes an IR playbook aligned to NIST SP 800-61r3, Sigma rules, and a structured **Incident Handler's Journal** covering two simulated compromises.
+
+---
+
+## 02: Vulnerability Assessment & Risk-Based Remediation
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/02-vulnerability-management)
+
+Turns raw scanner output into a prioritized remediation plan using CVSS, the **CISA Known Exploited Vulnerabilities** catalog, **EPSS** exploit likelihood, and asset criticality. Includes read-only Linux and Windows hardening audits mapped to CIS Controls v8.1, plus a scanning SOP with rules of engagement.
+
+---
+
+## 03: Secure SQL, Injection Defense & SQL Threat Hunting
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/03-secure-sql-and-threat-hunting)
+
+Side-by-side vulnerable and secure code showing five SQL injection attacks (OWASP Top 10:2025 A05) and the controls that stop them. Also includes ten documented SQL threat hunts (spray, impossible travel, compromise pivot, SQLi), a web-log SQLi detector, and a database hardening checklist.
+
+---
+
+## 04: Network Threat Detection & Firewall Policy Audit
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/04-network-threat-detection)
+
+Zeek log analytics that detect port scans, C2 beaconing, data exfiltration and DNS tunneling (7/7 planted scenarios found, 0 false positives). Also includes a 10-check vendor-neutral firewall rule auditor, 11 validated Suricata rules, and a Zero Trust segmentation design.
+
+---
+
+## TryHackMe Journal
+[My TryHackMe Profile](https://tryhackme.com/p/westwings85)
 
 A collection of walkthroughs, notes, and analysis from hands-on cybersecurity labs.
-
----
-
-## Incident Handler's Journal  
-**Coming Soon**  
-A structured incident response journal documenting alerts, triage steps, evidence, and conclusions.
-
----
-
-## Vulnerable System Analysis  
-**Coming Soon**  
-A technical breakdown of a vulnerable system including findings, remediation, and security recommendations.
-
----
-
-## SQL Query  
-**Coming Soon**  
-A demonstration of secure SQL practices, query analysis, and data handling.
 
 ---
 

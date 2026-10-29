@@ -1,0 +1,40 @@
+title: Windows Logon Success Following Repeated Failures
+id: 2d7e4c11-9b8a-4a6f-8e43-7f0c5b2a9e02
+status: experimental
+description: Successful logon (4624) from a source that produced repeated 4625 failures - possible credential compromise.
+author: Xiome West
+date: 2026-10-29
+references:
+  - https://attack.mitre.org/techniques/T1110/
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.credential-access
+  - attack.initial-access
+  - attack.t1110
+  - attack.t1078
+logsource:
+  product: windows
+  service: security
+correlation:
+  type: temporal_ordered
+  rules:
+    - failed_logons
+    - successful_logon
+  group-by:
+    - IpAddress
+  timespan: 30m
+---
+title: Failed logons
+name: failed_logons
+logsource: {product: windows, service: security}
+detection:
+  selection: {EventID: 4625}
+  condition: selection
+---
+title: Successful logon
+name: successful_logon
+logsource: {product: windows, service: security}
+detection:
+  selection: {EventID: 4624, LogonType: [3, 10]}
+  condition: selection
+level: critical

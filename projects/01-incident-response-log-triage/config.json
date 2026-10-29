@@ -1,0 +1,14 @@
+{
+  "_comment": "Tune these to your environment. Keys starting with _ are ignored. utc_offset_hours converts log timestamps to local business time (sample logs are already local, so 0). Example: US Eastern = -5 (EST) or -4 (EDT).",
+  "year": 2026,
+  "brute_force_threshold": 10,
+  "brute_force_window_minutes": 10,
+  "spray_user_threshold": 5,
+  "spray_window_minutes": 30,
+  "success_after_failure_minutes": 30,
+  "business_hours": {"start": 7, "end": 19, "weekdays_only": true, "utc_offset_hours": 0},
+  "internal_networks": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"],
+  "service_accounts": ["svc_backup", "svc_monitoring"],
+  "privileged_groups": ["Administrators", "Domain Admins", "Enterprise Admins", "Schema Admins", "sudo", "wheel"],
+  "max_evidence_lines": 5
+}

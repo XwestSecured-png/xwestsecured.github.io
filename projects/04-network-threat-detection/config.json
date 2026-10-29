@@ -1,0 +1,14 @@
+{
+  "_comment": "Tune to your network. Keys starting with _ are ignored.",
+  "internal_networks": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"],
+  "scan_vertical_ports": 25,
+  "scan_horizontal_hosts": 20,
+  "beacon_min_connections": 12,
+  "beacon_max_cv": 0.15,
+  "beacon_min_interval_s": 10,
+  "exfil_bytes_threshold": 100000000,
+  "dns_label_min_len": 40,
+  "dns_entropy_threshold": 3.8,
+  "dns_min_queries_per_domain": 10,
+  "allowlist_destinations": ["192.0.2.10"]
+}

@@ -1,0 +1,11 @@
+host,ip,criticality,internet_facing,owner,data_classification
+vpn-gw01,198.51.100.10,critical,yes,Network Team,Confidential
+web01,198.51.100.20,high,yes,Web Team,Internal
+mft01,198.51.100.30,critical,yes,Infrastructure,Restricted
+dc01,10.10.0.5,critical,no,Infrastructure,Restricted
+fs01,10.10.0.20,high,no,Infrastructure,Confidential
+legacy-pos01,10.30.5.14,medium,no,Retail Ops,Confidential
+app02,10.20.1.40,high,no,App Team,Internal
+dev-sandbox01,10.99.0.12,low,no,App Team,Public
+print01,10.30.1.9,low,no,Help Desk,Internal
+hr-laptop-114,10.40.2.114,medium,no,Desktop Support,Confidential

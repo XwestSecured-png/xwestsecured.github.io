@@ -1,0 +1,262 @@
+{
+  "total_requests": 318,
+  "alerts": [
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:00 +0000",
+      "status": 500,
+      "score": 8,
+      "signatures": [
+        "tautology",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12' OR '1'='1"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:04 +0000",
+      "status": 200,
+      "score": 10,
+      "signatures": [
+        "union_select",
+        "comment_terminator",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 UNION ALL SELECT NULL,username,password FROM users--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:08 +0000",
+      "status": 200,
+      "score": 11,
+      "signatures": [
+        "comment_terminator",
+        "time_based",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12;WAITFOR DELAY '0:0:5'--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:12 +0000",
+      "status": 500,
+      "score": 8,
+      "signatures": [
+        "time_based",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=1 AND SLEEP(5)"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:16 +0000",
+      "status": 200,
+      "score": 6,
+      "signatures": [
+        "comment_terminator",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/login?user=admin'--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:20 +0000",
+      "status": 200,
+      "score": 13,
+      "signatures": [
+        "union_select",
+        "info_schema",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 UNION SELECT table_name FROM information_schema.tables"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:24 +0000",
+      "status": 500,
+      "score": 15,
+      "signatures": [
+        "tautology",
+        "version_probe",
+        "error_based",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 AND 1=CONVERT(int,(SELECT @@version))"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:28 +0000",
+      "status": 200,
+      "score": 9,
+      "signatures": [
+        "comment_terminator",
+        "stacked_query",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12;DROP TABLE users--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:32 +0000",
+      "status": 200,
+      "score": 8,
+      "signatures": [
+        "tautology",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12' OR '1'='1"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:02:36 +0000",
+      "status": 500,
+      "score": 10,
+      "signatures": [
+        "union_select",
+        "comment_terminator",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 UNION ALL SELECT NULL,username,password FROM users--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:40 +0000",
+      "status": 200,
+      "score": 11,
+      "signatures": [
+        "comment_terminator",
+        "time_based",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12;WAITFOR DELAY '0:0:5'--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:44 +0000",
+      "status": 200,
+      "score": 8,
+      "signatures": [
+        "time_based",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=1 AND SLEEP(5)"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:48 +0000",
+      "status": 500,
+      "score": 6,
+      "signatures": [
+        "comment_terminator",
+        "quote_break",
+        "tool:sqlmap"
+      ],
+      "uri": "/login?user=admin'--"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:52 +0000",
+      "status": 200,
+      "score": 13,
+      "signatures": [
+        "union_select",
+        "info_schema",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 UNION SELECT table_name FROM information_schema.tables"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:56 +0000",
+      "status": 200,
+      "score": 15,
+      "signatures": [
+        "tautology",
+        "version_probe",
+        "error_based",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12 AND 1=CONVERT(int,(SELECT @@version))"
+    },
+    {
+      "src_ip": "203.0.113.99",
+      "ts": "24/Oct/2026:14:03:00 +0000",
+      "status": 500,
+      "score": 9,
+      "signatures": [
+        "comment_terminator",
+        "stacked_query",
+        "tool:sqlmap"
+      ],
+      "uri": "/products?id=12;DROP TABLE users--"
+    },
+    {
+      "src_ip": "198.51.100.14",
+      "ts": "24/Oct/2026:16:10:00 +0000",
+      "status": 200,
+      "score": 5,
+      "signatures": [
+        "tautology",
+        "quote_break"
+      ],
+      "uri": "/search?q=x' or 'a'='a"
+    },
+    {
+      "src_ip": "198.51.100.14",
+      "ts": "24/Oct/2026:16:10:07 +0000",
+      "status": 200,
+      "score": 12,
+      "signatures": [
+        "union_select",
+        "comment_terminator",
+        "version_probe",
+        "quote_break"
+      ],
+      "uri": "/search?q=x' UNION SELECT sqlite_version()--"
+    }
+  ],
+  "sources": {
+    "203.0.113.99": {
+      "hits": 16,
+      "max": 15,
+      "sigs": [
+        "comment_terminator",
+        "error_based",
+        "info_schema",
+        "quote_break",
+        "stacked_query",
+        "tautology",
+        "time_based",
+        "tool:sqlmap",
+        "union_select",
+        "version_probe"
+      ],
+      "first": "24/Oct/2026:14:02:00 +0000",
+      "last": "24/Oct/2026:14:03:00 +0000",
+      "errors": 6,
+      "tools": [
+        "sqlmap"
+      ]
+    },
+    "198.51.100.14": {
+      "hits": 2,
+      "max": 12,
+      "sigs": [
+        "comment_terminator",
+        "quote_break",
+        "tautology",
+        "union_select",
+        "version_probe"
+      ],
+      "first": "24/Oct/2026:16:10:00 +0000",
+      "last": "24/Oct/2026:16:10:07 +0000",
+      "errors": 0,
+      "tools": []
+    }
+  }
+}

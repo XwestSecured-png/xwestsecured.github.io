@@ -1,0 +1,173 @@
+[
+  {
+    "rule_id": "-",
+    "rule_name": "",
+    "check": "FW-005",
+    "severity": "critical",
+    "title": "No default-deny",
+    "detail": "default_action='allow' and no final deny-all rule",
+    "fix": "Set implicit/explicit deny-all at the end of every rule set (inbound and outbound)."
+  },
+  {
+    "rule_id": 110,
+    "rule_name": "temp-troubleshoot",
+    "check": "FW-001",
+    "severity": "critical",
+    "title": "Any/any/any allow rule",
+    "detail": "inbound allow with no restriction on source, destination, port or protocol",
+    "fix": "Delete or replace with specific source/destination/port rules (least privilege)."
+  },
+  {
+    "rule_id": 110,
+    "rule_name": "temp-troubleshoot",
+    "check": "FW-002",
+    "severity": "critical",
+    "title": "Admin/database service exposed to the internet",
+    "detail": "inbound from ANY to ['any'] on ALL PORTS",
+    "fix": "Restrict to VPN/ZTNA/bastion source ranges with MFA; never expose RDP/SMB/DB ports publicly."
+  },
+  {
+    "rule_id": 30,
+    "rule_name": "rdp-vendor-temp",
+    "check": "FW-002",
+    "severity": "critical",
+    "title": "Admin/database service exposed to the internet",
+    "detail": "inbound from ANY to ['10.10.1.20/32'] on 3389/RDP",
+    "fix": "Restrict to VPN/ZTNA/bastion source ranges with MFA; never expose RDP/SMB/DB ports publicly."
+  },
+  {
+    "rule_id": 100,
+    "rule_name": "users-outbound",
+    "check": "FW-003",
+    "severity": "high",
+    "title": "Overly permissive rule",
+    "detail": "src=['10.10.20.0/24'] ports=['any'] (65535 ports)",
+    "fix": "Narrow to the specific ports/sources the application requires."
+  },
+  {
+    "rule_id": 100,
+    "rule_name": "users-outbound",
+    "check": "FW-010",
+    "severity": "high",
+    "title": "Unrestricted egress",
+    "detail": "outbound from ['10.10.20.0/24'] to ANY on ANY port",
+    "fix": "Implement egress filtering: allow only required ports (e.g. 443, 53 to internal resolvers) and route web traffic through a proxy/SWG. Limits C2 and exfiltration."
+  },
+  {
+    "rule_id": 110,
+    "rule_name": "temp-troubleshoot",
+    "check": "FW-008",
+    "severity": "high",
+    "title": "Expired temporary rule still present",
+    "detail": "expired 2026-03-01 (242 days ago)",
+    "fix": "Remove the rule or re-approve with a new expiry."
+  },
+  {
+    "rule_id": 30,
+    "rule_name": "rdp-vendor-temp",
+    "check": "FW-008",
+    "severity": "high",
+    "title": "Expired temporary rule still present",
+    "detail": "expired 2026-06-30 (121 days ago)",
+    "fix": "Remove the rule or re-approve with a new expiry."
+  },
+  {
+    "rule_id": 40,
+    "rule_name": "dmz-to-db",
+    "check": "FW-003",
+    "severity": "high",
+    "title": "Overly permissive rule",
+    "detail": "src=['10.10.1.0/24'] ports=['1-65535'] (65535 ports)",
+    "fix": "Narrow to the specific ports/sources the application requires."
+  },
+  {
+    "rule_id": 50,
+    "rule_name": "block-db-from-dmz",
+    "check": "FW-004",
+    "severity": "high",
+    "title": "Conflicting shadowed rule",
+    "detail": "never matches; fully covered by earlier rule 40 (dmz-to-db, action=allow)",
+    "fix": "Reorder (specific before general) or remove. Conflicts mean the intended deny is NOT enforced."
+  },
+  {
+    "rule_id": 110,
+    "rule_name": "temp-troubleshoot",
+    "check": "FW-006",
+    "severity": "medium",
+    "title": "Allow rule without logging",
+    "detail": "log=false",
+    "fix": "Enable logging on allow rules (at least session start) and forward to SIEM."
+  },
+  {
+    "rule_id": 30,
+    "rule_name": "rdp-vendor-temp",
+    "check": "FW-006",
+    "severity": "medium",
+    "title": "Allow rule without logging",
+    "detail": "log=false",
+    "fix": "Enable logging on allow rules (at least session start) and forward to SIEM."
+  },
+  {
+    "rule_id": 80,
+    "rule_name": "ftp-partner",
+    "check": "FW-009",
+    "severity": "medium",
+    "title": "Cleartext / legacy protocol allowed",
+    "detail": "21/FTP",
+    "fix": "Migrate to encrypted equivalents (SSH/SFTP, HTTPS, LDAPS, SNMPv3, IMAPS)."
+  },
+  {
+    "rule_id": 90,
+    "rule_name": "snmp-monitoring",
+    "check": "FW-009",
+    "severity": "medium",
+    "title": "Cleartext / legacy protocol allowed",
+    "detail": "161/SNMPv1/v2c",
+    "fix": "Migrate to encrypted equivalents (SSH/SFTP, HTTPS, LDAPS, SNMPv3, IMAPS)."
+  },
+  {
+    "rule_id": 100,
+    "rule_name": "users-outbound",
+    "check": "FW-006",
+    "severity": "low",
+    "title": "Allow rule without logging",
+    "detail": "log=false",
+    "fix": "Enable logging on allow rules (at least session start) and forward to SIEM."
+  },
+  {
+    "rule_id": 40,
+    "rule_name": "dmz-to-db",
+    "check": "FW-006",
+    "severity": "low",
+    "title": "Allow rule without logging",
+    "detail": "log=false",
+    "fix": "Enable logging on allow rules (at least session start) and forward to SIEM."
+  },
+  {
+    "rule_id": 40,
+    "rule_name": "dmz-to-db",
+    "check": "FW-007",
+    "severity": "low",
+    "title": "Missing owner or business justification",
+    "detail": "owner='' description=''",
+    "fix": "Every rule needs an owner, ticket/justification and review date (PCI DSS 1.2, CIS 4.4)."
+  },
+  {
+    "rule_id": 70,
+    "rule_name": "mgmt-ssh-dup",
+    "check": "FW-004",
+    "severity": "low",
+    "title": "Redundant shadowed rule",
+    "detail": "never matches; fully covered by earlier rule 60 (mgmt-ssh, action=allow)",
+    "fix": "Reorder (specific before general) or remove. Conflicts mean the intended allow never applies."
+  },
+  {
+    "rule_id": 90,
+    "rule_name": "snmp-monitoring",
+    "check": "FW-006",
+    "severity": "low",
+    "title": "Allow rule without logging",
+    "detail": "log=false",
+    "fix": "Enable logging on allow rules (at least session start) and forward to SIEM."
+  }
+]

@@ -1,0 +1,169 @@
+{
+  "flows": 4286,
+  "dns_queries": 3035,
+  "findings": [
+    {
+      "rule_id": "NET-003",
+      "title": "Large outbound data transfer",
+      "severity": "critical",
+      "attack": [
+        "T1048",
+        "T1041"
+      ],
+      "entities": {
+        "src": "10.10.30.12",
+        "dst": "203.0.113.200",
+        "dst_port": 443
+      },
+      "evidence": {
+        "bytes_out": 473901243,
+        "mb_out": 473.9,
+        "upload_download_ratio": 1647.8,
+        "first_seen": "2026-10-28T13:00:00Z",
+        "last_seen": "2026-10-28T13:16:00Z"
+      },
+      "recommendation": "Confirm whether this is a sanctioned backup/sync. If not: isolate the host, identify the data, and engage the incident response and legal/privacy teams."
+    },
+    {
+      "rule_id": "NET-001",
+      "title": "Vertical port scan",
+      "severity": "high",
+      "attack": [
+        "T1046"
+      ],
+      "entities": {
+        "src": "203.0.113.50",
+        "dst": "10.10.1.10",
+        "external_source": true
+      },
+      "evidence": {
+        "distinct_ports": 1024,
+        "sample_ports": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "failed_conns_from_src": 1024,
+        "first_seen": "2026-10-28T09:00:00.020000Z",
+        "last_seen": "2026-10-28T09:00:20.480000Z"
+      },
+      "recommendation": "Block source if external; if internal, identify the host owner \u2014 unauthorized internal scanning often follows initial compromise."
+    },
+    {
+      "rule_id": "NET-001",
+      "title": "Horizontal sweep on port 445",
+      "severity": "high",
+      "attack": [
+        "T1046"
+      ],
+      "entities": {
+        "src": "10.10.20.66",
+        "dst_port": 445,
+        "external_source": false
+      },
+      "evidence": {
+        "distinct_hosts": 60,
+        "first_seen": "2026-10-28T08:46:52.432585Z"
+      },
+      "recommendation": "Sweeps of a single service (e.g. 445/3389) across many hosts are typical of worm propagation or lateral-movement discovery. Isolate and investigate."
+    },
+    {
+      "rule_id": "NET-002",
+      "title": "Periodic beaconing to external host",
+      "severity": "high",
+      "attack": [
+        "T1071",
+        "T1573"
+      ],
+      "entities": {
+        "src": "10.10.20.31",
+        "dst": "198.51.100.66",
+        "dst_port": 443
+      },
+      "evidence": {
+        "connections": 90,
+        "mean_interval_s": 60.0,
+        "interval_jitter_cv": 0.024,
+        "payload_size_cv": 0.017,
+        "first_seen": "2026-10-28T08:30:01.756283Z",
+        "last_seen": "2026-10-28T09:58:59.953540Z"
+      },
+      "recommendation": "Look up destination reputation, pull process/parent from EDR on the source host, and check for persistence. Consistent intervals + uniform payload sizes are typical of C2 implants (Cobalt Strike, Sliver, etc.)."
+    },
+    {
+      "rule_id": "NET-004",
+      "title": "Inbound RDP reachable from internet",
+      "severity": "high",
+      "attack": [
+        "T1133",
+        "T1021"
+      ],
+      "entities": {
+        "src": "198.51.100.201",
+        "dst": "10.10.1.20",
+        "dst_port": 3389
+      },
+      "evidence": {
+        "established_connections": 4,
+        "first_seen": "2026-10-28T14:00:00Z"
+      },
+      "recommendation": "Remove internet exposure of RDP; place behind VPN/ZTNA with MFA."
+    },
+    {
+      "rule_id": "NET-005",
+      "title": "DNS tunneling indicators",
+      "severity": "high",
+      "attack": [
+        "T1071.004",
+        "T1048.003"
+      ],
+      "entities": {
+        "domain": "c2.example",
+        "sources": [
+          "10.10.20.31"
+        ]
+      },
+      "evidence": {
+        "queries": 35,
+        "long_label_ratio": 0.97,
+        "avg_label_entropy": 4.45,
+        "qtypes": {
+          "TXT": 35
+        },
+        "example": "mvwxa3dppfswkx3jmqwg4ylnmuwhg43ol5wgc43ugqwhgylmmfzhsctfnvygy33.0000.c2.example"
+      },
+      "recommendation": "Sinkhole/block the domain at the resolver, force all DNS through internal resolvers (block outbound 53/853 except resolvers), inspect source hosts."
+    },
+    {
+      "rule_id": "NET-004",
+      "title": "Outbound SMB to internet",
+      "severity": "medium",
+      "attack": [
+        "T1048",
+        "T1021"
+      ],
+      "entities": {
+        "src": "10.10.20.44",
+        "dst": "198.51.100.150",
+        "dst_port": 445
+      },
+      "evidence": {
+        "connections": 3,
+        "first_seen": "2026-10-28T12:00:00Z"
+      },
+      "recommendation": "Egress filtering should block SMB (445) to the internet."
+    }
+  ]
+}

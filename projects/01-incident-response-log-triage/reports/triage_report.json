@@ -1,0 +1,281 @@
+{
+  "generated_utc": "2026-10-29T13:37:02.422751Z",
+  "evidence_integrity": [
+    {
+      "file": "sample_logs/auth.log",
+      "sha256": "69e733856353f802fb414defea9c542b12fbb7e24085b073d8068001771a68f3",
+      "bytes": 7831
+    },
+    {
+      "file": "sample_logs/windows_security.csv",
+      "sha256": "70cefd4830a764a44627e9afa205a0f7fc7e067dc46c7d5025003ac7a67f12f3",
+      "bytes": 3339
+    }
+  ],
+  "events_parsed": 115,
+  "summary": {
+    "critical": 3,
+    "high": 3,
+    "medium": 5
+  },
+  "findings": [
+    {
+      "rule_id": "IR-003",
+      "title": "Successful logon after repeated failures (possible compromise)",
+      "severity": "critical",
+      "attack": [
+        "T1110",
+        "T1078"
+      ],
+      "first_seen": "2026-10-28T02:47:00Z",
+      "last_seen": "2026-10-28T02:50:00Z",
+      "entities": {
+        "src_ip": "203.0.113.77",
+        "user": "deploy",
+        "host": "web01",
+        "prior_failures": 5
+      },
+      "evidence_count": 6,
+      "recommendation": "Treat as a likely compromised account: disable/reset credentials, revoke sessions and keys, isolate host if post-logon activity is found, and preserve evidence before remediation.",
+      "evidence": [
+        "Oct 28 02:47:20 web01 sshd[5561]: Failed password for deploy from 203.0.113.77 port 42001 ssh2",
+        "Oct 28 02:47:40 web01 sshd[7804]: Failed password for deploy from 203.0.113.77 port 42002 ssh2",
+        "Oct 28 02:48:00 web01 sshd[6878]: Failed password for deploy from 203.0.113.77 port 42003 ssh2",
+        "Oct 28 02:48:20 web01 sshd[7233]: Failed password for deploy from 203.0.113.77 port 42004 ssh2",
+        "Oct 28 02:50:00 web01 sshd[4780]: Accepted password for deploy from 203.0.113.77 port 42010 ssh2"
+      ]
+    },
+    {
+      "rule_id": "IR-003",
+      "title": "Successful logon after repeated failures (possible compromise)",
+      "severity": "critical",
+      "attack": [
+        "T1110",
+        "T1078"
+      ],
+      "first_seen": "2026-10-28T06:30:00Z",
+      "last_seen": "2026-10-28T06:38:00Z",
+      "entities": {
+        "src_ip": "198.51.100.200",
+        "user": "Administrator",
+        "host": "DC01.corp.example",
+        "prior_failures": 25
+      },
+      "evidence_count": 26,
+      "recommendation": "Treat as a likely compromised account: disable/reset credentials, revoke sessions and keys, isolate host if post-logon activity is found, and preserve evidence before remediation.",
+      "evidence": [
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4624 LogonType=10"
+      ]
+    },
+    {
+      "rule_id": "IR-007",
+      "title": "Security audit log cleared",
+      "severity": "critical",
+      "attack": [
+        "T1070.001"
+      ],
+      "first_seen": "2026-10-28T06:45:00Z",
+      "last_seen": "2026-10-28T06:45:00Z",
+      "entities": {
+        "host": "DC01.corp.example",
+        "actor": "Administrator"
+      },
+      "evidence_count": 1,
+      "recommendation": "Indicator of anti-forensics. Pull logs from SIEM/forwarder copy, isolate host, escalate to incident commander.",
+      "evidence": [
+        "EventID=1102 LogonType="
+      ]
+    },
+    {
+      "rule_id": "IR-001",
+      "title": "Brute-force authentication attempts",
+      "severity": "high",
+      "attack": [
+        "T1110.001"
+      ],
+      "first_seen": "2026-10-28T02:10:00Z",
+      "last_seen": "2026-10-28T02:15:51Z",
+      "entities": {
+        "src_ip": "203.0.113.45",
+        "users": [
+          "admin",
+          "root"
+        ],
+        "hosts": [
+          "web01"
+        ]
+      },
+      "evidence_count": 40,
+      "recommendation": "Block source at perimeter/host firewall, confirm no successful logon from this IP, enforce MFA and account lockout/throttling.",
+      "evidence": [
+        "Oct 28 02:10:00 web01 sshd[5070]: Failed password for root from 203.0.113.45 port 50000 ssh2",
+        "Oct 28 02:10:09 web01 sshd[3945]: Failed password for root from 203.0.113.45 port 50001 ssh2",
+        "Oct 28 02:10:18 web01 sshd[4999]: Failed password for root from 203.0.113.45 port 50002 ssh2",
+        "Oct 28 02:10:27 web01 sshd[2341]: Failed password for root from 203.0.113.45 port 50003 ssh2",
+        "Oct 28 02:10:36 web01 sshd[5919]: Failed password for root from 203.0.113.45 port 50004 ssh2"
+      ]
+    },
+    {
+      "rule_id": "IR-006",
+      "title": "Account added to privileged group",
+      "severity": "high",
+      "attack": [
+        "T1098"
+      ],
+      "first_seen": "2026-10-28T02:53:10Z",
+      "last_seen": "2026-10-28T02:53:10Z",
+      "entities": {
+        "user": "sysupdate",
+        "group": "sudo",
+        "host": "web01"
+      },
+      "evidence_count": 1,
+      "recommendation": "Verify against approved change; remove membership and investigate the actor if unapproved.",
+      "evidence": [
+        "group=sudo | Oct 28 02:53:10 web01 usermod: add 'sysupdate' to group 'sudo'"
+      ]
+    },
+    {
+      "rule_id": "IR-002",
+      "title": "Password spraying (one source, many accounts)",
+      "severity": "high",
+      "attack": [
+        "T1110.003"
+      ],
+      "first_seen": "2026-10-28T03:00:00Z",
+      "last_seen": "2026-10-28T03:08:00Z",
+      "entities": {
+        "src_ip": "198.51.100.23",
+        "distinct_users": 5,
+        "users": [
+          "asmith",
+          "backup",
+          "jdoe",
+          "mlee",
+          "svc_web"
+        ]
+      },
+      "evidence_count": 5,
+      "recommendation": "Block source, review all targeted accounts for successful logons, screen passwords against a breached-password blocklist (NIST SP 800-63B-4), require phishing-resistant MFA.",
+      "evidence": [
+        "Oct 28 03:00:00 web01 sshd[9134]: Failed password for jdoe from 198.51.100.23 port 41000 ssh2",
+        "Oct 28 03:02:00 web01 sshd[2320]: Failed password for asmith from 198.51.100.23 port 41001 ssh2",
+        "Oct 28 03:04:00 web01 sshd[3725]: Failed password for mlee from 198.51.100.23 port 41002 ssh2",
+        "Oct 28 03:06:00 web01 sshd[8359]: Failed password for backup from 198.51.100.23 port 41003 ssh2",
+        "Oct 28 03:08:00 web01 sshd[7580]: Failed password for svc_web from 198.51.100.23 port 41004 ssh2"
+      ]
+    },
+    {
+      "rule_id": "IR-004",
+      "title": "Successful logon outside business hours",
+      "severity": "medium",
+      "attack": [
+        "T1078"
+      ],
+      "first_seen": "2026-10-28T02:50:00Z",
+      "last_seen": "2026-10-28T02:50:00Z",
+      "entities": {
+        "user": "deploy",
+        "src_ip": "203.0.113.77",
+        "host": "web01",
+        "external_source": true
+      },
+      "evidence_count": 1,
+      "recommendation": "Validate with the account owner; if unexpected, follow the compromised-account playbook.",
+      "evidence": [
+        "Oct 28 02:50:00 web01 sshd[4780]: Accepted password for deploy from 203.0.113.77 port 42010 ssh2"
+      ]
+    },
+    {
+      "rule_id": "IR-005",
+      "title": "New local/domain account created",
+      "severity": "medium",
+      "attack": [
+        "T1136"
+      ],
+      "first_seen": "2026-10-28T02:53:00Z",
+      "last_seen": "2026-10-28T02:53:00Z",
+      "entities": {
+        "user": "sysupdate",
+        "host": "web01"
+      },
+      "evidence_count": 1,
+      "recommendation": "Confirm a change ticket exists for this account; disable if unapproved.",
+      "evidence": [
+        "Oct 28 02:53:00 web01 useradd: new user: name=sysupdate, UID=1005, GID=1005, home=/home/sysupdate, shell=/bin/bash, from=/dev/pts/1"
+      ]
+    },
+    {
+      "rule_id": "IR-001",
+      "title": "Brute-force authentication attempts",
+      "severity": "medium",
+      "attack": [
+        "T1110.001"
+      ],
+      "first_seen": "2026-10-28T06:30:00Z",
+      "last_seen": "2026-10-28T06:36:00Z",
+      "entities": {
+        "src_ip": "198.51.100.200",
+        "users": [
+          "Administrator"
+        ],
+        "hosts": [
+          "DC01.corp.example"
+        ]
+      },
+      "evidence_count": 25,
+      "recommendation": "Block source at perimeter/host firewall, confirm no successful logon from this IP, enforce MFA and account lockout/throttling.",
+      "evidence": [
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10",
+        "EventID=4625 LogonType=10"
+      ]
+    },
+    {
+      "rule_id": "IR-004",
+      "title": "Successful logon outside business hours",
+      "severity": "medium",
+      "attack": [
+        "T1078"
+      ],
+      "first_seen": "2026-10-28T06:38:00Z",
+      "last_seen": "2026-10-28T06:38:00Z",
+      "entities": {
+        "user": "Administrator",
+        "src_ip": "198.51.100.200",
+        "host": "DC01.corp.example",
+        "external_source": true
+      },
+      "evidence_count": 1,
+      "recommendation": "Validate with the account owner; if unexpected, follow the compromised-account playbook.",
+      "evidence": [
+        "EventID=4624 LogonType=10"
+      ]
+    },
+    {
+      "rule_id": "IR-005",
+      "title": "New local/domain account created",
+      "severity": "medium",
+      "attack": [
+        "T1136"
+      ],
+      "first_seen": "2026-10-28T06:40:00Z",
+      "last_seen": "2026-10-28T06:40:00Z",
+      "entities": {
+        "user": "helpdesk_tmp",
+        "host": "DC01.corp.example"
+      },
+      "evidence_count": 1,
+      "recommendation": "Confirm a change ticket exists for this account; disable if unapproved.",
+      "evidence": [
+        "EventID=4720 LogonType="
+      ]
+    }
+  ]
+}

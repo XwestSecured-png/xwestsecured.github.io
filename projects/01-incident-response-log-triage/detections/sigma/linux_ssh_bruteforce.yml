@@ -1,0 +1,24 @@
+title: SSH Brute Force - Many Failed Logins From One Source
+id: 6f1b8a52-6a0e-4b71-9c1e-1d2b8f3e0a01
+status: experimental
+description: Detects 10+ failed SSH authentications from one source IP within 10 minutes.
+author: Xiome West
+date: 2026-10-29
+references:
+  - https://attack.mitre.org/techniques/T1110/001/
+tags:
+  - attack.credential-access
+  - attack.t1110.001
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    - 'Failed password'
+    - 'Failed keyboard-interactive/pam'
+  condition: selection | count() by src_ip > 10
+  timeframe: 10m
+falsepositives:
+  - Misconfigured automation using a stale credential
+  - Vulnerability scanners during an authorized assessment
+level: medium

@@ -1,0 +1,21 @@
+title: Security Event Log Cleared
+id: 8c3a9e7d-1f2b-4c5d-9a6e-3b4c5d6e7f03
+status: stable
+description: Event 1102 - the Security audit log was cleared. Common anti-forensics step.
+author: Xiome West
+date: 2026-10-29
+references:
+  - https://attack.mitre.org/techniques/T1070/001/
+tags:
+  - attack.defense-evasion
+  - attack.t1070.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+  - Documented log maintenance (should be rare and ticketed)
+level: high

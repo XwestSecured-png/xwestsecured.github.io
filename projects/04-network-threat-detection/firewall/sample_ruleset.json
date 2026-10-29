@@ -1,0 +1,19 @@
+{
+  "name": "EDGE-FW01 (sample - intentionally misconfigured)",
+  "default_action": "allow",
+  "_schema": "id, name, action(allow|deny), direction(inbound|outbound), src[], dst[], ports[] ('443','8000-8100','any'), protocol(tcp|udp|icmp|any), log, owner, description, expires(YYYY-MM-DD), enabled",
+  "rules": [
+    {"id": 10, "name": "web-https", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.10/32"], "ports": ["443"], "protocol": "tcp", "log": true, "owner": "Web Team", "description": "Public website CHG-1021"},
+    {"id": 20, "name": "web-http-redirect", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.10/32"], "ports": ["80"], "protocol": "tcp", "log": true, "redirect_to_https": true, "owner": "Web Team", "description": "HTTP->HTTPS redirect"},
+    {"id": 30, "name": "rdp-vendor-temp", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.20/32"], "ports": ["3389"], "protocol": "tcp", "log": false, "owner": "Infrastructure", "description": "Vendor support access CHG-0877", "expires": "2026-06-30"},
+    {"id": 40, "name": "dmz-to-db", "action": "allow", "direction": "inbound", "src": ["10.10.1.0/24"], "dst": ["10.10.5.0/24"], "ports": ["1-65535"], "protocol": "tcp", "log": false, "owner": "", "description": ""},
+    {"id": 50, "name": "block-db-from-dmz", "action": "deny", "direction": "inbound", "src": ["10.10.1.10/32"], "dst": ["10.10.5.20/32"], "ports": ["1433"], "protocol": "tcp", "log": true, "owner": "Security", "description": "Only app tier may reach SQL"},
+    {"id": 60, "name": "mgmt-ssh", "action": "allow", "direction": "inbound", "src": ["10.99.0.0/24"], "dst": ["10.10.0.0/16"], "ports": ["22"], "protocol": "tcp", "log": true, "owner": "Infrastructure", "description": "Bastion subnet SSH"},
+    {"id": 70, "name": "mgmt-ssh-dup", "action": "allow", "direction": "inbound", "src": ["10.99.0.5/32"], "dst": ["10.10.1.10/32"], "ports": ["22"], "protocol": "tcp", "log": true, "owner": "Infrastructure", "description": "Legacy jump host"},
+    {"id": 80, "name": "ftp-partner", "action": "allow", "direction": "inbound", "src": ["198.51.100.0/24"], "dst": ["10.10.1.30/32"], "ports": ["21"], "protocol": "tcp", "log": true, "owner": "Finance", "description": "Partner file drop CHG-0455"},
+    {"id": 90, "name": "snmp-monitoring", "action": "allow", "direction": "inbound", "src": ["10.99.0.10/32"], "dst": ["10.10.0.0/16"], "ports": ["161"], "protocol": "udp", "log": false, "owner": "NOC", "description": "Monitoring"},
+    {"id": 100, "name": "users-outbound", "action": "allow", "direction": "outbound", "src": ["10.10.20.0/24"], "dst": ["any"], "ports": ["any"], "protocol": "any", "log": false, "owner": "Network Team", "description": "User internet access"},
+    {"id": 110, "name": "temp-troubleshoot", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["any"], "ports": ["any"], "protocol": "any", "log": false, "owner": "jsmith", "description": "troubleshooting - remove after", "expires": "2026-03-01"},
+    {"id": 120, "name": "old-rule", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.40/32"], "ports": ["8080"], "protocol": "tcp", "log": false, "owner": "App Team", "description": "Decommissioned app", "enabled": false}
+  ]
+}
