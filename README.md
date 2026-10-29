@@ -14,6 +14,9 @@ Cybersecurity portfolio of **Xiome West**.
 | 06 | [Cloud & Identity Security Audit](projects/06-cloud-identity-security-audit/) | AWS, Entra ID / M365, Active Directory |
 | 07 | [Software Supply-Chain Security Toolkit](projects/07-software-supply-chain-security/) | Secrets, SBOM, dependency risk, CI/CD security |
 | 08 | [Phishing Investigation & Forensic Timeline](projects/08-phishing-investigation-forensics/) | Email forensics, STIX 2.1, incident scoping |
+| 09 | [DFIR Endpoint Triage & Ransomware Investigation](projects/09-dfir-endpoint-triage-ransomware/) | Live response, Sysmon analysis, incident report |
+| 10 | [Web Application Vulnerability Analysis (VulnLab)](projects/10-web-app-vulnerability-analysis/) | OWASP Top 10, CVSS, PoC + fix verification |
+| 11 | [Secure PostgreSQL & Database Breach Forensics](projects/11-secure-postgresql-db-forensics/) | RLS, encryption, audit trails, SQL forensics |
 
 See [projects/README.md](projects/README.md) for the overview.
 

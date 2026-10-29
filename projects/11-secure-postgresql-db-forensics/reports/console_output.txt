@@ -1,0 +1,30 @@
+[*] Building database (01-06)…
+    ✓ 01_schema.sql
+    ✓ 02_seed_data.sql
+    ✓ 03_roles_least_privilege.sql
+    ✓ 04_row_level_security.sql
+    ✓ 05_encryption_and_masking.sql
+    ✓ 06_audit_trail.sql
+[*] Replaying scenario through real role logins…
+    91 actions, 3 rejected by the database
+[*] Running forensic investigation (07) and configuration audit (08)…
+[*] Verifying security controls (after forensics, so test probes don't enter the evidence)…
+    [PASS] Caseworker cannot SELECT client table directly
+    [PASS] RLS: caseworker cannot read a client at another site
+    [PASS] RLS: caseworker can read own-site client
+    [PASS] Reporting cannot read names/DOB/phone
+    [PASS] Reporting can read de-identified columns
+    [PASS] Reporting demographics apply small-cell suppression
+    [PASS] Wildcard / 1-char search returns nothing (and is logged)
+    [PASS] Audit trail is append-only (DELETE blocked even for auditor)
+    [PASS] Audit trail rejects UPDATE even by its owner role
+    [PASS] Caseworker cannot grant herself extra roles
+    [PASS] Caseworker cannot execute audit writer directly
+    [PASS] Case notes are ciphertext at rest
+    [PASS] Notes decrypt only with the application key
+    [PASS] Wrong key cannot decrypt notes
+    [PASS] PUBLIC has no privileges on app/audit tables
+    [PASS] Lab passwords stored as SCRAM-SHA-256
+    Breach scope (F7): 120 client records exposed by mallory_cw
+    Audit chain (F8): INTACT (87 events)
+[+] Reports: 11-secure-postgresql-db-forensics/reports/forensics_report.md, security_audit_report.md, simulation_log.csv

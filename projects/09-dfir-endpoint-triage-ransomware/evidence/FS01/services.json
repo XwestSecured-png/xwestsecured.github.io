@@ -1,0 +1,8 @@
+[
+ {
+  "Name": "PSEXESVC",
+  "PathName": "C:\\Windows\\PSEXESVC.exe",
+  "StartMode": "Manual",
+  "State": "Stopped"
+ }
+]

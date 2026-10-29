@@ -1,0 +1,20 @@
+[
+ {
+  "Name": "rundll32.exe",
+  "ProcessId": 7012,
+  "ParentProcessId": 6340,
+  "Path": "C:\\Windows\\System32\\rundll32.exe",
+  "CommandLine": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start",
+  "User": "CORP\\tnguyen",
+  "SHA256": "29FDEFE98FEB6CCF1607830920797DE1369E1E74BD27180C04637993D95965E4"
+ },
+ {
+  "Name": "OUTLOOK.EXE",
+  "ProcessId": 4012,
+  "ParentProcessId": 4412,
+  "Path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE",
+  "CommandLine": "OUTLOOK.EXE",
+  "User": "CORP\\tnguyen",
+  "SHA256": "4F53C6C301F98610918A5418C65988FAB5FD03F9D217902BFF2F03C2DAEF56B4"
+ }
+]

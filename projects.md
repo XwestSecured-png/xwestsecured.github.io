@@ -1,5 +1,13 @@
 # Projects
 
+**Focus:** incident handling and DFIR, vulnerability analysis, and secure SQL practices.
+
+| Focus area | Start here |
+|---|---|
+| Incident handling & DFIR | [09 Ransomware investigation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/09-dfir-endpoint-triage-ransomware) · [08 Phishing investigation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/08-phishing-investigation-forensics) · [01 Log triage](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/01-incident-response-log-triage) |
+| Vulnerability analysis | [10 Web app vulnerability analysis](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/10-web-app-vulnerability-analysis) · [02 Risk-based remediation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/02-vulnerability-management) |
+| Secure SQL | [11 Secure PostgreSQL & breach forensics](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/11-secure-postgresql-db-forensics) · [03 Injection defense & SQL hunting](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/03-secure-sql-and-threat-hunting) |
+
 Hands-on security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, MITRE ATT&CK).
 
 ---
@@ -57,6 +65,27 @@ Tools that address OWASP Top 10:2025 A03 Software Supply Chain Failures. A secre
 [View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/08-phishing-investigation-forensics)
 
 Offline analysis of suspicious emails catches lookalike domains, deceptive links, HTML smuggling and business email compromise, then exports IOCs as STIX 2.1. A correlation tool combines mail, proxy, sign-in and EDR logs to find who clicked, who submitted credentials and who was compromised, and surfaces new attacker infrastructure along the way.
+
+---
+
+## 09: DFIR Endpoint Triage & Ransomware Investigation
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/09-dfir-endpoint-triage-ransomware)
+
+A full DFIR case, from phishing email to encrypted file server. Read-only Windows and Linux live-response collectors gather evidence in order of volatility. A hash-verified analyzer decodes obfuscated PowerShell, detects credential dumping, lateral movement, C2 beaconing and mass encryption, and rebuilds the attack timeline across hosts. Includes a complete incident investigation report and chain-of-custody procedures.
+
+---
+
+## 10: Web Application Vulnerability Analysis (VulnLab)
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/10-web-app-vulnerability-analysis)
+
+Vulnerable and secure builds of the same web app, with six findings (IDOR, stored XSS, SSRF, path traversal, forgeable sessions, information disclosure). Each one has a proof of concept, a CVSS v3.1 score, root-cause code and a fix. An automated harness proves every issue is exploitable before the fix, blocked after it, and that the feature still works.
+
+---
+
+## 11: Secure PostgreSQL & Database Breach Forensics
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/11-secure-postgresql-db-forensics)
+
+A hardened PostgreSQL database using least-privilege roles, row-level security, column encryption, audited access functions and a tamper-evident hash-chained audit trail. It is tested against an insider data-theft scenario, and SQL-only forensics produce the exact breach scope for notification: 120 records exposed, and other sites protected.
 
 ---
 

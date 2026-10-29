@@ -1,0 +1,8 @@
+{
+ "hostname": "WS-0102.corp.example",
+ "os": "Windows 11 Pro 23H2",
+ "ip": "10.10.20.102",
+ "collected_utc": "2026-10-27T20:10:00Z",
+ "collected_by": "X. West (IR-2026-1027)",
+ "timezone": "Eastern Standard Time"
+}

