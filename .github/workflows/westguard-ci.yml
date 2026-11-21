@@ -11,7 +11,7 @@ defaults:
     working-directory: toolkit
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04          # pinned: newer images no longer ship Python 3.9 (EOL), which we still support
     strategy:
       fail-fast: false
       matrix:
