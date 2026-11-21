@@ -1,0 +1,11 @@
+{
+ "mfa_coverage_pct":            {"label": "MFA coverage (all accounts)",        "unit": "%", "target": 98,  "better": "higher", "amber": 92,  "csf": "PR.AA"},
+ "edr_coverage_pct":            {"label": "EDR coverage (endpoints)",           "unit": "%", "target": 99,  "better": "higher", "amber": 95,  "csf": "DE.CM"},
+ "critical_patch_sla_pct":      {"label": "Critical patches within 15-day SLA", "unit": "%", "target": 95,  "better": "higher", "amber": 85,  "csf": "ID.RA"},
+ "kev_open_past_due":           {"label": "CISA KEV items past due",            "unit": "",  "target": 0,   "better": "lower",  "amber": 3,   "csf": "ID.RA"},
+ "mttd_hours":                  {"label": "Mean time to detect",                "unit": "h", "target": 8,   "better": "lower",  "amber": 16,  "csf": "DE.AE"},
+ "mttr_hours":                  {"label": "Mean time to respond/contain",       "unit": "h", "target": 24,  "better": "lower",  "amber": 48,  "csf": "RS.MI"},
+ "phish_click_pct":             {"label": "Phishing simulation click rate",     "unit": "%", "target": 5,   "better": "lower",  "amber": 8,   "csf": "PR.AT"},
+ "phish_report_pct":            {"label": "Phishing simulation report rate",    "unit": "%", "target": 60,  "better": "higher", "amber": 40,  "csf": "PR.AT"},
+ "backup_restore_test_pass_pct":{"label": "Backup restore tests passed",        "unit": "%", "target": 100, "better": "higher", "amber": 85,  "csf": "RC.RP"}
+}

@@ -43,15 +43,59 @@ def match_selection(event: dict, sel: dict) -> bool:
     return True
 
 
+def _eval_bool(tokens: list[str]) -> bool:
+    """Evaluate True/False/and/or/not/( ) with normal precedence. No eval()."""
+    pos = 0
+
+    def expr():
+        nonlocal pos
+        v = term()
+        while pos < len(tokens) and tokens[pos] == "or":
+            pos += 1; r = term(); v = v or r
+        return v
+
+    def term():
+        nonlocal pos
+        v = factor()
+        while pos < len(tokens) and tokens[pos] == "and":
+            pos += 1; r = factor(); v = v and r
+        return v
+
+    def factor():
+        nonlocal pos
+        if pos >= len(tokens):
+            raise ValueError("unexpected end of condition")
+        t = tokens[pos]; pos += 1
+        if t == "not":
+            return not factor()
+        if t == "(":
+            v = expr()
+            if pos >= len(tokens) or tokens[pos] != ")":
+                raise ValueError("unbalanced parentheses in condition")
+            pos += 1
+            return v
+        if t in ("True", "False"):
+            return t == "True"
+        raise ValueError(f"unexpected token in condition: {t}")
+
+    v = expr()
+    if pos != len(tokens):
+        raise ValueError("trailing tokens in condition")
+    return v
+
+
 def match_detection(event: dict, detection: dict) -> bool:
-    cond = detection["condition"]
     named = {k: v for k, v in detection.items() if k != "condition"}
-    expr = cond
-    for name in sorted(named, key=len, reverse=True):
-        expr = re.sub(rf"\b{name}\b", "True" if match_selection(event, named[name]) else "False", expr)
-    if not re.fullmatch(r"[\sA-Za-z()]*", expr) or set(re.findall(r"[A-Za-z]+", expr)) - {"True", "False", "and", "or", "not"}:
-        raise ValueError(f"unsupported condition: {cond}")
-    return eval(expr, {"__builtins__": {}}, {})       # tokens verified above: only True/False/and/or/not/()
+    tokens = re.findall(r"\(|\)|[A-Za-z0-9_]+", detection["condition"])
+    resolved = []
+    for t in tokens:
+        if t in named:
+            resolved.append("True" if match_selection(event, named[t]) else "False")
+        elif t in ("and", "or", "not", "(", ")"):
+            resolved.append(t)
+        else:
+            raise ValueError(f"unsupported condition: {detection['condition']}")
+    return _eval_bool(resolved)
 
 
 def ts(event: dict, field: str) -> datetime:

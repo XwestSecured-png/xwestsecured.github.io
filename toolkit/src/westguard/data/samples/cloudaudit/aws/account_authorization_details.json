@@ -1,0 +1,14 @@
+{
+  "UserDetailList": [
+    {"UserName": "it-director", "AttachedManagedPolicies": [], "GroupList": ["Admins"], "UserPolicyList": []},
+    {"UserName": "ci-deploy", "AttachedManagedPolicies": [{"PolicyName": "AdministratorAccess", "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"}], "UserPolicyList": []},
+    {"UserName": "former-contractor", "AttachedManagedPolicies": [], "UserPolicyList": [
+      {"PolicyName": "temp-everything", "PolicyDocument": {"Version": "2012-10-17", "Statement": [{"Effect": "Allow", "Action": "*", "Resource": "*"}]}}]},
+    {"UserName": "backup-svc", "AttachedManagedPolicies": [{"PolicyName": "BackupWriteOnly", "PolicyArn": "arn:aws:iam::123456789012:policy/BackupWriteOnly"}], "UserPolicyList": []},
+    {"UserName": "jdoe", "AttachedManagedPolicies": [{"PolicyName": "ReadOnlyAccess", "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"}], "UserPolicyList": []}
+  ],
+  "Policies": [
+    {"PolicyName": "BackupWriteOnly", "Arn": "arn:aws:iam::123456789012:policy/BackupWriteOnly", "PolicyVersionList": [
+      {"IsDefaultVersion": true, "Document": {"Version": "2012-10-17", "Statement": [{"Effect": "Allow", "Action": ["s3:PutObject"], "Resource": "arn:aws:s3:::ecs-backups-example/*"}]}}]}
+  ]
+}

@@ -96,7 +96,8 @@ def main(argv=None) -> int:
     for e in rows(a.edr):
         d = e["detail"].lower()
         if any(n in d for n in att_names):
-            add(e["ts_utc"], f"EDR {e['host']}", e["user"], f"{e['event']}: {e['process']} ← {e['parent'] or '-'} ({Path(e['detail'].split()[-1].strip('\"')).name})",
+            fname = Path(e["detail"].split()[-1].strip('"')).name
+            add(e["ts_utc"], f"EDR {e['host']}", e["user"], f"{e['event']}: {e['process']} ← {e['parent'] or '-'} ({fname})",
                 "opened_attachment", "T1204.002")
         if e["event"] == "MailboxRule":
             add(e["ts_utc"], "M365 audit", e["user"], f"Suspicious inbox rule created: {e['detail']}", "compromised", "T1564.008")

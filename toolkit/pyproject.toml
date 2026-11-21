@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "westguard"
+dynamic = ["version"]
+description = "Read-only security operations toolkit: incident response, detection, vulnerability management, cloud/identity audit and security program reporting"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Xiome West" }]
+keywords = ["security", "incident-response", "dfir", "detection", "sigma", "yara", "cloudtrail", "vulnerability-management"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+]
+dependencies = []          # core runs on the Python standard library only
+
+[project.optional-dependencies]
+yara  = ["yara-python>=4.5"]
+sigma = ["pySigma>=0.11", "pySigma-backend-splunk>=1.1"]
+stix  = ["stix2>=3.0"]
+all   = ["westguard[yara,sigma,stix]"]
+
+[project.scripts]
+westguard = "westguard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/toolkit"
+
+[tool.setuptools.dynamic]
+version = { attr = "westguard.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+westguard = ["data/**/*", "data/**/.*"]

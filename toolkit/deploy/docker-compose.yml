@@ -1,0 +1,28 @@
+# Dashboard behind Caddy (automatic TLS). Edit the hostname in Caddyfile, then:
+#   export WESTGUARD_TOKEN="$(python3 -c 'import secrets;print(secrets.token_urlsafe(32))')"
+#   docker compose -f deploy/docker-compose.yml up -d
+services:
+  westguard:
+    build: ..
+    command: ["web", "--host", "0.0.0.0", "--allow-remote", "--behind-proxy"]
+    environment:
+      WESTGUARD_TOKEN: ${WESTGUARD_TOKEN:?set WESTGUARD_TOKEN (32+ random characters)}
+    volumes:
+      - westguard-data:/data
+    read_only: true
+    tmpfs: ["/tmp"]
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    expose: ["8765"]            # reachable only by the proxy, never published directly
+    restart: unless-stopped
+  caddy:
+    image: caddy:2.8
+    ports: ["443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on: [westguard]
+    restart: unless-stopped
+volumes:
+  westguard-data:
+  caddy-data:

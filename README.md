@@ -2,6 +2,15 @@
 
 Cybersecurity portfolio of **Xiome West**.
 
+## WestGuard: production toolkit
+
+[**WestGuard**](toolkit/) packages the reusable tools from these projects into one installable product: a `westguard` CLI with 16 commands, a token-protected web dashboard, a non-root Docker image, and CI that tests Python 3.9–3.13. Read-only by design, standard library only.
+
+```bash
+pip install "westguard @ git+https://github.com/XwestSecured-png/xwestsecured.github.io#subdirectory=toolkit"
+westguard demo --out ./demo
+```
+
 ## Projects
 
 | # | Project | Focus |

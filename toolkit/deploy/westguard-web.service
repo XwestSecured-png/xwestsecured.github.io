@@ -1,0 +1,25 @@
+# systemd unit for the dashboard on a Linux host (bind to localhost; put nginx/Caddy with TLS in front).
+#   sudo useradd --system --home /var/lib/westguard --shell /usr/sbin/nologin westguard
+#   sudo install -d -o westguard -g westguard -m 700 /var/lib/westguard
+#   echo "WESTGUARD_TOKEN=<32+ random chars>" | sudo tee /etc/westguard.env && sudo chmod 600 /etc/westguard.env
+[Unit]
+Description=WestGuard security toolkit dashboard
+After=network-online.target
+
+[Service]
+User=westguard
+Group=westguard
+EnvironmentFile=/etc/westguard.env
+Environment=WESTGUARD_DATA_DIR=/var/lib/westguard
+ExecStart=/usr/local/bin/westguard web --host 127.0.0.1 --port 8765
+Restart=on-failure
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/westguard
+PrivateTmp=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

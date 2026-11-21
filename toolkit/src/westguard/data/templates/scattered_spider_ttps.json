@@ -1,0 +1,291 @@
+{
+  "actor": "Scattered Spider",
+  "aliases": [
+    "UNC3944",
+    "Octo Tempest",
+    "Muddled Libra",
+    "Starfraud",
+    "Scatter Swine",
+    "0ktapus (overlapping campaign)"
+  ],
+  "sources": [
+    {
+      "name": "CISA/FBI et al. Joint Advisory AA23-320A (Nov 2023, updated Jul 29 2025)",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a"
+    },
+    {
+      "name": "CISA alert: updated advisory on Scattered Spider (Jul 29 2025)",
+      "url": "https://www.cisa.gov/news-events/alerts/2025/07/29/cisa-and-partners-release-updated-advisory-scattered-spider-group"
+    },
+    {
+      "name": "ASD's ACSC: Scattered Spider advisory (Jul 30 2025)",
+      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/scattered-spider"
+    },
+    {
+      "name": "U.S. DOJ: alleged member arrested in Finland and extradited (Jul 1 2026)",
+      "url": "https://www.justice.gov/opa/pr/alleged-member-criminal-cyber-hacking-group-scattered-spider-arrested-finland-and-extradited"
+    },
+    {
+      "name": "Intel 471: Scattered Spider duo sentenced over TfL hack (Jul 2026)",
+      "url": "https://www.intel471.com/blog/scattered-spider-duo-sentenced-to-prison-over-tfl-hack"
+    },
+    {
+      "name": "MITRE ATT&CK group G1015 Scattered Spider",
+      "url": "https://attack.mitre.org/groups/G1015/"
+    }
+  ],
+  "techniques": [
+    {
+      "id": "T1566.004",
+      "name": "Phishing: Spearphishing Voice",
+      "tactic": "initial-access",
+      "how": "Calls the IT help desk posing as an employee to reset a password or move MFA to an attacker device",
+      "coverage": [
+        [
+          "15",
+          "NEW (partial): entra_new_mfa_method.yml catches the MFA re-registration that follows a help-desk reset"
+        ]
+      ]
+    },
+    {
+      "id": "T1660",
+      "name": "Phishing (SMS)",
+      "tactic": "initial-access",
+      "how": "SMS lures to lookalike SSO pages (e.g. <company>-helpdesk / oktalogin-<company> domains)",
+      "coverage": [
+        [
+          "08",
+          "Lookalike / homoglyph link detection in the phishing analyzer (email lures; SMS not covered)"
+        ]
+      ]
+    },
+    {
+      "id": "T1583.001",
+      "name": "Acquire Infrastructure: Domains",
+      "tactic": "resource-development",
+      "how": "Registers victim-specific lookalike domains",
+      "coverage": [
+        [
+          "08",
+          "Lookalike / homoglyph domain scoring"
+        ]
+      ]
+    },
+    {
+      "id": "T1078.002",
+      "name": "Valid Accounts: Domain Accounts",
+      "tactic": "initial-access",
+      "how": "Logs in with stolen or reset employee credentials",
+      "coverage": [
+        [
+          "01",
+          "IR success-after-failures (likely compromised account)"
+        ],
+        [
+          "14",
+          "CLD-013 impossible travel"
+        ]
+      ]
+    },
+    {
+      "id": "T1621",
+      "name": "Multi-Factor Authentication Request Generation",
+      "tactic": "credential-access",
+      "how": "MFA push bombing until the user approves",
+      "coverage": [
+        [
+          "14",
+          "CLD-011 MFA fatigue (Sigma event_count)"
+        ]
+      ]
+    },
+    {
+      "id": "T1556.006",
+      "name": "Modify Authentication Process: Multi-Factor Authentication",
+      "tactic": "persistence",
+      "how": "Registers its own MFA device on the compromised account",
+      "coverage": [
+        [
+          "15",
+          "NEW: Sigma entra_new_mfa_method.yml"
+        ]
+      ]
+    },
+    {
+      "id": "T1484.002",
+      "name": "Domain or Tenant Policy Modification: Trust Modification",
+      "tactic": "privilege-escalation",
+      "how": "Adds a federated identity provider to the tenant for persistent SSO access",
+      "coverage": [
+        [
+          "15",
+          "NEW: Sigma entra_federation_change.yml"
+        ]
+      ]
+    },
+    {
+      "id": "T1136",
+      "name": "Create Account",
+      "tactic": "persistence",
+      "how": "Creates new identities, sometimes backed by fake social-media profiles",
+      "coverage": [
+        [
+          "01",
+          "IR-005 new local/domain account created (4720, useradd)"
+        ],
+        [
+          "14",
+          "CLD-006 console password created for IAM user"
+        ]
+      ]
+    },
+    {
+      "id": "T1219",
+      "name": "Remote Access Tools",
+      "tactic": "command-and-control",
+      "how": "Installs legitimate RMM / remote tools: AnyDesk, ScreenConnect, TeamViewer, Splashtop, Tactical.RMM, Teleport, Ngrok, Tailscale",
+      "coverage": [
+        [
+          "15",
+          "NEW: Sigma rmm_tool_execution.yml (written to close this gap)"
+        ]
+      ]
+    },
+    {
+      "id": "T1003.001",
+      "name": "OS Credential Dumping: LSASS Memory",
+      "tactic": "credential-access",
+      "how": "Mimikatz and similar tools after gaining a foothold",
+      "coverage": [
+        [
+          "09",
+          "DF-11 LSASS memory dump (comsvcs MiniDump / procdump)"
+        ]
+      ]
+    },
+    {
+      "id": "T1213.002",
+      "name": "Data from Information Repositories: SharePoint",
+      "tactic": "collection",
+      "how": "Searches SharePoint and wikis for VPN, MFA and help-desk procedures",
+      "coverage": []
+    },
+    {
+      "id": "T1578.002",
+      "name": "Modify Cloud Compute Infrastructure: Create Cloud Instance",
+      "tactic": "defense-evasion",
+      "how": "Creates EC2 instances to move laterally inside cloud environments",
+      "coverage": [
+        [
+          "14",
+          "CLD-008 EC2 launched in unapproved region"
+        ]
+      ]
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "collection",
+      "how": "Pulls data from cloud storage and SaaS data platforms (e.g. Snowflake bulk queries)",
+      "coverage": [
+        [
+          "14",
+          "CLD-007 S3 bucket opened to everyone"
+        ],
+        [
+          "11",
+          "Bulk-read detection via database audit trail"
+        ]
+      ]
+    },
+    {
+      "id": "T1567.002",
+      "name": "Exfiltration to Cloud Storage",
+      "tactic": "exfiltration",
+      "how": "Exfiltrates to MEGA and attacker-controlled Amazon S3",
+      "coverage": [
+        [
+          "04",
+          "NET-003 large outbound transfer to an external destination (Zeek)"
+        ]
+      ]
+    },
+    {
+      "id": "T1562.001",
+      "name": "Impair Defenses: Disable or Modify Tools",
+      "tactic": "defense-evasion",
+      "how": "Abuses or disables EDR and cloud security tooling",
+      "coverage": [
+        [
+          "14",
+          "CLD-003 CloudTrail stopped; CLD-004 GuardDuty deleted"
+        ]
+      ]
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "impact",
+      "how": "Deploys ALPHV/BlackCat and, more recently, DragonForce ransomware, including against VMware ESXi",
+      "coverage": [
+        [
+          "09",
+          "Mass file-rename and ransom-note detection (case IR-2026-1027)"
+        ],
+        [
+          "15",
+          "YARA Ransom_Note_Generic"
+        ]
+      ]
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "impact",
+      "how": "Data-theft extortion, threatening to publish stolen data",
+      "coverage": [
+        [
+          "13",
+          "Tabletop injects 5-6: notification and payment decision"
+        ]
+      ]
+    }
+  ],
+  "software": [
+    {
+      "name": "DragonForce",
+      "type": "malware",
+      "kind": "ransomware"
+    },
+    {
+      "name": "ALPHV/BlackCat",
+      "type": "malware",
+      "kind": "ransomware"
+    },
+    {
+      "name": "RattyRAT",
+      "type": "malware",
+      "kind": "remote-access-trojan"
+    },
+    {
+      "name": "Mimikatz",
+      "type": "tool",
+      "kind": "credential-exploitation"
+    },
+    {
+      "name": "AnyDesk",
+      "type": "tool",
+      "kind": "remote-access"
+    },
+    {
+      "name": "ScreenConnect",
+      "type": "tool",
+      "kind": "remote-access"
+    },
+    {
+      "name": "Ngrok",
+      "type": "tool",
+      "kind": "network-capture"
+    }
+  ]
+}

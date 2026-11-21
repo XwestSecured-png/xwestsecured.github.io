@@ -1,0 +1,16 @@
+{
+  "name": "EDGE-FW01 (remediated)",
+  "default_action": "deny",
+  "rules": [
+    {"id": 10, "name": "web-https", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.10/32"], "ports": ["443"], "protocol": "tcp", "log": true, "owner": "Web Team", "description": "Public website CHG-1021"},
+    {"id": 20, "name": "web-http-redirect", "action": "allow", "direction": "inbound", "src": ["any"], "dst": ["10.10.1.10/32"], "ports": ["80"], "protocol": "tcp", "log": true, "redirect_to_https": true, "owner": "Web Team", "description": "HTTP->HTTPS redirect only"},
+    {"id": 35, "name": "block-db-from-dmz", "action": "deny", "direction": "inbound", "src": ["10.10.1.10/32"], "dst": ["10.10.5.20/32"], "ports": ["1433"], "protocol": "tcp", "log": true, "owner": "Security", "description": "Specific deny placed before general allow"},
+    {"id": 40, "name": "app-to-db", "action": "allow", "direction": "inbound", "src": ["10.10.2.0/24"], "dst": ["10.10.5.20/32"], "ports": ["1433"], "protocol": "tcp", "log": true, "owner": "App Team", "description": "App tier to SQL CHG-1102"},
+    {"id": 60, "name": "bastion-ssh", "action": "allow", "direction": "inbound", "src": ["10.99.0.0/24"], "dst": ["10.10.0.0/16"], "ports": ["22"], "protocol": "tcp", "log": true, "owner": "Infrastructure", "description": "Bastion subnet SSH (MFA at bastion)"},
+    {"id": 80, "name": "sftp-partner", "action": "allow", "direction": "inbound", "src": ["198.51.100.0/24"], "dst": ["10.10.1.30/32"], "ports": ["22"], "protocol": "tcp", "log": true, "owner": "Finance", "description": "Partner SFTP replaces FTP CHG-1130"},
+    {"id": 90, "name": "snmpv3-monitoring", "action": "allow", "direction": "inbound", "src": ["10.99.0.10/32"], "dst": ["10.10.0.0/16"], "ports": ["10161"], "protocol": "udp", "log": true, "owner": "NOC", "description": "SNMPv3 over DTLS/TLS (RFC 6353)"},
+    {"id": 100, "name": "users-web-egress", "action": "allow", "direction": "outbound", "src": ["10.10.20.0/24"], "dst": ["10.10.0.80/32"], "ports": ["3128"], "protocol": "tcp", "log": true, "owner": "Network Team", "description": "Users to web proxy/SWG only"},
+    {"id": 105, "name": "dns-to-resolvers", "action": "allow", "direction": "outbound", "src": ["10.10.0.53/32"], "dst": ["any"], "ports": ["53", "853"], "protocol": "any", "log": true, "owner": "Network Team", "description": "Only internal resolvers query internet DNS"},
+    {"id": 999, "name": "deny-all", "action": "deny", "direction": "inbound", "src": ["any"], "dst": ["any"], "ports": ["any"], "protocol": "any", "log": true, "owner": "Security", "description": "Explicit default deny"}
+  ]
+}

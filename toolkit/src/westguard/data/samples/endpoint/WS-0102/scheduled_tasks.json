@@ -1,0 +1,16 @@
+[
+ {
+  "TaskName": "\\MicrosoftEdgeUpdateTaskCore",
+  "Author": "CORP\\tnguyen",
+  "Action": "rundll32.exe C:\\ProgramData\\SysUpdate\\upd.dll,Start",
+  "Trigger": "AtLogon",
+  "RunLevel": "Highest"
+ },
+ {
+  "TaskName": "\\Microsoft\\Windows\\Defrag\\ScheduledDefrag",
+  "Author": "Microsoft Corporation",
+  "Action": "%windir%\\system32\\defrag.exe -c -h -o -$",
+  "Trigger": "Weekly",
+  "RunLevel": "Highest"
+ }
+]

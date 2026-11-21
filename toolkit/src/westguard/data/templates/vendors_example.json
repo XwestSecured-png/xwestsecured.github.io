@@ -1,0 +1,23 @@
+{"vendors": [
+ {"name": "PayrollCloud Inc.", "service": "Payroll and HR SaaS", "data": "restricted", "access": "data_hosted", "criticality": "high",
+  "answers": {"soc2_type2": true, "iso27001": false, "mfa_enforced": true, "sso_supported": true, "encryption_at_rest": true, "encryption_in_transit": true,
+              "pentest_annual": true, "breach_notify_72h": true, "sub_processors_disclosed": true, "data_deletion_on_exit": true, "bcp_tested": true, "vuln_mgmt_sla": true},
+  "last_review": "2026-03-10"},
+ {"name": "QuickPrint Supplies", "service": "Office supplies ordering", "data": "public", "access": "none", "criticality": "low",
+  "answers": {"soc2_type2": false, "iso27001": false, "mfa_enforced": false, "sso_supported": false, "encryption_at_rest": false, "encryption_in_transit": true,
+              "pentest_annual": false, "breach_notify_72h": false, "sub_processors_disclosed": false, "data_deletion_on_exit": false, "bcp_tested": false, "vuln_mgmt_sla": false},
+  "last_review": "2025-08-01"},
+ {"name": "NetWatch MSP", "service": "Managed IT with remote admin access", "data": "confidential", "access": "privileged_network", "criticality": "high",
+  "answers": {"soc2_type2": false, "iso27001": false, "mfa_enforced": false, "sso_supported": false, "encryption_at_rest": true, "encryption_in_transit": true,
+              "pentest_annual": false, "breach_notify_72h": false, "sub_processors_disclosed": false, "data_deletion_on_exit": true, "bcp_tested": false, "vuln_mgmt_sla": false},
+  "last_review": "2024-11-20"},
+ {"name": "MarketMail Pro", "service": "Email marketing platform", "data": "internal", "access": "data_hosted", "criticality": "medium",
+  "answers": {"soc2_type2": true, "iso27001": true, "mfa_enforced": true, "sso_supported": false, "encryption_at_rest": true, "encryption_in_transit": true,
+              "pentest_annual": true, "breach_notify_72h": false, "sub_processors_disclosed": true, "data_deletion_on_exit": false, "bcp_tested": false, "vuln_mgmt_sla": true},
+  "last_review": "2026-06-15"},
+ {"name": "AIScribe Notes", "service": "AI meeting transcription", "data": "confidential", "access": "data_hosted", "criticality": "medium",
+  "answers": {"soc2_type2": false, "iso27001": false, "mfa_enforced": true, "sso_supported": true, "encryption_at_rest": true, "encryption_in_transit": true,
+              "pentest_annual": false, "breach_notify_72h": true, "sub_processors_disclosed": false, "data_deletion_on_exit": false, "bcp_tested": false, "vuln_mgmt_sla": false,
+              "ai_trains_on_customer_data": true},
+  "last_review": "2026-09-30"}
+]}

@@ -73,9 +73,12 @@ def is_text(p: Path) -> bool:
 
 def iter_files(root: Path, ignores: list[str]):
     for p in sorted(root.rglob("*")):
-        if not p.is_file() or any(part in SKIP_DIRS for part in p.parts) or p.name in SKIP_FILES:
+        if p.is_symlink() or not p.is_file() or p.name in SKIP_FILES:
             continue
-        rel = p.relative_to(root).as_posix()
+        relp = p.relative_to(root)
+        if any(part in SKIP_DIRS for part in relp.parts[:-1]):   # only folders INSIDE the scan root
+            continue
+        rel = relp.as_posix()
         if any(fnmatch.fnmatch(rel, g) for g in ignores):
             continue
         if p.stat().st_size > 2_000_000 or not is_text(p):

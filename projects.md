@@ -11,6 +11,8 @@
 | API & AI security | [12 API & AI application security](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/12-api-and-ai-security) |
 | Security program management | [13 Tabletop, vendor risk & KPIs](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/13-security-program-management) |
 
+**Production toolkit:** [WestGuard](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/toolkit) combines the reusable tools below into one pip-installable CLI, web dashboard and Docker image, with CI across Python 3.9–3.13.
+
 Hands-on security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, OWASP API and LLM Top 10, MITRE ATT&CK, Sigma, STIX 2.1).
 
 ---

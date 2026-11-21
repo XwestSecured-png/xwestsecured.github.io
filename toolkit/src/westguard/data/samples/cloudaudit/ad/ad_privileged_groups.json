@@ -1,0 +1,5 @@
+{
+  "Domain Admins": ["Administrator", "xw-admin", "svc_sql", "old.helpdesk", "jdoe.admin", "vendor.it"],
+  "Enterprise Admins": ["Administrator"],
+  "Backup Operators": ["svc_backup"]
+}

@@ -1,0 +1,14 @@
+{"value": [
+  {"displayName": "Require MFA - all users", "state": "enabled",
+   "conditions": {"users": {"includeUsers": ["All"], "excludeUsers": ["bg1-id", "bg2-id", "frontdesk-site3-id", "printer-scan-id", "ceo-id"]},
+                  "applications": {"includeApplications": ["All"]}, "clientAppTypes": ["browser", "mobileAppsAndDesktopClients"]},
+   "grantControls": {"operator": "OR", "builtInControls": ["mfa"]}},
+  {"displayName": "Block legacy authentication", "state": "enabledForReportingButNotEnforced",
+   "conditions": {"users": {"includeUsers": ["All"], "excludeUsers": ["bg1-id", "bg2-id"]},
+                  "applications": {"includeApplications": ["All"]}, "clientAppTypes": ["exchangeActiveSync", "other"]},
+   "grantControls": {"operator": "OR", "builtInControls": ["block"]}},
+  {"displayName": "Admins - require MFA", "state": "enabled",
+   "conditions": {"users": {"includeRoles": ["62e90394-69f5-4237-9190-012177145e10"], "excludeUsers": ["bg1-id", "bg2-id"]},
+                  "applications": {"includeApplications": ["All"]}, "clientAppTypes": ["all"]},
+   "grantControls": {"operator": "OR", "builtInControls": ["mfa"]}}
+]}

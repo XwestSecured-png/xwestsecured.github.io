@@ -1,0 +1,10 @@
+# Replace with your internal hostname. `tls internal` issues a certificate from Caddy's own CA
+# (trust it on clients) - use your corporate CA or a public ACME name instead if you have one.
+westguard.corp.example {
+	tls internal
+	encode gzip
+	request_body {
+		max_size 60MB
+	}
+	reverse_proxy westguard:8765
+}

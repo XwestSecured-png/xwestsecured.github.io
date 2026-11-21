@@ -1,6 +1,6 @@
 # Cybersecurity Portfolio Projects
 
-Fifteen hands-on security projects by **Xiome West**. Each one includes working code, synthetic sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, NIST SP 800-63B-4, NIST SP 800-218, CIS Controls v8.1, OWASP Top 10:2025, CISA SCuBA, MITRE ATT&CK, OWASP API Security Top 10, OWASP Top 10 for LLM Applications 2025).
+Fifteen hands-on security projects (the reusable tools are packaged as the [WestGuard toolkit](../toolkit/)) by **Xiome West**. Each one includes working code, synthetic sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, NIST SP 800-63B-4, NIST SP 800-218, CIS Controls v8.1, OWASP Top 10:2025, CISA SCuBA, MITRE ATT&CK, OWASP API Security Top 10, OWASP Top 10 for LLM Applications 2025).
 
 | # | Project | What it demonstrates | Key standards |
 |---|---|---|---|

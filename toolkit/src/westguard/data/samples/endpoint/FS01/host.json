@@ -1,0 +1,8 @@
+{
+ "hostname": "FS01.corp.example",
+ "os": "Windows Server 2019",
+ "ip": "10.10.5.20",
+ "collected_utc": "2026-10-27T20:40:00Z",
+ "collected_by": "X. West (IR-2026-1027)",
+ "timezone": "Eastern Standard Time"
+}

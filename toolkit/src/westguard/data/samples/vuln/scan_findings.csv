@@ -1,0 +1,17 @@
+Host,Port,CVE,CVSS v3.0 Base Score,Name,Solution
+vpn-gw01,443,CVE-2024-3400,10.0,PAN-OS GlobalProtect Command Injection,Upgrade PAN-OS to a fixed hotfix release per vendor advisory
+web01,8080,CVE-2021-44228,10.0,Apache Log4j2 JNDI Remote Code Execution (Log4Shell),Upgrade log4j-core to 2.17.1 or later
+mft01,443,CVE-2023-34362,9.8,MOVEit Transfer SQL Injection,Apply Progress MOVEit Transfer security patch
+fs01,445,CVE-2017-0144,8.8,Microsoft SMBv1 Remote Code Execution (EternalBlue / MS17-010),Apply MS17-010 and disable SMBv1
+legacy-pos01,3389,CVE-2019-0708,9.8,Remote Desktop Services RCE (BlueKeep),Apply vendor patch; enable NLA; restrict RDP
+web01,443,CVE-2099-10001,9.1,Synthetic: Web framework deserialization flaw,Upgrade framework to latest
+dev-sandbox01,8000,CVE-2099-10002,9.8,Synthetic: Dev tool RCE (no public exploit),Upgrade or remove dev tool
+app02,8443,CVE-2099-10003,7.5,Synthetic: App server path traversal,Apply vendor patch
+print01,9100,CVE-2099-10004,8.1,Synthetic: Printer firmware buffer overflow,Update printer firmware
+dc01,636,CVE-2099-10005,6.5,Synthetic: LDAP information disclosure,Apply cumulative update
+hr-laptop-114,0,CVE-2099-10006,7.8,Synthetic: Browser use-after-free,Update browser
+hr-laptop-114,0,CVE-2099-10007,5.3,Synthetic: PDF reader information leak,Update PDF reader
+fs01,443,,5.3,TLS 1.0/1.1 protocol enabled,Disable legacy TLS; require TLS 1.2+
+web01,443,,3.7,HTTP security headers missing (HSTS),Add Strict-Transport-Security header
+app02,22,CVE-2099-10008,4.3,Synthetic: SSH client information leak,Update OpenSSH package
+print01,80,,0.0,Web interface detected,Informational

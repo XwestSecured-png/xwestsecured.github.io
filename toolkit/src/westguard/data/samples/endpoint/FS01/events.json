@@ -1,0 +1,2357 @@
+[
+ {
+  "TimeCreated": "2026-10-27T15:25:02.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 4624,
+  "Provider": "Microsoft-Windows-Security-Auditing",
+  "TargetUserName": "svc_backup",
+  "LogonType": 3,
+  "IpAddress": "10.10.20.102"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:03.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 7045,
+  "Provider": "Service Control Manager",
+  "User": "CORP\\svc_backup",
+  "ServiceName": "PSEXESVC",
+  "ImagePath": "%SystemRoot%\\PSEXESVC.exe",
+  "StartType": "demand start"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:04.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "CommandLine": "C:\\Windows\\Temp\\lk.exe --path D:\\Shares --ext .lockd",
+  "ParentImage": "C:\\Windows\\PSEXESVC.exe",
+  "ParentCommandLine": "",
+  "ProcessId": 5100,
+  "ParentProcessId": 5080,
+  "Hashes": "SHA256=A1FED1CAE33CC3F71ED0C834EB91C54E0D6417760C98DC5ED45841AE65E01D30"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:06.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\System32\\vssadmin.exe",
+  "CommandLine": "vssadmin.exe delete shadows /all /quiet",
+  "ParentImage": "C:\\Windows\\Temp\\lk.exe",
+  "ParentCommandLine": "",
+  "ProcessId": 5120,
+  "ParentProcessId": 5100,
+  "Hashes": "SHA256=33FD41BE400FE88824CDEF9800163FEC3F3A952B345F380835CA744811AEA38F"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:07.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\System32\\wbadmin.exe",
+  "CommandLine": "wbadmin delete catalog -quiet",
+  "ParentImage": "C:\\Windows\\Temp\\lk.exe",
+  "ParentCommandLine": "",
+  "ProcessId": 5130,
+  "ParentProcessId": 5100,
+  "Hashes": "SHA256=4839C11AC0135BE0DBEED15E6F50E131CE926420C4CA02FC88E13DE7D7ECE15C"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:08.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\System32\\bcdedit.exe",
+  "CommandLine": "bcdedit /set {default} recoveryenabled no",
+  "ParentImage": "C:\\Windows\\Temp\\lk.exe",
+  "ParentCommandLine": "",
+  "ProcessId": 5140,
+  "ParentProcessId": 5100,
+  "Hashes": "SHA256=B4214985853DDC0215D44214C07F5BE09359B3B13B3465C45AF39E210B7BA676"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:10.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0000.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:11.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0001.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:12.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0002.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:13.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0003.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:14.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0004.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:15.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0005.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:16.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0006.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:17.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0007.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:18.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0008.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:19.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0009.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:20.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0010.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:21.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0011.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:22.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0012.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:23.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0013.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:24.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0014.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:25.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0015.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:26.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0016.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:27.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0017.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:28.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0018.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:29.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0019.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:30.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0020.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:31.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0021.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:32.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0022.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:33.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0023.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:34.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0024.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:35.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0025.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:36.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0026.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:37.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0027.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:38.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0028.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:39.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0029.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:40.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0030.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:41.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0031.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:42.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0032.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:43.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0033.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:44.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0034.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:45.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0035.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:46.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0036.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:47.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0037.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:48.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0038.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:49.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0039.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:50.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0040.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:51.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0041.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:52.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0042.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:53.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0043.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:54.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0044.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:55.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0045.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:56.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0046.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:57.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0047.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:58.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0048.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:25:59.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0049.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:00.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0050.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:01.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0051.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:02.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0052.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:03.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0053.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:04.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0054.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:05.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0055.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:06.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0056.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:07.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0057.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:08.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0058.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:09.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0059.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:10.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0060.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:11.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0061.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:12.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0062.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:13.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0063.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:14.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0064.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:15.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0065.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:16.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0066.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:17.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0067.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:18.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0068.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:19.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0069.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:20.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0070.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:21.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0071.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:22.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0072.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:23.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0073.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:24.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0074.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:25.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0075.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:26.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0076.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:27.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0077.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:28.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0078.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:29.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0079.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:30.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0080.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:31.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0081.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:32.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0082.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:33.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0083.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:34.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0084.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:35.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0085.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:36.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0086.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:37.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0087.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:38.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0088.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:39.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0089.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:40.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0090.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:41.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0091.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:42.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0092.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:43.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0093.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:44.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0094.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:45.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0095.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:46.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0096.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:47.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0097.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:48.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0098.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:49.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0099.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:50.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0100.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:51.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0101.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:52.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0102.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:53.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0103.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:54.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0104.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:55.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0105.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:56.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0106.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:57.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0107.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:58.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0108.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:26:59.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0109.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:00.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0110.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:01.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0111.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:02.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0112.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:03.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0113.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:04.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0114.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:05.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0115.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:06.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0116.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:07.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0117.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:08.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0118.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:09.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0119.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:10.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0120.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:11.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0121.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:12.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0122.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:13.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0123.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:14.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0124.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:15.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0125.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:16.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0126.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:17.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0127.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:18.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0128.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:19.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0129.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:20.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0130.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:21.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0131.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:22.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0132.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:23.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0133.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:24.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0134.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:25.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0135.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:26.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0136.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:27.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0137.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:28.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0138.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:29.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0139.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:30.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0140.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:31.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0141.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:32.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0142.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:33.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0143.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:34.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0144.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:35.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0145.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:36.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0146.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:37.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0147.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:38.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0148.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:39.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0149.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:40.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0150.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:41.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0151.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:42.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0152.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:43.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0153.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:44.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0154.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:45.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0155.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:46.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0156.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:47.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0157.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:48.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0158.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:49.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0159.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:50.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0160.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:51.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0161.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:52.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0162.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:53.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0163.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:54.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0164.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:55.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0165.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:56.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0166.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:57.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0167.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:58.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0168.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:27:59.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0169.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:00.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0170.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:01.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0171.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:02.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0172.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:03.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0173.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:04.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0174.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:05.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0175.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:06.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0176.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:07.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0177.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:08.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0178.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:09.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0179.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:10.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0180.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:11.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0181.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:12.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0182.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:13.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0183.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:14.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0184.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:15.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0185.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:16.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0186.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:17.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0187.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:18.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0188.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:19.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0189.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:20.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0190.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:21.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0191.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:22.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0192.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:23.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0193.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:24.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0194.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:25.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0195.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:26.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0196.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:27.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0197.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:28.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0198.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:29.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0199.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:30.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0200.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:31.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0201.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:32.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0202.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:33.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0203.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:34.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0204.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:35.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0205.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:36.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0206.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:37.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0207.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:38.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0208.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:39.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0209.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:40.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0210.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:41.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0211.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:42.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0212.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:43.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0213.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:44.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0214.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:45.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0215.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:46.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0216.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:47.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0217.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:48.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0218.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:49.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0219.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:50.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0220.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:51.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0221.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:52.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0222.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:53.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0223.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:54.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0224.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:55.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0225.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:56.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0226.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:57.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0227.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:58.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0228.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:28:59.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0229.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:00.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0230.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:01.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0231.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:02.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0232.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:03.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0233.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:04.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0234.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:05.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0235.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:06.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0236.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:07.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0237.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:08.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0238.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:09.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0239.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:10.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0240.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:11.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0241.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:12.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0242.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:13.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0243.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:14.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0244.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:15.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0245.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:16.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0246.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:17.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0247.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:18.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0248.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:29:19.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\Finance\\file_0249.xlsx.lockd"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:30:00.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 11,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\Temp\\lk.exe",
+  "TargetFilename": "D:\\Shares\\README_RESTORE_FILES.txt"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:30:50.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1,
+  "Provider": "Microsoft-Windows-Sysmon",
+  "User": "NT AUTHORITY\\SYSTEM",
+  "Image": "C:\\Windows\\System32\\wevtutil.exe",
+  "CommandLine": "wevtutil.exe cl Security",
+  "ParentImage": "C:\\Windows\\Temp\\lk.exe",
+  "ParentCommandLine": "",
+  "ProcessId": 5200,
+  "ParentProcessId": 5100,
+  "Hashes": "SHA256=8660B4D4132A96FBD6790D3015F1EAD47B495AA89E14FF1567E3BD4D741181CB"
+ },
+ {
+  "TimeCreated": "2026-10-27T15:30:51.000Z",
+  "Computer": "FS01.corp.example",
+  "Id": 1102,
+  "Provider": "Microsoft-Windows-Eventlog",
+  "User": "NT AUTHORITY\\SYSTEM"
+ }
+]

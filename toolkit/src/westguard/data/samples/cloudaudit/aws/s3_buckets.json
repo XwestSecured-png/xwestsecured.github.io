@@ -1,0 +1,5 @@
+[
+  {"Name": "ecs-backups-example", "PublicAccessBlockConfiguration": {"BlockPublicAcls": true, "IgnorePublicAcls": true, "BlockPublicPolicy": true, "RestrictPublicBuckets": true}, "PolicyIsPublic": false, "Versioning": "Enabled"},
+  {"Name": "ecs-website-assets-example", "PublicAccessBlockConfiguration": {"BlockPublicAcls": true, "IgnorePublicAcls": true, "BlockPublicPolicy": false, "RestrictPublicBuckets": false}, "PolicyIsPublic": true, "Versioning": "Suspended"},
+  {"Name": "ecs-client-intake-exports-example", "PublicAccessBlockConfiguration": null, "PolicyIsPublic": false, "Versioning": null}
+]

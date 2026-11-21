@@ -1,0 +1,7 @@
+[
+ {
+  "Location": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "Name": "OneDrive",
+  "Value": "\"C:\\Users\\tnguyen\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background"
+ }
+]
