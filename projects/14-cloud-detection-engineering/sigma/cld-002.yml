@@ -1,0 +1,27 @@
+title: AWS console login without MFA
+id: 1274c4bd-0bf5-5257-903d-c573cd8b1316
+name: cld_002
+status: experimental
+description: "Successful IAM user console login where MFA was not used."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1078/004/
+tags:
+    - attack.t1078.004
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventName: "ConsoleLogin"
+        additionalEventData.MFAUsed: "No"
+        responseElements.ConsoleLogin: "Success"
+    filter:
+        userIdentity.type:
+            - "AssumedRole"
+            - "FederatedUser"
+    condition: sel and not filter
+falsepositives:
+    - "Federated (SSO) users, where MFA is enforced at the IdP; these are filtered"
+level: medium

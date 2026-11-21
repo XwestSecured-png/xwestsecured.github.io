@@ -1,0 +1,28 @@
+title: Administrator policy attached to IAM identity
+id: 0a70a3ca-a8aa-55df-b8ad-982544c5264d
+name: cld_005
+status: experimental
+description: "AdministratorAccess (or another *Admin* managed policy) attached to a user, role or group."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1098/003/
+tags:
+    - attack.t1098.003
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventSource: "iam.amazonaws.com"
+        eventName:
+            - "AttachUserPolicy"
+            - "AttachRolePolicy"
+            - "AttachGroupPolicy"
+        requestParameters.policyArn|endswith:
+            - "/AdministratorAccess"
+            - "/IAMFullAccess"
+    condition: sel
+falsepositives:
+    - "Approved admin onboarding via IaC pipeline role; tune with an allow-list of pipeline ARNs"
+level: high

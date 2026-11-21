@@ -1,0 +1,82 @@
+[
+  {
+    "name": "NetWatch MSP",
+    "service": "Managed IT with remote admin access",
+    "inherent": 80,
+    "control": 25,
+    "residual": 81,
+    "tier": "Critical",
+    "review_every_days": 180,
+    "review_overdue_days": 551,
+    "flags": [
+      "Privileged remote access without MFA: top supply-chain attack path"
+    ],
+    "follow_ups": [
+      "Request SOC 2 Type II report (or ISO 27001 certificate) and review exceptions",
+      "Require MFA on every account with access to our data or systems",
+      "Ask for SSO/SAML support so access is removed when staff leave",
+      "Request latest third-party penetration test summary",
+      "Add 72-hour breach notification clause to the contract",
+      "Obtain list of sub-processors (fourth parties)",
+      "Request evidence of tested business continuity / DR plan",
+      "Confirm critical vulnerabilities are patched within a defined SLA"
+    ]
+  },
+  {
+    "name": "AIScribe Notes",
+    "service": "AI meeting transcription",
+    "inherent": 32,
+    "control": 50,
+    "residual": 36,
+    "tier": "High",
+    "review_every_days": 365,
+    "review_overdue_days": 0,
+    "flags": [
+      "Vendor trains AI models on customer data: require opt-out in contract"
+    ],
+    "follow_ups": [
+      "Request SOC 2 Type II report (or ISO 27001 certificate) and review exceptions",
+      "Request latest third-party penetration test summary",
+      "Obtain list of sub-processors (fourth parties)",
+      "Add certified data return/deletion at contract end",
+      "Request evidence of tested business continuity / DR plan",
+      "Confirm critical vulnerabilities are patched within a defined SLA"
+    ]
+  },
+  {
+    "name": "PayrollCloud Inc.",
+    "service": "Payroll and HR SaaS",
+    "inherent": 60,
+    "control": 95,
+    "residual": 20,
+    "tier": "Moderate",
+    "review_every_days": 730,
+    "review_overdue_days": 0,
+    "flags": [],
+    "follow_ups": []
+  },
+  {
+    "name": "MarketMail Pro",
+    "service": "Email marketing platform",
+    "inherent": 16,
+    "control": 75,
+    "residual": 8,
+    "tier": "Low",
+    "review_every_days": 1095,
+    "review_overdue_days": 0,
+    "flags": [],
+    "follow_ups": []
+  },
+  {
+    "name": "QuickPrint Supplies",
+    "service": "Office supplies ordering",
+    "inherent": 1,
+    "control": 10,
+    "residual": 1,
+    "tier": "Low",
+    "review_every_days": 1095,
+    "review_overdue_days": 0,
+    "flags": [],
+    "follow_ups": []
+  }
+]

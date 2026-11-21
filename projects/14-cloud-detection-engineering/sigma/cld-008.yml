@@ -1,0 +1,28 @@
+title: EC2 instances launched in an unapproved region
+id: 23a1d14e-0ca9-5d93-a767-2826dcfd99ba
+name: cld_008
+status: experimental
+description: "Attackers with stolen keys launch crypto-mining instances in regions nobody watches."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1578/002/
+tags:
+    - attack.t1578.002
+    - attack.t1496
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventSource: "ec2.amazonaws.com"
+        eventName: "RunInstances"
+    filter:
+        awsRegion:
+            - "us-east-1"
+            - "us-east-2"
+            - "us-west-2"
+    condition: sel and not filter
+falsepositives:
+    - "New region adoption (update ALLOWED_REGIONS)"
+level: high

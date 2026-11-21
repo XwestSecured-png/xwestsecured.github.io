@@ -1,0 +1,162 @@
+[
+  {
+    "id": "API2-a",
+    "title": "JWT 'alg:none' accepted: forge an admin token with no password",
+    "owasp": "API2:2023 Broken Authentication",
+    "cwe": "CWE-347",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "cvss": 9.8,
+    "severity": "Critical",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "DELETE /api/admin/users/2 with alg:none token -> 200 {'deleted': 2}"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "DELETE /api/admin/users/2 with alg:none token -> 401 {'error': 'authentication required'}"
+    },
+    "pass": true
+  },
+  {
+    "id": "API3-a",
+    "title": "Mass assignment: customer sets own role to admin",
+    "owasp": "API3:2023 Broken Object Property Level Authorization",
+    "cwe": "CWE-915",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "cvss": 8.8,
+    "severity": "High",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "PATCH /api/users/me {role:admin} -> 200 role=admin"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "PATCH /api/users/me {role:admin} -> 400 role=None"
+    },
+    "pass": true
+  },
+  {
+    "id": "API5",
+    "title": "Customer can call admin-only DELETE /api/admin/users",
+    "owasp": "API5:2023 Broken Function Level Authorization",
+    "cwe": "CWE-285",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+    "cvss": 8.1,
+    "severity": "High",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "DELETE /api/admin/users/2 as customer -> 200 {'deleted': 2}"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "DELETE /api/admin/users/2 as customer -> 403 {'error': 'forbidden'}"
+    },
+    "pass": true
+  },
+  {
+    "id": "API1",
+    "title": "BOLA: read another customer's account by changing the ID",
+    "owasp": "API1:2023 Broken Object Level Authorization",
+    "cwe": "CWE-639",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+    "cvss": 6.5,
+    "severity": "Medium",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "GET /api/accounts/502 as alice -> 200 {'id': 502, 'owner': 2, 'iban': 'XX00 0000 0000 0502', 'balance': 98000.0, 'ssn_last4': '5678'}"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "GET /api/accounts/502 as alice -> 404 {'error': 'not found'}"
+    },
+    "pass": true
+  },
+  {
+    "id": "API2-b",
+    "title": "No login throttling: unlimited password guessing",
+    "owasp": "API2:2023 Broken Authentication",
+    "cwe": "CWE-307",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+    "cvss": 6.5,
+    "severity": "Medium",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "12 wrong passwords -> statuses [401]"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "12 wrong passwords -> statuses [401, 429]"
+    },
+    "pass": true
+  },
+  {
+    "id": "API3-b",
+    "title": "Excessive data exposure: response includes SSN digits",
+    "owasp": "API3:2023 Broken Object Property Level Authorization",
+    "cwe": "CWE-213",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+    "cvss": 4.3,
+    "severity": "Medium",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "GET /api/accounts/501 fields -> ['balance', 'iban', 'id', 'owner', 'ssn_last4']"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "GET /api/accounts/501 fields -> ['balance', 'iban', 'id']"
+    },
+    "pass": true
+  },
+  {
+    "id": "API4",
+    "title": "Unbounded page size: ?limit=100000 returns everything",
+    "owasp": "API4:2023 Unrestricted Resource Consumption",
+    "cwe": "CWE-770",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+    "cvss": 4.3,
+    "severity": "Medium",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "GET /api/transactions?limit=100000 -> 5000 rows"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "GET /api/transactions?limit=100000 -> 100 rows"
+    },
+    "pass": true
+  },
+  {
+    "id": "API8",
+    "title": "Wildcard CORS with credentials flag",
+    "owasp": "API8:2023 Security Misconfiguration",
+    "cwe": "CWE-942",
+    "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+    "cvss": 3.1,
+    "severity": "Low",
+    "vulnerable": {
+      "reproduced": true,
+      "functional": true,
+      "evidence": "Access-Control-Allow-Origin: *"
+    },
+    "secure": {
+      "reproduced": false,
+      "functional": true,
+      "evidence": "Access-Control-Allow-Origin: https://app.bank.example"
+    },
+    "pass": true
+  }
+]

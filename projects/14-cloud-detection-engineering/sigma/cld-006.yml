@@ -1,0 +1,24 @@
+title: Console password created for IAM user
+id: 4ba4c74b-1c7a-5234-a526-1c7f7eaf09e0
+name: cld_006
+status: experimental
+description: "CreateLoginProfile / UpdateLoginProfile gives an identity (often a programmatic one) a console password."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1098/001/
+tags:
+    - attack.t1098.001
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventSource: "iam.amazonaws.com"
+        eventName:
+            - "CreateLoginProfile"
+            - "UpdateLoginProfile"
+    condition: sel
+falsepositives:
+    - "Helpdesk password reset for a human user"
+level: medium

@@ -1,0 +1,17 @@
+{"exercise_date": "2026-11-12", "team": "Example Org IR team (synthetic)",
+ "responses": {
+  "1": ["isolate_host", "open_incident_ticket", "notify_incident_commander"],
+  "2": ["disable_account", "revoke_sessions", "raise_severity", "hunt_lateral_movement"],
+  "3": ["isolate_file_servers", "notify_executives", "engage_ir_retainer", "segment_network"],
+  "4": ["approved_holding_statement", "single_spokesperson"],
+  "5": ["notify_insurer", "breach_counsel_assessment", "document_timeline"],
+  "6": ["executive_decision_record", "restore_time_estimate"],
+  "7": ["restore_identity_first", "prioritize_by_business_impact", "validate_before_reconnect", "monitor_for_reinfection"],
+  "8": ["after_action_report", "owners_and_due_dates", "update_ir_plan"]
+ },
+ "notes": {
+  "1": "Took 25 minutes to reach the incident commander; on-call number in the plan was out of date.",
+  "3": "Debate over full network shutdown vs segmentation took 40 minutes; no pre-agreed criteria.",
+  "6": "Nobody knew sanctions screening is required before any ransom payment.",
+  "7": "Restore runbook assumes the domain controller is available."
+ }}

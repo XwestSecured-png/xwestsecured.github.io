@@ -1,0 +1,35 @@
+title: Entra ID MFA fatigue (repeated push denials)
+id: 7507a81c-6bf3-5676-bf40-196cc3493a0e
+name: cld_011
+status: experimental
+description: "5+ MFA denials or timeouts (500121) for one user in 10 minutes: an attacker has the password and is spamming pushes."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1621/
+tags:
+    - attack.t1621
+logsource:
+    product: azure
+    service: signinlogs
+detection:
+    sel:
+        status.errorCode: 500121
+    condition: sel
+falsepositives:
+    - "User with a broken authenticator app"
+level: high
+---
+title: Entra ID MFA fatigue (repeated push denials) (correlation)
+id: 07ebd8f1-4881-5082-bb5c-cebf125ba37c
+status: experimental
+correlation:
+    type: event_count
+    rules:
+        - cld_011
+    group-by:
+        - userPrincipalName
+    timespan: 10m
+    condition:
+        gte: 5
+level: high

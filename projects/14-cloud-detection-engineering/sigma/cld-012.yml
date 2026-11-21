@@ -1,0 +1,27 @@
+title: Successful legacy-authentication sign-in (MFA bypass)
+id: b8f5dc73-6078-58fb-9715-ac670589faf6
+name: cld_012
+status: experimental
+description: "IMAP, POP, SMTP AUTH and ActiveSync basic auth cannot do MFA; a success means the password alone was enough."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1078/004/
+tags:
+    - attack.t1078.004
+logsource:
+    product: azure
+    service: signinlogs
+detection:
+    sel:
+        status.errorCode: 0
+        clientAppUsed:
+            - "IMAP4"
+            - "POP3"
+            - "Authenticated SMTP"
+            - "Exchange ActiveSync"
+            - "Other clients"
+    condition: sel
+falsepositives:
+    - "Legacy printers/scanners using SMTP AUTH (move to an app-specific connector)"
+level: medium

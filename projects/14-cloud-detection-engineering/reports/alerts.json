@@ -1,0 +1,210 @@
+[
+  {
+    "rule": "CLD-010",
+    "title": "Entra ID password spray (one IP, many accounts)",
+    "level": "high",
+    "attack": [
+      "T1110.003"
+    ],
+    "tactic": "Credential Access",
+    "first": "2026-11-17T06:02:00Z",
+    "last": "2026-11-17T06:10:40Z",
+    "summary": "14 distinct userPrincipalName for ipAddress=203.0.113.50 (06:02\u201306:10); last: avery.lane@corp.example from 203.0.113.50 via Browser"
+  },
+  {
+    "rule": "CLD-013",
+    "title": "Entra ID impossible travel",
+    "level": "high",
+    "attack": [
+      "T1078.004"
+    ],
+    "tactic": "Initial Access",
+    "first": "2026-11-17T13:05:00Z",
+    "last": "2026-11-17T14:17:00Z",
+    "summary": "Atlanta \u2192 Bucharest: 8,848 km in 1.2 h (7,373 km/h)"
+  },
+  {
+    "rule": "CLD-011",
+    "title": "Entra ID MFA fatigue (repeated push denials)",
+    "level": "high",
+    "attack": [
+      "T1621"
+    ],
+    "tactic": "Credential Access",
+    "first": "2026-11-17T14:10:00Z",
+    "last": "2026-11-17T14:15:30Z",
+    "summary": "7 events for userPrincipalName=jordan.lee@corp.example (14:10\u201314:15); last: jordan.lee@corp.example from 198.51.100.77 via Browser"
+  },
+  {
+    "rule": "CLD-012",
+    "title": "Successful legacy-authentication sign-in (MFA bypass)",
+    "level": "medium",
+    "attack": [
+      "T1078.004"
+    ],
+    "tactic": "Initial Access / Defense Evasion",
+    "first": "2026-11-17T14:30:00Z",
+    "last": "2026-11-17T14:30:00Z",
+    "summary": "casey.ford@corp.example from 198.51.100.77 via IMAP4"
+  },
+  {
+    "rule": "CLD-013",
+    "title": "Entra ID impossible travel",
+    "level": "high",
+    "attack": [
+      "T1078.004"
+    ],
+    "tactic": "Initial Access",
+    "first": "2026-11-17T14:30:00Z",
+    "last": "2026-11-17T19:07:00Z",
+    "summary": "Bucharest \u2192 Atlanta: 8,848 km in 4.6 h (1,917 km/h)"
+  },
+  {
+    "rule": "CLD-009",
+    "title": "Burst of AccessDenied errors from one principal (cloud discovery)",
+    "level": "medium",
+    "attack": [
+      "T1580",
+      "T1526"
+    ],
+    "tactic": "Discovery",
+    "first": "2026-11-17T15:00:00Z",
+    "last": "2026-11-17T15:03:40Z",
+    "summary": "10 events for userIdentity.arn=arn:aws:iam::111122223333:user/ci-deploy (15:00\u201315:03); last: ListUsers by arn:aws:iam::111122223333:user/ci-deploy from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-005",
+    "title": "Administrator policy attached to IAM identity",
+    "level": "high",
+    "attack": [
+      "T1098.003"
+    ],
+    "tactic": "Privilege Escalation / Persistence",
+    "first": "2026-11-17T15:08:00Z",
+    "last": "2026-11-17T15:08:00Z",
+    "summary": "AttachUserPolicy by arn:aws:iam::111122223333:user/ci-deploy from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-006",
+    "title": "Console password created for IAM user",
+    "level": "medium",
+    "attack": [
+      "T1098.001"
+    ],
+    "tactic": "Persistence",
+    "first": "2026-11-17T15:11:00Z",
+    "last": "2026-11-17T15:11:00Z",
+    "summary": "CreateLoginProfile by arn:aws:iam::111122223333:user/ci-deploy from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-003",
+    "title": "CloudTrail logging stopped or deleted",
+    "level": "critical",
+    "attack": [
+      "T1562.008"
+    ],
+    "tactic": "Defense Evasion",
+    "first": "2026-11-17T15:13:00Z",
+    "last": "2026-11-17T15:13:00Z",
+    "summary": "StopLogging by arn:aws:iam::111122223333:user/ci-deploy from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-004",
+    "title": "GuardDuty detector deleted or disassociated",
+    "level": "high",
+    "attack": [
+      "T1562.001"
+    ],
+    "tactic": "Defense Evasion",
+    "first": "2026-11-17T15:14:00Z",
+    "last": "2026-11-17T15:14:00Z",
+    "summary": "DeleteDetector by arn:aws:iam::111122223333:user/ci-deploy from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-002",
+    "title": "AWS console login without MFA",
+    "level": "medium",
+    "attack": [
+      "T1078.004"
+    ],
+    "tactic": "Initial Access",
+    "first": "2026-11-17T15:20:00Z",
+    "last": "2026-11-17T15:20:00Z",
+    "summary": "ConsoleLogin by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-008",
+    "title": "EC2 instances launched in an unapproved region",
+    "level": "high",
+    "attack": [
+      "T1578.002",
+      "T1496"
+    ],
+    "tactic": "Defense Evasion / Impact",
+    "first": "2026-11-17T15:23:00Z",
+    "last": "2026-11-17T15:23:00Z",
+    "summary": "RunInstances by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in ap-southeast-3"
+  },
+  {
+    "rule": "CLD-008",
+    "title": "EC2 instances launched in an unapproved region",
+    "level": "high",
+    "attack": [
+      "T1578.002",
+      "T1496"
+    ],
+    "tactic": "Defense Evasion / Impact",
+    "first": "2026-11-17T15:24:00Z",
+    "last": "2026-11-17T15:24:00Z",
+    "summary": "RunInstances by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in ap-southeast-3"
+  },
+  {
+    "rule": "CLD-008",
+    "title": "EC2 instances launched in an unapproved region",
+    "level": "high",
+    "attack": [
+      "T1578.002",
+      "T1496"
+    ],
+    "tactic": "Defense Evasion / Impact",
+    "first": "2026-11-17T15:25:00Z",
+    "last": "2026-11-17T15:25:00Z",
+    "summary": "RunInstances by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in ap-southeast-3"
+  },
+  {
+    "rule": "CLD-007",
+    "title": "S3 public access block removed or bucket opened to everyone",
+    "level": "high",
+    "attack": [
+      "T1530"
+    ],
+    "tactic": "Collection / Exfiltration",
+    "first": "2026-11-17T15:30:00Z",
+    "last": "2026-11-17T15:30:00Z",
+    "summary": "DeleteBucketPublicAccessBlock by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-007",
+    "title": "S3 public access block removed or bucket opened to everyone",
+    "level": "high",
+    "attack": [
+      "T1530"
+    ],
+    "tactic": "Collection / Exfiltration",
+    "first": "2026-11-17T15:31:00Z",
+    "last": "2026-11-17T15:31:00Z",
+    "summary": "PutBucketPolicy by arn:aws:iam::111122223333:user/backup-admin from 203.0.113.200 in us-east-1"
+  },
+  {
+    "rule": "CLD-001",
+    "title": "AWS root account console login",
+    "level": "high",
+    "attack": [
+      "T1078.004"
+    ],
+    "tactic": "Initial Access / Privilege Escalation",
+    "first": "2026-11-17T20:00:00Z",
+    "last": "2026-11-17T20:00:00Z",
+    "summary": "ConsoleLogin by arn:aws:iam::111122223333:root from 192.0.2.20 in us-east-1"
+  }
+]

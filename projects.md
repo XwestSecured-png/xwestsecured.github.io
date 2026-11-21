@@ -7,8 +7,11 @@
 | Incident handling & DFIR | [09 Ransomware investigation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/09-dfir-endpoint-triage-ransomware) · [08 Phishing investigation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/08-phishing-investigation-forensics) · [01 Log triage](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/01-incident-response-log-triage) |
 | Vulnerability analysis | [10 Web app vulnerability analysis](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/10-web-app-vulnerability-analysis) · [02 Risk-based remediation](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/02-vulnerability-management) |
 | Secure SQL | [11 Secure PostgreSQL & breach forensics](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/11-secure-postgresql-db-forensics) · [03 Injection defense & SQL hunting](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/03-secure-sql-and-threat-hunting) |
+| Detection engineering & threat intel | [14 Cloud detections as code](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/14-cloud-detection-engineering) · [15 Malware triage & threat intel](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/15-malware-triage-and-threat-intel) |
+| API & AI security | [12 API & AI application security](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/12-api-and-ai-security) |
+| Security program management | [13 Tabletop, vendor risk & KPIs](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/13-security-program-management) |
 
-Hands-on security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, MITRE ATT&CK).
+Hands-on security projects with working code, sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, CIS Controls v8.1, OWASP Top 10:2025, OWASP API and LLM Top 10, MITRE ATT&CK, Sigma, STIX 2.1).
 
 ---
 
@@ -86,6 +89,34 @@ Vulnerable and secure builds of the same web app, with six findings (IDOR, store
 [View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/11-secure-postgresql-db-forensics)
 
 A hardened PostgreSQL database using least-privilege roles, row-level security, column encryption, audited access functions and a tamper-evident hash-chained audit trail. It is tested against an insider data-theft scenario, and SQL-only forensics produce the exact breach scope for notification: 120 records exposed, and other sites protected.
+
+---
+
+## 12: API & AI Application Security
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/12-api-and-ai-security)
+
+A banking-style REST API with vulnerable and secure builds covering the OWASP API Security Top 10 (JWT `alg:none` forgery, BOLA, mass assignment, broken function-level authorization, unbounded queries, CORS). A harness proves all 8 findings are exploitable, then fixed, with features still working. The AI half defends a tool-using help-desk agent against prompt injection with four layers, measures the detector's precision and recall, and shows the policy layer still blocks data exfiltration when an attack slips past the detector.
+
+---
+
+## 13: Security Program Management
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/13-security-program-management)
+
+The tools a security program runs on: a 2-hour ransomware tabletop exercise with a facilitator guide and a scorer that drafts the after-action report, a vendor risk register (inherent risk × verified controls), a self-contained KPI dashboard for leadership ([view live](projects/13-security-program-management/reports/security_kpi_dashboard.html)), and a severity, escalation and RACI matrix.
+
+---
+
+## 14: Cloud Threat Detection Engineering (Detection as Code)
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/14-cloud-detection-engineering)
+
+13 AWS CloudTrail and Microsoft Entra ID detections written as code, each with ATT&CK mapping, documented false positives and positive/negative unit tests. Rules export to Sigma (including correlation rules) and convert to Splunk SPL with pySigma. Against a planted intrusion (password spray, MFA fatigue, leaked access key, CloudTrail tampering, crypto-mining, public bucket), all 13 rules fired with zero alerts on benign activity.
+
+---
+
+## 15: Malware Triage & Threat Intelligence
+[View project](https://github.com/XwestSecured-png/xwestsecured.github.io/tree/main/projects/15-malware-triage-and-threat-intel)
+
+A static triage tool that inspects files without running them (standard-library PE parser, entropy, packer and masquerading checks, PowerShell decoding, IOC extraction) plus 8 tested YARA rules, all run against a safe practice sample set. A sourced Scattered Spider threat profile is exported as STIX 2.1 and mapped against this portfolio's detections; the gap analysis led to 3 new Sigma rules, raising coverage from 12 to 16 of 17 techniques.
 
 ---
 

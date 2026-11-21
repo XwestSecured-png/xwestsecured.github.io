@@ -1,0 +1,39 @@
+title: Burst of AccessDenied errors from one principal (cloud discovery)
+id: 4f92932e-07d1-5071-be6b-291dabb16820
+name: cld_009
+status: experimental
+description: "Stolen keys are tested by enumerating services; most calls fail."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1580/
+tags:
+    - attack.t1580
+    - attack.t1526
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        errorCode:
+            - "AccessDenied"
+            - "Client.UnauthorizedOperation"
+            - "UnauthorizedOperation"
+    condition: sel
+falsepositives:
+    - "Misconfigured automation after a permission change"
+level: medium
+---
+title: Burst of AccessDenied errors from one principal (cloud discovery) (correlation)
+id: 8313fc67-7a82-52d1-9e59-0f6c8f990447
+status: experimental
+correlation:
+    type: event_count
+    rules:
+        - cld_009
+    group-by:
+        - userIdentity.arn
+    timespan: 10m
+    condition:
+        gte: 10
+level: medium

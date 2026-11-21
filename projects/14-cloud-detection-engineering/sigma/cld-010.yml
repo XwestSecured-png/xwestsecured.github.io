@@ -1,0 +1,38 @@
+title: Entra ID password spray (one IP, many accounts)
+id: 6cb724d9-5c69-51d6-a1b7-dbad459304f8
+name: cld_010
+status: experimental
+description: "Failed password (50126) against 10+ distinct users from one IP within 30 minutes."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1110/003/
+tags:
+    - attack.t1110.003
+logsource:
+    product: azure
+    service: signinlogs
+detection:
+    sel:
+        status.errorCode:
+            - 50126
+            - 50053
+    condition: sel
+falsepositives:
+    - "Shared NAT egress with a misconfigured app; check user agent"
+level: high
+---
+title: Entra ID password spray (one IP, many accounts) (correlation)
+id: 6c253cba-d6d8-5268-afd5-5306a2a4167b
+status: experimental
+correlation:
+    type: value_count
+    rules:
+        - cld_010
+    group-by:
+        - ipAddress
+    timespan: 30m
+    condition:
+        gte: 10
+        field: userPrincipalName
+level: high

@@ -1,0 +1,31 @@
+title: S3 public access block removed or bucket opened to everyone
+id: 7bacfbc1-02b2-5b17-860a-4b762176dae9
+name: cld_007
+status: experimental
+description: "Bucket-level guardrails removed or an ACL/policy grants access to AllUsers."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1530/
+tags:
+    - attack.t1530
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel1:
+        eventSource: "s3.amazonaws.com"
+        eventName: "DeleteBucketPublicAccessBlock"
+    sel2:
+        eventSource: "s3.amazonaws.com"
+        eventName:
+            - "PutBucketAcl"
+            - "PutBucketPolicy"
+        requestParameters|contains:
+            - "AllUsers"
+            - "\"Principal\": \"*\""
+            - "'Principal': '*'"
+    condition: sel1 or sel2
+falsepositives:
+    - "Intentional static-website buckets (should be behind CloudFront instead)"
+level: high

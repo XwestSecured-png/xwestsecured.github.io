@@ -1,6 +1,6 @@
 # Cybersecurity Portfolio Projects
 
-Eleven hands-on security projects by **Xiome West**. Each one includes working code, synthetic sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, NIST SP 800-63B-4, NIST SP 800-218, CIS Controls v8.1, OWASP Top 10:2025, CISA SCuBA, MITRE ATT&CK).
+Fifteen hands-on security projects by **Xiome West**. Each one includes working code, synthetic sample data, generated reports, automated tests, and documentation mapped to current standards (NIST CSF 2.0, NIST SP 800-61r3, NIST SP 800-63B-4, NIST SP 800-218, CIS Controls v8.1, OWASP Top 10:2025, CISA SCuBA, MITRE ATT&CK, OWASP API Security Top 10, OWASP Top 10 for LLM Applications 2025).
 
 | # | Project | What it demonstrates | Key standards |
 |---|---|---|---|
@@ -15,28 +15,33 @@ Eleven hands-on security projects by **Xiome West**. Each one includes working c
 | 09 | [DFIR Endpoint Triage & Ransomware Investigation](09-dfir-endpoint-triage-ransomware/) | Read-only Windows/Linux live-response collectors, hash-verified triage analyzer (24 rules, PowerShell decoding, beacon and mass-encryption detection), full incident report for case IR-2026-1027 | NIST SP 800-61r3, SP 800-86, RFC 3227, ATT&CK |
 | 10 | [Web Application Vulnerability Analysis (VulnLab)](10-web-app-vulnerability-analysis/) | Vulnerable vs. secure builds of one app, 6 findings with PoCs, CVSS v3.1 calculator, regression harness proving each fix, pentest-style report | OWASP Top 10:2025, WSTG, CVSS v3.1 |
 | 11 | [Secure PostgreSQL & Database Breach Forensics](11-secure-postgresql-db-forensics/) | Least privilege, row-level security, pgcrypto, audited definer functions, hash-chained audit trail; SQL-only insider investigation with exact breach scope | CIS PostgreSQL, NIST SP 800-53 AC/AU, OWASP A01/A09 |
+| 12 | [API & AI Application Security](12-api-and-ai-security/) | Vulnerable vs. secure REST API (8 findings incl. JWT `alg:none`, BOLA, mass assignment), prompt-injection detector with precision/recall, AI agent policy layer that blocks exfiltration even when the detector is evaded | OWASP API Top 10 (2023), OWASP LLM Top 10 2025, MITRE ATLAS |
+| 13 | [Security Program Management](13-security-program-management/) | Ransomware tabletop kit with scored after-action report, vendor risk register, self-contained KPI dashboard, severity/escalation matrix and RACI | NIST CSF 2.0 GV, SP 800-84, SP 800-161r1, CISA CTEP |
+| 14 | [Cloud Threat Detection Engineering](14-cloud-detection-engineering/) | 13 CloudTrail and Entra ID detections as code with pos/neg test fixtures, Sigma correlation export validated by pySigma, Splunk SPL, 13/13 rules fire on a planted intrusion with 0 benign alerts | ATT&CK Cloud, Sigma v2, CIS AWS / M365 |
+| 15 | [Malware Triage & Threat Intelligence](15-malware-triage-and-threat-intel/) | Static triage (stdlib PE parser, entropy, PowerShell decoding, IOC extraction), 8 tested YARA rules, sourced Scattered Spider profile, STIX 2.1 bundle, detection gap analysis with 3 new Sigma rules | ATT&CK G1015, STIX 2.1, SP 800-83r1, AA23-320A |
 
 ## By focus area
 
 | Focus | Projects |
 |---|---|
-| **Incident handling & DFIR** | 01 Log triage · 08 Phishing investigation · **09 Endpoint triage & ransomware case** · 11 Database breach forensics |
-| **Vulnerability analysis** | 02 Risk-based remediation · **10 Web app vulnerability analysis** · 06 Cloud & identity audit · 07 Supply chain |
+| **Incident handling & DFIR** | 01 Log triage · 08 Phishing investigation · **09 Endpoint triage & ransomware case** · 11 Database breach forensics · 15 Malware triage |
+| **Vulnerability analysis** | 02 Risk-based remediation · **10 Web app vulnerability analysis** · **12 API & AI security** · 06 Cloud & identity audit · 07 Supply chain |
 | **Secure SQL** | 03 Injection defense & SQL hunting · **11 Secure PostgreSQL** |
-| Network, GRC | 04 Network detection · 05 NIST CSF 2.0 assessment |
+| **Detection engineering & threat intel** | **14 Cloud detections as code** · 15 Threat intel & YARA · 04 Network detection |
+| **Security program management** | **13 Tabletop, vendor risk, KPIs** · 05 NIST CSF 2.0 assessment |
 
 ## Design principles (shared by all projects)
 
 - **Adaptable to any environment.** Thresholds, network ranges, business hours, SLAs and allow-lists live in config files, not code. Each README has an "Adapting to your environment" section covering small organizations, enterprise, cloud, and air-gapped networks.
 - **Safe by default.** Every tool is read-only or passive, and the audit scripts never change settings.
-- **No dependencies.** Python tools use only the standard library (Python 3.9+), so they run on any analyst workstation or jump box.
+- **No dependencies.** Python tools use only the standard library (Python 3.9+), so they run on any analyst workstation or jump box. Optional extras (yara-python, pySigma, stix2) add validation, and their tests skip cleanly when absent.
 - **Responsible data.** All sample data is synthetic. IPs come from the RFC 5737 documentation ranges, domains use `.example`, and placeholder CVEs use `CVE-2099-*`.
-- **Tested.** `python3 -m unittest discover -s tests` passes in every project (94 tests total; Project 11's integration tests need a disposable PostgreSQL instance).
+- **Tested.** `python3 -m unittest discover -s tests` passes in every project (132 tests total; Project 11's integration tests need a disposable PostgreSQL instance).
 
 ## Run everything
 
 ```bash
-for p in 0*/; do (cd "$p" && echo "== $p" && python3 -m unittest discover -s tests); done
+for p in [01]*/; do (cd "$p" && echo "== $p" && python3 -m unittest discover -s tests); done
 ```
 
 > ⚠️ Use these tools only on systems, networks and logs you own or are explicitly authorized to assess.

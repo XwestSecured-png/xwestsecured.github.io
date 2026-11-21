@@ -1,0 +1,26 @@
+title: CloudTrail logging stopped or deleted
+id: b4551c8a-bcd9-558d-b44a-923fe1d6b06e
+name: cld_003
+status: experimental
+description: "An attacker turning off the audit trail to hide what comes next."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1562/008/
+tags:
+    - attack.t1562.008
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventSource: "cloudtrail.amazonaws.com"
+        eventName:
+            - "StopLogging"
+            - "DeleteTrail"
+            - "UpdateTrail"
+            - "PutEventSelectors"
+    condition: sel
+falsepositives:
+    - "Trail migration during a planned change"
+level: critical

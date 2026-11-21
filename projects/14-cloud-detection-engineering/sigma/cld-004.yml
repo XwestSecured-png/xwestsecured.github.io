@@ -1,0 +1,26 @@
+title: GuardDuty detector deleted or disassociated
+id: 8594e268-ad11-5717-9f2a-04c445583609
+name: cld_004
+status: experimental
+description: "Threat detection service disabled."
+author: Xiome West
+date: 2026-11-21
+references:
+    - https://attack.mitre.org/techniques/T1562/001/
+tags:
+    - attack.t1562.001
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    sel:
+        eventSource: "guardduty.amazonaws.com"
+        eventName:
+            - "DeleteDetector"
+            - "DisassociateFromAdministratorAccount"
+            - "StopMonitoringMembers"
+            - "DeleteMembers"
+    condition: sel
+falsepositives:
+    - "Account decommissioning"
+level: high
